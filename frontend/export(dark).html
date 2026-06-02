@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Export - Timetable Generator</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#e4e1e8",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#1b1b1f",
+                        "on-primary-fixed-variant": "#47464b",
+                        "tertiary-fixed": "#e4e1e8",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-container-low": "#1a1c1c",
+                        "primary": "#e4e1e7",
+                        "outline-variant": "#47464b",
+                        "on-tertiary-fixed-variant": "#47464c",
+                        "on-tertiary-container": "#525157",
+                        "background": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "surface-bright": "#393939",
+                        "on-primary": "#303034",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1b1b20",
+                        "outline": "#929095",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#c8c5cb",
+                        "inverse-primary": "#5f5e63",
+                        "primary-container": "#c8c5cb",
+                        "surface-tint": "#c8c5cb",
+                        "on-tertiary": "#303035",
+                        "secondary-container": "#454747",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed-dim": "#c8c5cb",
+                        "tertiary-container": "#c7c5cc",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-dim": "#121414",
+                        "inverse-surface": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "surface-container": "#1e2020",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary": "#2f3131",
+                        "on-primary-container": "#535257",
+                        "primary-fixed": "#e5e1e7",
+                        "integrity-success": "#10b981",
+                        "secondary-fixed-dim": "#c6c7c6",
+                        "surface-container-high": "#292a2a",
+                        "surface": "#121414",
+                        "surface-variant": "#333535",
+                        "secondary": "#c6c7c6",
+                        "surface-container-lowest": "#0d0f0f",
+                        "surface-container-highest": "#333535",
+                        "tertiary-fixed-dim": "#c8c5cc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-page": "32px",
+                        "card-padding": "20px",
+                        "sidebar-width": "80px",
+                        "component-gap": "12px",
+                        "unit": "4px",
+                        "header-height": "64px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["13px", { "lineHeight": "19px", "fontWeight": "400" }],
+                        "body-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(41, 42, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.outline-variant');
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            #print-preview-area,
+            #print-preview-area * {
+                visibility: visible;
+            }
+
+            #print-preview-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background: white;
+            }
+
+            .dark #print-preview-area {
+                background: white;
+                color: black;
+            }
+
+            .dark #print-preview-area .border-outline-variant {
+                border-color: #ccc;
+            }
+
+            .dark #print-preview-area .bg-surface-container {
+                background-color: #f5f5f5;
+            }
+
+            .dark #print-preview-area .text-on-surface {
+                color: #000;
+            }
+
+            .dark #print-preview-area .text-on-surface-variant {
+                color: #555;
+            }
+        }
+
+        /* Custom scrollbar for preview */
+        .preview-scroll::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .preview-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .preview-scroll::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-variant');
+            border-radius: 4px;
+        }
+
+        .preview-scroll::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline-variant');
+        }
+    </style>
+</head>
+
+<body id="page-export" class="flex flex-col h-screen overflow-hidden">
+    <!-- TopAppBar Component -->
+    <header
+        class="fixed top-0 right-0 w-[calc(100%-80px)] h-header-height flex justify-between items-center px-gutter ml-sidebar-width bg-background dark:bg-background z-50">
+        <div class="flex items-center gap-6">
+            <span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Timetable
+                Generator</span>
+            <nav class="hidden md:flex items-center gap-4 border-l border-outline-variant pl-6">
+                <a class="text-on-surface-variant hover:text-primary transition-opacity opacity-80 font-body-md text-body-md"
+                    href="#">Year 2024</a>
+                <span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_right</span>
+                <a class="text-on-surface-variant hover:text-primary transition-opacity opacity-80 font-body-md text-body-md"
+                    href="#">Semester 1</a>
+                <span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_right</span>
+                <a class="text-on-surface-variant hover:text-primary transition-opacity opacity-80 font-body-md text-body-md"
+                    href="#">Computer Science</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors" id="themeToggle"
+                title="Toggle Theme">
+                <span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+            </button>
+            <button class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <button
+                class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors border-r border-outline-variant pr-6 mr-2">
+                <span class="material-symbols-outlined" data-icon="cloud_done">cloud_done</span>
+            </button>
+            <button
+                class="bg-primary-container text-on-primary-fixed font-body-md text-body-md px-4 py-2 rounded font-medium hover:bg-tertiary transition-colors opacity-80">
+                Export PDF
+            </button>
+        </div>
+    </header>
+    <!-- SideNavBar Component -->
+    <nav
+        class="fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant bg-surface-bright dark:bg-surface-bright flex flex-col items-center py-margin-page gap-component-gap z-50">
+        <div class="mb-8 flex flex-col items-center gap-2">
+            <div
+                class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-fixed font-bold text-lg mb-2">
+                US
+            </div>
+        </div>
+        <div class="flex flex-col gap-2 w-full px-2">
+            <!-- Tabs -->
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors scale-95 duration-150 group"
+                href="main.html">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary"
+                    data-icon="dashboard">dashboard</span>
+                <span class="font-caption text-caption text-[10px] text-center w-full truncate">Dashboard</span>
+            </a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors scale-95 duration-150 group"
+                href="timetable(dark).html">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary"
+                    data-icon="calendar_today">calendar_today</span>
+                <span class="font-caption text-caption text-[10px] text-center w-full truncate">Timetable</span>
+            </a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors scale-95 duration-150 group"
+                href="Generate(dark).html">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary"
+                    data-icon="folder_shared">folder_shared</span>
+                <span class="font-caption text-caption text-[10px] text-center w-full truncate">Resources</span>
+            </a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors scale-95 duration-150 group"
+                href="export(dark).html">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary" data-icon="warning">warning</span>
+                <span class="font-caption text-caption text-[10px] text-center w-full truncate">Conflicts</span>
+            </a>
+            <!-- Active Tab (Settings/Export context) -->
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg bg-secondary-container text-on-secondary-container scale-95 duration-150"
+                href="#">
+                <span class="material-symbols-outlined mb-1" data-icon="settings" data-weight="fill"
+                    style="font-variation-settings: 'FILL' 1;">settings</span>
+                <span
+                    class="font-caption text-caption text-[10px] text-center w-full truncate font-medium">Settings</span>
+            </a>
+        </div>
+        <div class="mt-auto flex flex-col gap-2 w-full px-2">
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors scale-95 duration-150 group"
+                href="#">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary"
+                    data-icon="help_outline">help_outline</span>
+            </a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors scale-95 duration-150 group"
+                href="#">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary" data-icon="logout">logout</span>
+            </a>
+        </div>
+    </nav>
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-sidebar-width mt-header-height mb-[56px] p-margin-page overflow-y-auto bg-background">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-6 h-full">
+            <!-- Left Column: Controls (Glassmorphism Panel) -->
+            <div class="w-full lg:w-[320px] flex flex-col gap-6 shrink-0">
+                <div class="glass-panel rounded-lg p-card-padding flex flex-col gap-6 relative overflow-hidden">
+                    <!-- Accent bar -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-integrity-success"></div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary" data-icon="ios_share">ios_share</span>
+                        <h2 class="font-headline-md text-headline-md text-primary">Export Configuration</h2>
+                    </div>
+                    <!-- Dropdowns -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-sm text-label-sm text-on-surface-variant">BRANCH</label>
+                            <div class="relative">
+                                <select id="export-branch-select"
+                                    class="w-full bg-surface-container border border-outline-variant rounded p-2 text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:border-primary transition-colors cursor-pointer pr-8">
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-sm text-label-sm text-on-surface-variant">SECTION / GROUP</label>
+                            <div class="relative">
+                                <select id="export-section-select"
+                                    class="w-full bg-surface-container border border-outline-variant rounded p-2 text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:border-primary transition-colors cursor-pointer pr-8">
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-sm text-label-sm text-on-surface-variant">FORMAT</label>
+                            <div class="flex gap-2">
+                                <label
+                                    class="flex-1 bg-surface-container border border-outline-variant rounded p-2 flex items-center justify-center gap-2 cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-variant">
+                                    <input checked="" class="sr-only" name="format" type="radio" value="grid" />
+                                    <span class="material-symbols-outlined text-[18px]">grid_on</span>
+                                    <span class="font-body-md text-body-md">Grid</span>
+                                </label>
+                                <label
+                                    class="flex-1 bg-surface-container border border-outline-variant rounded p-2 flex items-center justify-center gap-2 cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-variant">
+                                    <input class="sr-only" name="format" type="radio" value="list" />
+                                    <span class="material-symbols-outlined text-[18px]">view_list</span>
+                                    <span class="font-body-md text-body-md">List</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-px bg-outline-variant w-full my-2"></div>
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col gap-3">
+                        <button id="btn-export-csv"
+                            class="w-full bg-primary-container text-on-primary-fixed font-body-md text-body-md px-4 py-2.5 rounded font-medium hover:bg-tertiary transition-colors flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">download</span>
+                            Download CSV
+                        </button>
+                        <button id="btn-export-all"
+                            class="w-full border border-outline-variant text-primary font-body-md text-body-md px-4 py-2.5 rounded font-medium hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">archive</span>
+                            Download All (ZIP)
+                        </button>
+                        <button id="btn-print"
+                            class="w-full border border-outline-variant text-on-surface font-body-md text-body-md px-4 py-2.5 rounded font-medium hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2 mt-2">
+                            <span class="material-symbols-outlined text-[18px]">print</span>
+                            Print Preview
+                        </button>
+                    </div>
+                </div>
+                <!-- Status Context -->
+                <div class="bg-surface-container-low border-l border-outline-variant p-4 rounded-r flex flex-col gap-2">
+                    <div class="flex items-center gap-2 text-integrity-success font-label-sm text-label-sm">
+                        <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        VALIDATION PASSED
+                    </div>
+                    <p class="font-caption text-caption text-on-surface-variant">No scheduling conflicts detected for
+                        selected branches. Ready for export.</p>
+                </div>
+            </div>
+            <!-- Right Column: Print Preview Canvas -->
+            <div
+                class="flex-1 bg-surface-container-high border border-outline-variant rounded-lg flex flex-col overflow-hidden relative">
+                <!-- Preview Toolbar -->
+                <div
+                    class="h-[40px] border-b border-outline-variant bg-surface-container flex items-center justify-between px-4 shrink-0">
+                    <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[14px]">visibility</span>
+                        PREVIEW
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="font-caption text-caption text-on-surface-variant">Scale: 100%</span>
+                    </div>
+                </div>
+                <!-- Preview Area (Scrollable) -->
+                <div class="flex-1 overflow-auto preview-scroll p-8 bg-surface flex justify-center items-start">
+                    <!-- The actual "Paper" area to be printed -->
+                    <div class="w-[800px] min-h-[600px] bg-background border border-outline-variant p-8 shadow-sm rounded-sm"
+                        id="export-preview">
+                        <!-- Print Header -->
+                        <div class="flex justify-between items-end border-b-2 border-on-surface pb-4 mb-6">
+                            <div>
+                                <h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Computer Science
+                                    (B.Tech) - Master Timetable</h1>
+                                <p class="font-body-md text-body-md text-on-surface-variant">Year 2024 • Semester 1 •
+                                    Valid from: Sep 01, 2024</p>
+                            </div>
+                            <div class="text-right font-caption text-caption text-on-surface-variant">
+                                Generated: Oct 24, 2024<br />
+                                Page 1 of 1
+                            </div>
+                        </div>
+                        <!-- High-contrast Grid -->
+                        <div class="w-full border-t border-l border-outline-variant">
+                            <!-- Header Row -->
+                            <div
+                                class="flex bg-surface-container border-b border-outline-variant font-label-sm text-label-sm text-on-surface">
+                                <div class="w-20 p-2 border-r border-outline-variant">TIME</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant text-center">MON</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant text-center">TUE</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant text-center">WED</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant text-center">THU</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant text-center">FRI</div>
+                            </div>
+                            <!-- Row 1: 09:00 -->
+                            <div class="flex border-b border-outline-variant font-body-md text-body-md text-on-surface">
+                                <div
+                                    class="w-20 p-2 border-r border-outline-variant flex items-center justify-center font-caption text-caption text-on-surface-variant">
+                                    09:00<br />10:00</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant bg-surface-container-low">
+                                    <div class="font-medium text-primary">CS301 - Data Str.</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Prof. Alan T.
+                                    </div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Room 402</div>
+                                </div>
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div class="font-medium text-primary">MA201 - Calc III</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Dr. Euler</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Hall A</div>
+                                </div>
+                                <div
+                                    class="flex-[2] p-2 border-r border-outline-variant bg-surface-container text-center flex flex-col justify-center items-center">
+                                    <div class="font-medium">CS301 LAB (G1)</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Computer Lab 3</div>
+                                </div>
+                                <!-- Span 2 cols for lab -->
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div class="font-medium text-primary">PH102 - Physics</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Dr. Bohr</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Room 105</div>
+                                </div>
+                            </div>
+                            <!-- Row 2: 10:00 -->
+                            <div class="flex border-b border-outline-variant font-body-md text-body-md text-on-surface">
+                                <div
+                                    class="w-20 p-2 border-r border-outline-variant flex items-center justify-center font-caption text-caption text-on-surface-variant">
+                                    10:00<br />11:00</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div class="font-medium text-primary">CS305 - Arch.</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Prof. Neumann
+                                    </div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Room 402</div>
+                                </div>
+                                <div class="flex-1 p-2 border-r border-outline-variant bg-surface-container-low">
+                                    <div class="font-medium text-primary">CS301 - Data Str.</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Prof. Alan T.
+                                    </div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Room 402</div>
+                                </div>
+                                <!-- Lab continues -->
+                                <div
+                                    class="flex-1 p-2 border-r border-outline-variant bg-surface-container text-center flex flex-col justify-center items-center text-on-surface-variant">
+                                    <span class="font-caption text-caption">Lab cont.</span>
+                                </div>
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div class="font-medium text-primary">MA201 - Calc III</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Dr. Euler</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Hall A</div>
+                                </div>
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div
+                                        class="text-on-surface-variant italic font-caption text-caption flex h-full items-center justify-center">
+                                        Free Slot</div>
+                                </div>
+                            </div>
+                            <!-- Row 3: Break -->
+                            <div class="flex border-b border-outline-variant bg-surface-container-lowest">
+                                <div
+                                    class="w-20 p-1 border-r border-outline-variant flex items-center justify-center font-caption text-caption text-on-surface-variant">
+                                    11:00<br />11:30</div>
+                                <div
+                                    class="flex-1 p-1 flex items-center justify-center border-r border-outline-variant col-span-5 text-on-surface-variant font-label-sm text-label-sm tracking-widest">
+                                    BREAK
+                                </div>
+                            </div>
+                            <!-- Row 4: 11:30 -->
+                            <div class="flex border-b border-outline-variant font-body-md text-body-md text-on-surface">
+                                <div
+                                    class="w-20 p-2 border-r border-outline-variant flex items-center justify-center font-caption text-caption text-on-surface-variant">
+                                    11:30<br />12:30</div>
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div class="font-medium text-primary">PH102 - Physics</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Dr. Bohr</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Room 105</div>
+                                </div>
+                                <div
+                                    class="flex-[2] p-2 border-r border-outline-variant bg-surface-container text-center flex flex-col justify-center items-center">
+                                    <div class="font-medium">CS305 LAB (G1)</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Hardware Lab 1</div>
+                                </div>
+                                <div class="flex-1 p-2 border-r border-outline-variant">
+                                    <div class="font-medium text-primary">CS305 - Arch.</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Prof. Neumann
+                                    </div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Room 402</div>
+                                </div>
+                                <div class="flex-1 p-2 border-r border-outline-variant bg-surface-container-low">
+                                    <div class="font-medium text-primary">SE101 - Seminar</div>
+                                    <div class="font-caption text-caption text-on-surface-variant mt-1">Guest</div>
+                                    <div class="font-caption text-caption text-on-surface-variant">Auditorium</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 font-caption text-caption text-on-surface-variant flex justify-between">
+                            <span>GridSystem Technical v2.4</span>
+                            <span>Confidential - Internal Academic Use Only</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Component -->
+    <footer
+        class="fixed bottom-0 right-0 w-[calc(100%-80px)] h-[40px] flex justify-between items-center px-gutter ml-sidebar-width bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant z-50">
+        <div class="font-label-sm text-label-sm text-on-surface-variant">
+            © 2024 Technical University Scheduling System
+        </div>
+        <nav class="flex gap-4">
+            <a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline transition-all"
+                href="#">System Status</a>
+            <a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline transition-all"
+                href="#">Terms of Service</a>
+            <a class="font-caption text-caption text-on-surface-variant hover:text-on-surface underline transition-all"
+                href="#">Privacy Policy</a>
+        </nav>
+    </footer>
+    <script>
+        // Simple theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeToggle.querySelector('span').textContent = 'dark_mode';
+            } else {
+                html.classList.add('dark');
+                themeToggle.querySelector('span').textContent = 'light_mode';
+            }
+        });
+    </script>
+    <!-- Toast Container -->
+    <div id="toast-container" style="position:fixed;top:80px;right:24px;z-index:9999;"></div>
+    <!-- Scripts -->
+    <script src="../js/data.js?v=2"></script>
+    <script src="../js/constraints.js?v=2"></script>
+    <script src="../js/genetic.js?v=2"></script>
+    <script src="../js/export.js?v=2"></script>
+    <script src="../js/app.js?v=2"></script>
+</body>
+
+</html>

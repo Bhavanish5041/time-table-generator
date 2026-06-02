@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Timetable Generator - Generate</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c7c5cc",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3f8",
+                        "on-secondary-container": "#1a1c1c",
+                        "surface-variant": "#e4e1e8",
+                        "primary-fixed-dim": "#c8c5cb",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#47464c",
+                        "surface-dim": "#ded8e0",
+                        "on-surface": "#1b1b1f",
+                        "surface-container-highest": "#e4e1e8",
+                        "inverse-surface": "#303034",
+                        "on-primary-fixed": "#1b1b1f",
+                        "tertiary-fixed": "#e4e1e8",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#c8c5cb",
+                        "secondary-fixed-dim": "#c6c7c6",
+                        "surface-container": "#f0edf3",
+                        "outline": "#78767c",
+                        "on-primary-container": "#1a1b1f",
+                        "secondary-container": "#e2e2e2",
+                        "secondary": "#5d5e5e",
+                        "on-primary-fixed-variant": "#47464b",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#410002",
+                        "inverse-on-surface": "#f2f0f4",
+                        "on-background": "#1b1b1f",
+                        "on-tertiary-container": "#191a20",
+                        "surface": "#fdf8fd",
+                        "integrity-success": "#10b981",
+                        "primary-fixed": "#e5e1e7",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fdf8fd",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5f5e63",
+                        "background": "#fdf8fd",
+                        "surface-container-high": "#ebe7ed",
+                        "tertiary-fixed-dim": "#c8c5cc",
+                        "primary-container": "#e5e1e7",
+                        "primary": "#5f5e63",
+                        "on-tertiary-fixed": "#1b1b20",
+                        "tertiary": "#5f5e64",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#e4e1e8",
+                        "on-surface-variant": "#47464b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "card-padding": "20px",
+                        "header-height": "64px",
+                        "unit": "4px",
+                        "sidebar-width": "80px",
+                        "gutter": "24px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["13px", { "lineHeight": "19px", "fontWeight": "400" }],
+                        "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 right-0 w-[calc(100%-80px)] h-header-height border-b border-outline-variant flat no shadows flex justify-between items-center px-gutter ml-sidebar-width bg-background z-20">
+        <div class="flex items-center gap-gutter">
+            <h1 class="font-headline-md text-headline-md text-on-surface">Timetable Generator</h1>
+            <nav class="hidden md:flex gap-component-gap">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80"
+                    href="#">Year 2024</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80"
+                    href="#">Semester 1</a>
+                <a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 transition-opacity opacity-80"
+                    href="#">Computer Science</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-component-gap">
+            <button
+                class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-1 rounded">
+                <span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+            </button>
+            <button
+                class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-1 rounded">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <button
+                class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-1 rounded">
+                <span class="material-symbols-outlined" data-icon="cloud_done">cloud_done</span>
+            </button>
+            <button
+                class="bg-primary text-on-primary font-body-lg text-body-lg px-4 py-2 rounded flex items-center gap-2 hover:bg-opacity-90 transition-colors">
+                Export PDF
+            </button>
+        </div>
+    </header>
+    <!-- SideNavBar -->
+    <aside
+        class="fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant flat no shadows bg-surface-bright flex flex-col items-center py-margin-page gap-component-gap z-30">
+        <div class="mb-gutter flex flex-col items-center">
+            <div
+                class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md mb-2">
+                U
+            </div>
+            <span
+                class="font-label-sm text-label-sm text-on-surface-variant text-center leading-tight">UniSched<br /><span
+                    class="opacity-70">Technical Portal</span></span>
+        </div>
+        <nav class="flex flex-col gap-2 w-full px-2">
+            <a class="flex flex-col items-center p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg group scale-95 transition-transform duration-150"
+                href="main(light).html">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary transition-colors"
+                    data-icon="dashboard">dashboard</span>
+                <span class="font-caption text-caption">Dashboard</span>
+            </a>
+            <a class="flex flex-col items-center p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg group scale-95 transition-transform duration-150"
+                href="timetable(dark).html">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary transition-colors"
+                    data-icon="calendar_today">calendar_today</span>
+                <span class="font-caption text-caption">Timetable</span>
+            </a>
+            <a class="flex flex-col items-center p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg group scale-95 transition-transform duration-150"
+                href="#">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary transition-colors"
+                    data-icon="folder_shared">folder_shared</span>
+                <span class="font-caption text-caption">Resources</span>
+            </a>
+            <a class="flex flex-col items-center p-2 bg-secondary-container text-on-secondary-container rounded-lg group scale-95 transition-transform duration-150"
+                href="#">
+                <span class="material-symbols-outlined mb-1 text-primary" data-icon="warning">warning</span>
+                <span class="font-caption text-caption font-medium">Conflicts</span>
+            </a>
+            <a class="flex flex-col items-center p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg group scale-95 transition-transform duration-150"
+                href="#">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary transition-colors"
+                    data-icon="settings">settings</span>
+                <span class="font-caption text-caption">Settings</span>
+            </a>
+        </nav>
+        <div class="mt-auto flex flex-col gap-2 w-full px-2">
+            <button
+                class="w-full bg-surface-container-high border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors font-caption text-caption py-2 rounded flex flex-col items-center justify-center">
+                <span class="material-symbols-outlined mb-1 text-[18px]" data-icon="add">add</span>
+                New Schedule
+            </button>
+            <a class="flex flex-col items-center p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg group scale-95 transition-transform duration-150 mt-4"
+                href="#">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary transition-colors"
+                    data-icon="help_outline">help_outline</span>
+                <span class="font-caption text-caption">Support</span>
+            </a>
+            <a class="flex flex-col items-center p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg group scale-95 transition-transform duration-150"
+                href="#">
+                <span class="material-symbols-outlined mb-1 group-hover:text-primary transition-colors"
+                    data-icon="logout">logout</span>
+                <span class="font-caption text-caption">Sign Out</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main
+        class="ml-sidebar-width mt-header-height mb-[40px] p-margin-page flex-grow flex flex-col items-center justify-center">
+        <div class="w-full max-w-3xl flex flex-col gap-gutter">
+            <!-- Header Section -->
+            <div class="text-center mb-4">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Algorithm Configuration</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto">Tune the genetic algorithm
+                    parameters before initializing the schedule generation process. Higher population sizes may increase
+                    computation time.</p>
+            </div>
+            <!-- Configuration Card -->
+            <div
+                class="bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex flex-col gap-6 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-outline-variant"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter ml-2">
+                    <!-- Population Size -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-sm text-label-sm text-on-surface-variant flex justify-between">
+                            Population Size
+                            <span class="text-on-surface">150</span>
+                        </label>
+                        <input
+                            class="w-full h-1 bg-outline-variant rounded-full appearance-none outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high accent-primary"
+                            max="500" min="50" type="range" value="150" />
+                        <div class="flex justify-between font-caption text-caption text-on-surface-variant mt-1">
+                            <span>50</span>
+                            <span>500</span>
+                        </div>
+                    </div>
+                    <!-- Mutation Rate -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-sm text-label-sm text-on-surface-variant flex justify-between">
+                            Mutation Rate
+                            <span class="text-on-surface">0.05</span>
+                        </label>
+                        <input
+                            class="w-full h-1 bg-outline-variant rounded-full appearance-none outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high accent-primary"
+                            max="0.2" min="0.01" step="0.01" type="range" value="0.05" />
+                        <div class="flex justify-between font-caption text-caption text-on-surface-variant mt-1">
+                            <span>0.01</span>
+                            <span>0.20</span>
+                        </div>
+                    </div>
+                    <!-- Max Generations -->
+                    <div class="flex flex-col gap-2 md:col-span-2">
+                        <label class="font-label-sm text-label-sm text-on-surface-variant">Max Generations</label>
+                        <input
+                            class="bg-surface-container border border-outline-variant rounded px-3 py-2 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full md:w-1/2"
+                            type="number" value="1000" />
+                    </div>
+                </div>
+                <div class="flex justify-end mt-4 ml-2">
+                    <button
+                        class="bg-primary-container text-on-primary-fixed font-body-lg text-body-lg px-6 py-2 rounded flex items-center gap-2 hover:bg-opacity-90 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]" data-icon="play_arrow">play_arrow</span>
+                        Initialize Generation
+                    </button>
+                </div>
+            </div>
+            <!-- Generation Progress (Simulated State) -->
+            <div
+                class="bg-surface-container-low border border-outline-variant rounded-lg p-card-padding flex flex-col gap-4 mt-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[20px]" data-icon="sync">sync</span>
+                        Generation Progress
+                    </h3>
+                    <span
+                        class="font-caption text-caption text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">Running
+                        (Gen 432/1000)</span>
+                </div>
+                <div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+                    <div class="bg-primary h-full rounded-full w-[43%] transition-all duration-500 relative">
+                        <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-2">
+                    <div class="flex flex-col">
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Hard
+                            Violations</span>
+                        <span class="font-headline-lg text-headline-lg text-error">12</span>
+                    </div>
+                    <div class="flex flex-col border-l border-outline-variant pl-4">
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Soft
+                            Penalties</span>
+                        <span class="font-headline-lg text-headline-lg text-on-surface">345</span>
+                    </div>
+                    <div class="flex flex-col border-l border-outline-variant pl-4">
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Time Elapsed</span>
+                        <span class="font-headline-lg text-headline-lg text-on-surface">00:45</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="fixed bottom-0 right-0 w-[calc(100%-80px)] bg-surface-container-low border-t border-outline-variant flat no shadows flex justify-between items-center px-gutter py-2 ml-sidebar-width z-20">
+        <div class="font-label-sm text-label-sm text-on-surface-variant">
+            © 2024 Technical University Scheduling System
+        </div>
+        <nav class="flex gap-4 font-caption text-caption text-on-surface-variant">
+            <a class="hover:text-on-surface underline transition-all" href="#">System Status</a>
+            <a class="hover:text-on-surface underline transition-all" href="#">Terms of Service</a>
+            <a class="hover:text-on-surface underline transition-all" href="#">Privacy Policy</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
