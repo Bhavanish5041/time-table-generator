@@ -153,7 +153,7 @@ const TimetableData = (() => {
     const teacher = {
       id: generateId('TCH'),
       name: name.trim(),
-      subjectIds: [...subjectIds]
+      subjectIds: Array.isArray(subjectIds) ? [...subjectIds] : []
     };
     teachers.push(teacher);
     save();
@@ -164,7 +164,9 @@ const TimetableData = (() => {
     const teacher = teachers.find(t => t.id === id);
     if (!teacher) return null;
     if (updates.name !== undefined) teacher.name = updates.name.trim();
-    if (updates.subjectIds !== undefined) teacher.subjectIds = [...updates.subjectIds];
+    if (updates.subjectIds !== undefined) {
+      teacher.subjectIds = Array.isArray(updates.subjectIds) ? [...updates.subjectIds] : [];
+    }
     save();
     return teacher;
   }
@@ -203,7 +205,10 @@ const TimetableData = (() => {
       const data = JSON.parse(raw);
       branches = data.branches || [];
       subjects = data.subjects || [];
-      teachers = data.teachers || [];
+      teachers = (data.teachers || []).map(t => ({
+        ...t,
+        subjectIds: Array.isArray(t.subjectIds) ? t.subjectIds : []
+      }));
       sections = data.sections || [];
       _idCounter = data._idCounter || 0;
       return true;

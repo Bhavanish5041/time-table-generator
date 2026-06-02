@@ -66,6 +66,16 @@ let currentStep = 1;
 function initSetupPage() {
   renderSetupBranches();
 
+  document.querySelectorAll('[id^="step-indicator-"]').forEach(stepEl => {
+    const step = parseInt(stepEl.id.replace('step-indicator-', ''), 10);
+    if (!Number.isNaN(step)) {
+      stepEl.addEventListener('click', () => {
+        currentStep = step;
+        updateWizardUI();
+      });
+    }
+  });
+
   const btnAddBranch = document.getElementById('btn-add-branch');
   if (btnAddBranch) {
     btnAddBranch.addEventListener('click', () => {
@@ -119,6 +129,7 @@ function updateWizardUI() {
     if (stepEl) {
       const circle = stepEl.querySelector('.indicator-circle');
       const text = stepEl.querySelector('.indicator-text');
+      stepEl.classList.add('cursor-pointer');
       
       if (i < currentStep) {
         circle.className = 'w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[10px] font-bold indicator-circle';
@@ -455,6 +466,7 @@ function renderSetupTeachers() {
   const cardsContainer = document.getElementById('teachers-cards');
   
   teachers.forEach(tch => {
+    const assignedSubjectIds = Array.isArray(tch.subjectIds) ? tch.subjectIds : [];
     const card = document.createElement('div');
     card.className = 'bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex flex-col gap-4 relative overflow-hidden group';
     card.innerHTML = `
@@ -475,7 +487,7 @@ function renderSetupTeachers() {
             ${subjects.map(sub => `
                 <label class="flex items-center gap-2 cursor-pointer p-1 hover:bg-surface-container rounded transition-colors">
                     <input type="checkbox" class="tch-subj-checkbox accent-primary" 
-                           data-tid="${tch.id}" data-sid="${sub.id}" ${tch.subjectIds.includes(sub.id) ? 'checked' : ''} />
+                           data-tid="${tch.id}" data-sid="${sub.id}" ${assignedSubjectIds.includes(sub.id) ? 'checked' : ''} />
                     <span class="font-body-md text-body-md text-on-surface flex-1">${sub.code}</span>
                 </label>
             `).join('')}
@@ -505,7 +517,7 @@ function renderSetupTeachers() {
         const sid = e.target.dataset.sid;
         const teacher = TimetableData.getTeacherById(tid);
         if(teacher) {
-            let subjects = [...teacher.subjectIds];
+            let subjects = Array.isArray(teacher.subjectIds) ? [...teacher.subjectIds] : [];
             if (e.target.checked) {
                 if(!subjects.includes(sid)) subjects.push(sid);
             } else {
