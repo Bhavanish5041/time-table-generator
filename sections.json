@@ -1,0 +1,79 @@
+[ 
+  {
+    "id": "AI_1A",
+    "department": "AI",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "AI_1B",
+    "department": "AI",
+    "year": 1,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "AI_1C",
+    "department": "AI",
+    "year": 1,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "CI_2A",
+    "department": "AI",
+    "year": 2,
+    "section": "A",
+    "strength": 80
+  },
+  {
+    "id": "CI_2B",
+    "department": "AI",
+    "year": 2,
+    "section": "B",
+    "strength": 80
+  },
+  {
+    "id": "AI_3A",
+    "department": "AI",
+    "year": 3,
+    "section": "A",
+    "strength": 70
+  },
+  {
+    "id": "AI_3B",
+    "department": "AI",
+    "year": 3,
+    "section": "B",
+    "strength": 70
+  },
+  {
+    "id": "AI_4A",
+    "department": "AI",
+    "year": 4,
+    "section": "A",
+    "strength": 80
+  },
+  {
+    "id": "CS_1A",
+    "department": "CS",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CS_1B",
+    "department": "CS",
+    "year": 1,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CS_1C",
+    "department": "CS",
+    "year": 1,
+    "section": "C",
+    "strength": 75
+  }
+]

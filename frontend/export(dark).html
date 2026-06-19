@@ -203,8 +203,8 @@
             </nav>
         </div>
         <div class="flex items-center gap-4">
-            <button class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors" id="themeToggle"
-                title="Toggle Theme">
+            <button class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors" data-theme-toggle
+                title="Switch to light mode">
                 <span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
             </button>
             <button class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors">
@@ -214,7 +214,7 @@
                 class="text-on-surface-variant hover:text-primary p-2 rounded transition-colors border-r border-outline-variant pr-6 mr-2">
                 <span class="material-symbols-outlined" data-icon="cloud_done">cloud_done</span>
             </button>
-            <button
+            <button id="btn-export-pdf"
                 class="bg-primary-container text-on-primary-fixed font-body-md text-body-md px-4 py-2 rounded font-medium hover:bg-tertiary transition-colors opacity-80">
                 Export PDF
             </button>
@@ -524,29 +524,14 @@
                 href="#">Privacy Policy</a>
         </nav>
     </footer>
-    <script>
-        // Simple theme toggle logic
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        themeToggle.addEventListener('click', () => {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                themeToggle.querySelector('span').textContent = 'dark_mode';
-            } else {
-                html.classList.add('dark');
-                themeToggle.querySelector('span').textContent = 'light_mode';
-            }
-        });
-    </script>
     <!-- Toast Container -->
     <div id="toast-container" style="position:fixed;top:80px;right:24px;z-index:9999;"></div>
     <!-- Scripts -->
-    <script src="../js/data.js?v=2"></script>
-    <script src="../js/constraints.js?v=2"></script>
-    <script src="../js/genetic.js?v=2"></script>
-    <script src="../js/export.js?v=2"></script>
-    <script src="../js/app.js?v=2"></script>
+    <script src="../js/data.js?v=16"></script>
+    <script src="../js/constraints.js?v=16"></script>
+    <script src="../js/genetic.js?v=16"></script>
+    <script src="../js/export.js?v=16"></script>
+    <script src="../js/app.js?v=16"></script>
 </body>
 
 </html>

@@ -1,0 +1,4618 @@
+[
+  {
+    "college": "RVCE",
+    "branch": "AI",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Mathematics for AI and ML",
+            "code": "MA231ET",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Data Structures and Applications",
+            "code": "AI233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Foundations of Cyber Physical Systems",
+            "code": "AI234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Statistical Foundations for Data Science",
+            "code": "CI235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "CI237DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Artificial Intelligence and Machine Learning",
+            "code": "AI244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "AI255TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Big Data Technologies",
+            "code": "AI362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Natural Language Processing and Transformers",
+            "code": "AI363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Cloud Computing Technology and Architectures",
+            "code": "AI364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Generative Artificial Intelligence",
+            "code": "AI365TID",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "AI367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "CS",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra and Probability Theory",
+            "code": "MA231CT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Bridge Course - C Programming",
+            "code": "CS139AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Data Structures and Applications",
+            "code": "CS233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Applied Digital Logic Design and Computer Organization",
+            "code": "CS234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Operating Systems",
+            "code": "CS235AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "CS237DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Discrete Mathematical Structures and Combinatorics",
+            "code": "CS241AT",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "IoT and Embedded Computing",
+            "code": "CS344AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Professional Elective - Group B",
+            "code": "CS246TX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Theory of Computation",
+            "code": "CS354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "CS355TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Network Programming and Security",
+            "code": "CS362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Compiler Design",
+            "code": "CS363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Software Engineering with Agile Technologies",
+            "code": "CS364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "CS367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "EC",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Statistics, Laplace Transform and Numerical Methods",
+            "code": "MA231BT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Analog Microelectronic Circuits",
+            "code": "EC233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Analysis and Design of Digital Circuits",
+            "code": "EC234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Network Analysis and Control Engineering",
+            "code": "EC235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communication Engineering",
+            "code": "EC244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Electromagnetics",
+            "code": "EC345AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "EC247DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Digital VLSI Design",
+            "code": "EC352IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Digital Communication Systems",
+            "code": "EC353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Embedded System Design",
+            "code": "EC354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group B Elective",
+            "code": "EC355TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "VLSI Design",
+            "code": "EC362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Digital Communication",
+            "code": "EC363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "RF and Microwave Engineering",
+            "code": "EC364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "EC367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "ME",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Computer Aided Engineering Graphics",
+            "code": "ME112GL",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 1,
+            "lab_hours": 2
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "IDEA Lab",
+            "code": "ME121DL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra, Fourier Transforms and Statistics",
+            "code": "MA232AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Solid Mechanics",
+            "code": "ME233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Thermodynamics",
+            "code": "ME234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Metrology and Machine Drawing",
+            "code": "ME235AL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Fluid Mechanics",
+            "code": "ME244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Theory of Machines",
+            "code": "ME245AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "ME247DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Flexible Manufacturing Systems",
+            "code": "ME252IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Heat Transfer",
+            "code": "ME353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Design of Machine Elements - I",
+            "code": "ME354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group G",
+            "code": "ME355TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design of Machine Elements",
+            "code": "ME362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Finite Element Analysis",
+            "code": "ME363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Control Engineering",
+            "code": "ME364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "ME367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "CE",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra, Fourier Transforms and Statistics",
+            "code": "MA232AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Surveying",
+            "code": "CV233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Concrete Technology",
+            "code": "CV234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Mechanics of Materials",
+            "code": "CV235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Building Planning and Drawing",
+            "code": "CV344AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Structural Analysis",
+            "code": "CV345AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "CV247DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design of RCC Structures",
+            "code": "CV352IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Design of Steel Structures",
+            "code": "CV353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Hydrology and Irrigation Engineering",
+            "code": "CV354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "CV255TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "EE",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Statistics, Laplace Transform and Numerical Methods",
+            "code": "MA231BT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Electronics Linear Integrated Circuits",
+            "code": "EE233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Analysis and Design of Digital Circuits",
+            "code": "EE234AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Signals and Network Analysis",
+            "code": "EE235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Power Electronics and Applications",
+            "code": "EE244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Electrical Machines",
+            "code": "EE351IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Power Transmission and Distribution",
+            "code": "EE352TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Control Systems Engineering",
+            "code": "EE353TBD",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Professional Core Elective - Group C",
+            "code": "EE256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Digital Signal Processing and Applications",
+            "code": "EE362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Power System Analysis",
+            "code": "EE363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Electric Vehicles Power Train and Drives",
+            "code": "EE364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "EE367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "BT",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra, Fourier Transforms and Statistics",
+            "code": "MA232AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Cell and Molecular Biology",
+            "code": "BT233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Biochemistry",
+            "code": "BT234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Thermodynamics and Bioseparation Techniques",
+            "code": "BT235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Biochemistry",
+            "code": "BT344AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Bioprocess Calculations",
+            "code": "BT345AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bioinformatics",
+            "code": "BT351IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Bioinformatics Theory and Lab",
+            "code": "BT352IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Genetic Engineering",
+            "code": "BT353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Genomics Proteomics and Biotechnology",
+            "code": "BT354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "BT355TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Microbial Biotechnology",
+            "code": "BT362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kinetics of Reactions",
+            "code": "BT363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Omics Technology",
+            "code": "BT364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Elective",
+            "code": "BT365TDX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "CH",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra, Fourier Transforms and Statistics",
+            "code": "MA232AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Momentum Transfer",
+            "code": "CH233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Particle Technology",
+            "code": "CH234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Chemical Process Calculations",
+            "code": "CH235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Process Heat Transfer",
+            "code": "CH344AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Thermodynamics",
+            "code": "CH345AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "CH247DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Process Dynamics and Control",
+            "code": "CH352IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Process Dynamics and Control Laboratory",
+            "code": "CH353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Mass Transfer",
+            "code": "CH354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "CH255TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "NPTEL / MOOC Course",
+            "code": "CH256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Process Modelling and Simulation",
+            "code": "CH362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Mass Transfer-II",
+            "code": "CH363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Heterogeneous Reaction Systems",
+            "code": "CH364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Process Engineering and Economics",
+            "code": "CH365TDX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "CH367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "AS",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra, Fourier Transforms and Statistics",
+            "code": "MA232AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Fluid Mechanics",
+            "code": "AS233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Mechanics of Fluids",
+            "code": "AS234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Structural Mechanics",
+            "code": "AS235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Aircraft Structures",
+            "code": "AS344AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Avionics",
+            "code": "AS345AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "AS247DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Computational Fluid Dynamics",
+            "code": "AS362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Aircraft Propulsion",
+            "code": "AS363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Structural Dynamics",
+            "code": "AS364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Elective",
+            "code": "AS365TDX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "AS367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "CD",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Mathematics for AI and ML",
+            "code": "MA231ET",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Design and Analysis of Algorithms",
+            "code": "CD343AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Database Management Systems",
+            "code": "CD252IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "CY",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra and Probability Theory",
+            "code": "MA231CT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Computer Networks",
+            "code": "CY245AT",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "CY255TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "IS",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra and Probability Theory",
+            "code": "MA231CT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Data Structures and Applications",
+            "code": "IS233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Logic Design and Computer Organization",
+            "code": "IS234AT",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Operating Systems",
+            "code": "CD235AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "IS237DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Web Technologies",
+            "code": "IS244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Artificial Intelligence and Machine Learning",
+            "code": "IS353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Artificial Intelligence and Machine Learning",
+            "code": "IS353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Database Management Systems",
+            "code": "CD252IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Theory of Computation",
+            "code": "CS354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Cloud Computing",
+            "code": "CS355TBB",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Computer Networks",
+            "code": "IS362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Cloud Computing",
+            "code": "IS363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Software Engineering and Testing",
+            "code": "IS364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "IS367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "ET",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Statistics, Laplace Transform and Numerical Methods",
+            "code": "MA231BT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Linear Integrated Circuits and Applications",
+            "code": "ET233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Analysis and Design of Digital Circuits",
+            "code": "ET234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Circuit Analysis and Signal Handling",
+            "code": "ET235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communication Engineering",
+            "code": "ET244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Digital Modulation and Coding",
+            "code": "ET352IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Discrete Time Signal Processing",
+            "code": "ET353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "RF Circuits",
+            "code": "ET354TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Machine Learning",
+            "code": "ET355TBA",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Data Structures and Algorithms",
+            "code": "ET355TBB",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Antenna Theory and Design",
+            "code": "ET362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Data Communication and Networking",
+            "code": "ET363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Optical Fibre Communication",
+            "code": "ET364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Elective",
+            "code": "ET365TDX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "ET367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "college": "RVCE",
+    "branch": "IM",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+            "code": "MA211TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Chemistry of Smart Materials and Devices",
+            "code": "CM211IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-I",
+            "code": "XX113XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Programming Languages Course",
+            "code": "XX115XIX",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Communicative English-I",
+            "code": "HS111EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Fundamentals of Indian Constitution",
+            "code": "HS114TC",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          },
+          {
+            "name": "Scientific Foundations of Health - Yoga Practice",
+            "code": "HS115YL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "name": "Number Theory, Vector Calculus and Computational Methods",
+            "code": "MA221TC",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Quantum Physics for Engineers",
+            "code": "PY221IC",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Principles of Programming Using C",
+            "code": "CS222IA",
+            "credits": 3,
+            "type": "theory_lab",
+            "theory_hours": 2,
+            "lab_hours": 1
+          },
+          {
+            "name": "Engineering Science Course-II",
+            "code": "XX123XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Emerging Technology Course",
+            "code": "XX124XTX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Communicative English-II",
+            "code": "HS121EL",
+            "credits": 1,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 1
+          },
+          {
+            "name": "Kannada Course",
+            "code": "HS122KS_HS123KB",
+            "credits": 1,
+            "type": "theory",
+            "theory_hours": 1,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "subjects": [
+          {
+            "name": "Linear Algebra, Fourier Transforms and Statistics",
+            "code": "MA232AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX232TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course",
+            "code": "HS237LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Work Systems Design",
+            "code": "IM233AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Manufacturing Processes",
+            "code": "IM234AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Digital Technology",
+            "code": "IM235AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "subjects": [
+          {
+            "name": "Basket Course - Group A",
+            "code": "XX242TX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Ability Enhancement Course - Group C",
+            "code": "HS247LX",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          },
+          {
+            "name": "Universal Human Values",
+            "code": "HS248AT",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Bridge Course Mathematics",
+            "code": "MA149AT",
+            "credits": 0,
+            "type": "audit",
+            "theory_hours": 3,
+            "lab_hours": 0
+          },
+          {
+            "name": "Operations Research",
+            "code": "IM244AI",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Marketing Management",
+            "code": "IM345AT",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Design Thinking Lab",
+            "code": "IM247DL",
+            "credits": 2,
+            "type": "lab",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "name": "Entrepreneurship and Intellectual Property Rights",
+            "code": "HS351TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Group C Elective - NPTEL",
+            "code": "XX256TCX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Operations Management",
+            "code": "IM352IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Quality Assurance",
+            "code": "IM353IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Finance Accounting and Costing",
+            "code": "IM254TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Professional Core Elective - Group D",
+            "code": "IMX55TBX",
+            "credits": 3,
+            "type": "theory",
+            "theory_hours": 3,
+            "lab_hours": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "name": "Principles of Management and Economics",
+            "code": "HS261TA",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Institutional Elective - I",
+            "code": "XX266TEX",
+            "credits": 2,
+            "type": "theory",
+            "theory_hours": 2,
+            "lab_hours": 0
+          },
+          {
+            "name": "Supply Chain Management",
+            "code": "IM362IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Design of Experiments",
+            "code": "IM363IA",
+            "credits": 4,
+            "type": "theory_lab",
+            "theory_hours": 3,
+            "lab_hours": 1
+          },
+          {
+            "name": "Project Management",
+            "code": "IM364TA",
+            "credits": 4,
+            "type": "theory",
+            "theory_hours": 4,
+            "lab_hours": 0
+          },
+          {
+            "name": "Interdisciplinary Project",
+            "code": "IM367P",
+            "credits": 2,
+            "type": "project",
+            "theory_hours": 0,
+            "lab_hours": 2
+          }
+        ]
+      }
+    ]
+  }
+]

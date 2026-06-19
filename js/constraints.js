@@ -13,9 +13,14 @@ const Constraints = (() => {
   const SOFT_UNEVEN_LOAD = 2;            // Uneven distribution across days
   const SOFT_IDLE_GAP = 4;              // Gaps in a section's schedule
 
+  // Valid lab start positions (teaching slots that begin a physical block).
+  // Slot 0 = 9:00-10:00, 1 = 10:00-11:00, [SHORT BREAK], 2 = 11:30-12:30, 3 = 12:30-1:30, [LUNCH], 4 = 2:30-3:30, 5 = 3:30-4:30
+  // Physical blocks: [0,1], [2,3], [4,5]
+  const VALID_LAB_STARTS = new Set([0, 2, 4]);
+
   /**
    * Check all hard constraints and return violations.
-   * @param {Object} timetable - Map<sectionId, grid[6][6]> where each cell is null or {subjectId, teacherId, type}
+   * @param {Object} timetable - Map<sectionId, grid[5][6]> where each cell is null or {subjectId, teacherId, type}
    * @param {Object} data - The full dataset from TimetableData.getAllData()
    * @returns {Object} { violations: Array, count: number, penalty: number }
    */
@@ -28,8 +33,8 @@ const Constraints = (() => {
     // 2. Lab not in consecutive slots
     violations.push(...checkLabConsecutive(timetable, data));
 
-    // 3. No free slot after lab
-    violations.push(...checkPostLabRest(timetable, data));
+    // 3. Lab must not cross a break boundary
+    violations.push(...checkLabBreakSplit(timetable, data));
 
     // 4. Teacher section limit: 1 teacher → max 1 section per subject per semester
     violations.push(...checkTeacherSectionLimit(timetable, data));
@@ -46,8 +51,8 @@ const Constraints = (() => {
    */
   function checkTeacherConflicts(timetable, data) {
     const violations = [];
-    const numDays = 6;
-    const numSlots = 6;
+    const numDays = data.days.length;
+    const numSlots = data.teachingSlots || 6;
 
     for (let day = 0; day < numDays; day++) {
       for (let slot = 0; slot < numSlots; slot++) {
@@ -76,22 +81,22 @@ const Constraints = (() => {
   }
 
   /**
-   * Check that lab sessions occupy 2 consecutive slots.
+   * Check that lab sessions occupy consecutive slots (lab followed by lab_cont).
    */
   function checkLabConsecutive(timetable, data) {
     const violations = [];
 
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
+      for (let day = 0; day < data.days.length; day++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           const cell = grid[day][slot];
           if (cell && cell.type === 'lab') {
             // A lab start should have the same subject in the next slot
-            if (slot + 1 >= 6) {
+            if (slot + 1 >= (data.teachingSlots || 6)) {
               violations.push({
                 type: 'LAB_OVERFLOW',
-                message: `Lab at slot 6 cannot extend — ${data.days[day]} Section ${sectionId}`,
+                message: `Lab at last slot cannot extend — ${data.days[day]} Section ${sectionId}`,
                 day, slot, sectionId
               });
             } else {
@@ -112,30 +117,29 @@ const Constraints = (() => {
   }
 
   /**
-   * Check compulsory free slot after a lab session.
+   * Check that lab sessions don't cross break boundaries.
+   * Labs must start at a valid lab start position (0, 2, or 4).
+   * This ensures a 2-hour lab at slots 0-1 is 9:00-11:00 (continuous),
+   * NOT slots 1-2 which would be 10:00-11:00 + [BREAK] + 11:30-12:30 (split).
    */
-  function checkPostLabRest(timetable, data) {
+  function checkLabBreakSplit(timetable, data) {
     const violations = [];
 
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
+      for (let day = 0; day < data.days.length; day++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           const cell = grid[day][slot];
-          if (cell && cell.type === 'lab_cont') {
-            // The slot after lab_cont must be free (null) or it's the last slot
-            const restSlot = slot + 1;
-            if (restSlot < 6) {
-              const restCell = grid[day][restSlot];
-              if (restCell !== null) {
-                violations.push({
-                  type: 'NO_POST_LAB_REST',
-                  message: `No rest after lab on ${data.days[day]} Slot ${restSlot + 1} — Section ${sectionId}`,
-                  day, slot: restSlot, sectionId
-                });
-              }
+          if (cell && cell.type === 'lab') {
+            // Lab must start at an even slot (0, 2, or 4) to avoid crossing breaks
+            if (!VALID_LAB_STARTS.has(slot)) {
+              const subject = data.subjects.find(s => s.id === cell.subjectId);
+              violations.push({
+                type: 'LAB_BREAK_SPLIT',
+                message: `Lab "${subject?.name || cell.subjectId}" crosses a break on ${data.days[day]} — must start at 9:00, 11:30, or 2:30`,
+                day, slot, sectionId
+              });
             }
-            // If lab ends at slot 5 (last slot), rest is after school — fine.
           }
         }
       }
@@ -152,38 +156,8 @@ const Constraints = (() => {
    */
   function checkTeacherSectionLimit(timetable, data) {
     const violations = [];
-    // Build: teacherId → Set of sectionIds they teach in
-    // Group by (branchId, semester)
-    const teacherSectionMap = {}; // `${teacherId}_${branchId}_${sem}` → Set<sectionId>
 
-    for (const sectionId of Object.keys(timetable)) {
-      const section = data.sections.find(s => s.id === sectionId);
-      if (!section) continue;
-
-      const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
-          const cell = grid[day][slot];
-          if (cell && cell.teacherId) {
-            const key = `${cell.teacherId}_${section.branchId}_${section.semester}`;
-            if (!teacherSectionMap[key]) {
-              teacherSectionMap[key] = new Set();
-            }
-            teacherSectionMap[key].add(sectionId);
-          }
-        }
-      }
-    }
-
-    for (const [key, sectionSet] of Object.entries(teacherSectionMap)) {
-      if (sectionSet.size > 1) {
-        const [teacherId, branchId, sem] = key.split('_');
-        // Only the first part is teacherId — need to be more careful with split
-        // Actually the IDs contain underscores. Let's use a different approach.
-      }
-    }
-
-    // Redo with a structured approach
+    // Structured approach
     const teacherAssignments = {}; // teacherId → [{branchId, semester, sectionId}]
 
     for (const sectionId of Object.keys(timetable)) {
@@ -193,8 +167,8 @@ const Constraints = (() => {
       const grid = timetable[sectionId];
       const teachersInSection = new Set();
 
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
+      for (let day = 0; day < data.days.length; day++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           const cell = grid[day][slot];
           if (cell && cell.teacherId) {
             teachersInSection.add(cell.teacherId);
@@ -275,12 +249,12 @@ const Constraints = (() => {
 
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
+      for (let day = 0; day < data.days.length; day++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           const cell = grid[day][slot];
           if (cell && cell.teacherId) {
             if (!teacherSchedules[cell.teacherId]) {
-              teacherSchedules[cell.teacherId] = Array.from({ length: 6 }, () => Array(6).fill(false));
+              teacherSchedules[cell.teacherId] = Array.from({ length: data.days.length }, () => Array((data.teachingSlots || 6)).fill(false));
             }
             teacherSchedules[cell.teacherId][day][slot] = true;
           }
@@ -289,9 +263,9 @@ const Constraints = (() => {
     }
 
     for (const [teacherId, schedule] of Object.entries(teacherSchedules)) {
-      for (let day = 0; day < 6; day++) {
+      for (let day = 0; day < data.days.length; day++) {
         let consecutive = 0;
-        for (let slot = 0; slot < 6; slot++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           if (schedule[day][slot]) {
             consecutive++;
             if (consecutive > 4) {
@@ -316,9 +290,9 @@ const Constraints = (() => {
 
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
+      for (let day = 0; day < data.days.length; day++) {
         const subjectCount = {};
-        for (let slot = 0; slot < 6; slot++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           const cell = grid[day][slot];
           if (cell && cell.subjectId && cell.type !== 'lab_cont') {
             subjectCount[cell.subjectId] = (subjectCount[cell.subjectId] || 0) + 1;
@@ -351,15 +325,15 @@ const Constraints = (() => {
       const grid = timetable[sectionId];
       const dailyCounts = [];
 
-      for (let day = 0; day < 6; day++) {
+      for (let day = 0; day < data.days.length; day++) {
         let count = 0;
-        for (let slot = 0; slot < 6; slot++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           if (grid[day][slot] !== null) count++;
         }
         dailyCounts.push(count);
       }
 
-      const avg = dailyCounts.reduce((a, b) => a + b, 0) / 6;
+      const avg = dailyCounts.reduce((a, b) => a + b, 0) / data.days.length;
       const maxDev = Math.max(...dailyCounts.map(c => Math.abs(c - avg)));
 
       if (maxDev > 2) {
@@ -379,12 +353,12 @@ const Constraints = (() => {
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
 
-      for (let day = 0; day < 6; day++) {
+      for (let day = 0; day < data.days.length; day++) {
         let firstClass = -1;
         let lastClass = -1;
         let classCount = 0;
 
-        for (let slot = 0; slot < 6; slot++) {
+        for (let slot = 0; slot < (data.teachingSlots || 6); slot++) {
           if (grid[day][slot] !== null) {
             if (firstClass === -1) firstClass = slot;
             lastClass = slot;
@@ -395,12 +369,12 @@ const Constraints = (() => {
         if (firstClass !== -1 && lastClass !== -1) {
           const span = lastClass - firstClass + 1;
           const gaps = span - classCount;
-          // Allow 1 gap (could be rest after lab), penalize more
-          if (gaps > 1) {
+          // Penalize idle gaps
+          if (gaps > 0) {
             penalties.push({
               type: 'IDLE_GAP',
-              message: `Section ${sectionId}: ${gaps} idle gaps on ${data.days[day]}`,
-              penalty: SOFT_IDLE_GAP * (gaps - 1)
+              message: `Section ${sectionId}: ${gaps} idle gap(s) on ${data.days[day]}`,
+              penalty: SOFT_IDLE_GAP * gaps
             });
           }
         }
@@ -433,8 +407,10 @@ const Constraints = (() => {
 
     // --- Quick hard constraints ---
     // Teacher conflicts
-    for (let day = 0; day < 6; day++) {
-      for (let slot = 0; slot < 6; slot++) {
+    const numDays = data.days.length;
+    const numSlots = data.teachingSlots || 6;
+    for (let day = 0; day < numDays; day++) {
+      for (let slot = 0; slot < numSlots; slot++) {
         const seen = new Set();
         for (const sectionId of Object.keys(timetable)) {
           const cell = timetable[sectionId][day][slot];
@@ -448,19 +424,19 @@ const Constraints = (() => {
       }
     }
 
-    // Lab consecutive + post-lab rest
+    // Lab consecutive check + break-split check
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
+      for (let day = 0; day < numDays; day++) {
+        for (let slot = 0; slot < numSlots; slot++) {
           const cell = grid[day][slot];
           if (cell && cell.type === 'lab') {
-            if (slot + 1 >= 6 || !grid[day][slot + 1] || grid[day][slot + 1].type !== 'lab_cont') {
+            // Must have lab_cont in next slot
+            if (slot + 1 >= numSlots || !grid[day][slot + 1] || grid[day][slot + 1].type !== 'lab_cont') {
               penalty += HARD_PENALTY;
             }
-          }
-          if (cell && cell.type === 'lab_cont') {
-            if (slot + 1 < 6 && grid[day][slot + 1] !== null) {
+            // Must start at a valid position (0, 2, or 4) to avoid crossing breaks
+            if (!VALID_LAB_STARTS.has(slot)) {
               penalty += HARD_PENALTY;
             }
           }
@@ -475,8 +451,8 @@ const Constraints = (() => {
       if (!section) continue;
       const grid = timetable[sectionId];
       const teachersHere = new Set();
-      for (let day = 0; day < 6; day++) {
-        for (let slot = 0; slot < 6; slot++) {
+      for (let day = 0; day < numDays; day++) {
+        for (let slot = 0; slot < numSlots; slot++) {
           const cell = grid[day][slot];
           if (cell && cell.teacherId) teachersHere.add(cell.teacherId);
         }
@@ -493,11 +469,11 @@ const Constraints = (() => {
     // --- Quick soft constraints ---
     for (const sectionId of Object.keys(timetable)) {
       const grid = timetable[sectionId];
-      for (let day = 0; day < 6; day++) {
+      for (let day = 0; day < numDays; day++) {
         // Subject clustering
         const subjCount = {};
         let firstClass = -1, lastClass = -1, classCount = 0;
-        for (let slot = 0; slot < 6; slot++) {
+        for (let slot = 0; slot < numSlots; slot++) {
           const cell = grid[day][slot];
           if (cell) {
             if (cell.type !== 'lab_cont') {
@@ -514,7 +490,7 @@ const Constraints = (() => {
         // Idle gaps
         if (firstClass !== -1) {
           const gaps = (lastClass - firstClass + 1) - classCount;
-          if (gaps > 1) penalty += SOFT_IDLE_GAP * (gaps - 1);
+          if (gaps > 0) penalty += SOFT_IDLE_GAP * gaps;
         }
       }
     }
@@ -531,7 +507,7 @@ const Constraints = (() => {
     // Expose individual checks for UI
     checkTeacherConflicts,
     checkLabConsecutive,
-    checkPostLabRest,
+    checkLabBreakSplit,
     checkTeacherSectionLimit,
     checkTeacherFatigue,
     checkSubjectClustering,

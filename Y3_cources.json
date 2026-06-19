@@ -1,0 +1,1011 @@
+[
+    {
+        "id": "HS351TA",
+        "name": "Entrepreneurship and Intellectual Property Rights",
+        "department_teaching": "HSS",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "CD252IA",
+        "name": "Database Management Systems",
+        "department_teaching": "CD",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS354TA",
+        "name": "Theory of Computation",
+        "department_teaching": "CS",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "IS353IA",
+        "name": "Artificial Intelligence and Machine Learning",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS355TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "CS",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "AI255TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "AIML",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CY255TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "CY",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "BT351IA",
+        "name": "Bioinformatics",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT352IA",
+        "name": "Bioinformatics Theory and Lab",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT353IA",
+        "name": "Genetic Engineering",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT354TA",
+        "name": "Genomics Proteomics and Biotechnology",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "BT355TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "BT",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH352IA",
+        "name": "Process Dynamics and Control",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH353IA",
+        "name": "Process Dynamics and Control Laboratory",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH354TA",
+        "name": "Mass Transfer",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH255TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "CH",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH256TCX",
+        "name": "NPTEL / MOOC Course",
+        "department_teaching": "CH",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "EC352IA",
+        "name": "Digital VLSI Design",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC353IA",
+        "name": "Principles of Digital Communication Systems",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC354TA",
+        "name": "Embedded System Design",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EC355TBX",
+        "name": "Group B Elective",
+        "department_teaching": "ECE",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "XX256TCX",
+        "name": "Group C Elective - NPTEL",
+        "department_teaching": "MULTI",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "EE351IA",
+        "name": "Electrical Machines",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EE352TA",
+        "name": "Power Transmission and Distribution",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EE353TBD",
+        "name": "Control Systems Engineering",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EE256TCX",
+        "name": "Professional Core Elective - Group C",
+        "department_teaching": "EEE",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "EI252IA",
+        "name": "Digital Signal Processing",
+        "department_teaching": "EIE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EI253IA",
+        "name": "Automatic Process Control and Virtual Instrumentation",
+        "department_teaching": "EIE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC354TA",
+        "name": "Embedded System Design",
+        "department_teaching": "EIE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EI356TCX",
+        "name": "Professional Core Elective - Group C",
+        "department_teaching": "EIE",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "ET352IA",
+        "name": "Digital Modulation and Coding",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET353IA",
+        "name": "Discrete Time Signal Processing",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET354TA",
+        "name": "RF Circuits",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ET355TBA",
+        "name": "Machine Learning",
+        "department_teaching": "ETE",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "ET355TBB",
+        "name": "Data Structures and Algorithms",
+        "department_teaching": "ETE",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "IM352IA",
+        "name": "Operations Management",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM353IA",
+        "name": "Quality Assurance",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM254TA",
+        "name": "Finance Accounting and Costing",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "IMX55TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "IM",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "IS353IA",
+        "name": "Artificial Intelligence and Machine Learning",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CD252IA",
+        "name": "Database Management Systems",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS354TA",
+        "name": "Theory of Computation",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CS355TBB",
+        "name": "Cloud Computing",
+        "department_teaching": "ISE",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "ME252IA",
+        "name": "Flexible Manufacturing Systems",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME353IA",
+        "name": "Heat Transfer",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME354TA",
+        "name": "Design of Machine Elements - I",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ME355TBX",
+        "name": "Professional Core Elective - Group G",
+        "department_teaching": "ME",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CV352IA",
+        "name": "Design of RCC Structures",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CV353IA",
+        "name": "Design of Steel Structures",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CV354TA",
+        "name": "Hydrology and Irrigation Engineering",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CV255TBX",
+        "name": "Professional Core Elective - Group D",
+        "department_teaching": "CV",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "HS261TA",
+        "name": "Principles of Management and Economics",
+        "department_teaching": "HSS",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "XX266TEX",
+        "name": "Institutional Elective - I",
+        "department_teaching": "MULTI",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "AI362IA",
+        "name": "Big Data Technologies",
+        "department_teaching": "AIML",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AI363IA",
+        "name": "Natural Language Processing and Transformers",
+        "department_teaching": "AIML",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AI364TA",
+        "name": "Cloud Computing Technology and Architectures",
+        "department_teaching": "AIML",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "AI365TID",
+        "name": "Generative Artificial Intelligence",
+        "department_teaching": "AIML",
+        "year": 3,
+        "semester": 6,
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "AI367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "AIML",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "CS362IA",
+        "name": "Network Programming and Security",
+        "department_teaching": "CSE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS363IA",
+        "name": "Compiler Design",
+        "department_teaching": "CSE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS364TA",
+        "name": "Software Engineering with Agile Technologies",
+        "department_teaching": "CSE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CS367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "CSE",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "EC362IA",
+        "name": "VLSI Design",
+        "department_teaching": "ECE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC363IA",
+        "name": "Digital Communication",
+        "department_teaching": "ECE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC364TA",
+        "name": "RF and Microwave Engineering",
+        "department_teaching": "ECE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EC367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "ECE",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "IS362IA",
+        "name": "Computer Networks",
+        "department_teaching": "ISE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IS363IA",
+        "name": "Cloud Computing",
+        "department_teaching": "ISE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IS364TA",
+        "name": "Software Engineering and Testing",
+        "department_teaching": "ISE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "IS367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "ISE",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "AS362IA",
+        "name": "Computational Fluid Dynamics",
+        "department_teaching": "AS",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AS363IA",
+        "name": "Aircraft Propulsion",
+        "department_teaching": "AS",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AS364TA",
+        "name": "Structural Dynamics",
+        "department_teaching": "AS",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "AS365TDX",
+        "name": "Professional Elective",
+        "department_teaching": "AS",
+        "year": 3,
+        "semester": 6,
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "AS367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "AS",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "BT362IA",
+        "name": "Microbial Biotechnology",
+        "department_teaching": "BT",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT363IA",
+        "name": "Kinetics of Reactions",
+        "department_teaching": "BT",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT364TA",
+        "name": "Omics Technology",
+        "department_teaching": "BT",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "BT365TDX",
+        "name": "Professional Elective",
+        "department_teaching": "BT",
+        "year": 3,
+        "semester": 6,
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH362IA",
+        "name": "Process Modelling and Simulation",
+        "department_teaching": "CH",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH363IA",
+        "name": "Mass Transfer-II",
+        "department_teaching": "CH",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH364TA",
+        "name": "Heterogeneous Reaction Systems",
+        "department_teaching": "CH",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH365TDX",
+        "name": "Process Engineering and Economics",
+        "department_teaching": "CH",
+        "year": 3,
+        "semester": 6,
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "CH",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "EE362IA",
+        "name": "Digital Signal Processing and Applications",
+        "department_teaching": "EEE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EE363IA",
+        "name": "Power System Analysis",
+        "department_teaching": "EEE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EE364TA",
+        "name": "Electric Vehicles Power Train and Drives",
+        "department_teaching": "EEE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EE367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "EEE",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "ET362IA",
+        "name": "Antenna Theory and Design",
+        "department_teaching": "ETE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET363IA",
+        "name": "Data Communication and Networking",
+        "department_teaching": "ETE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET364TA",
+        "name": "Optical Fibre Communication",
+        "department_teaching": "ETE",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ET365TDX",
+        "name": "Professional Elective",
+        "department_teaching": "ETE",
+        "year": 3,
+        "semester": 6,
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "ET367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "ETE",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "IM362IA",
+        "name": "Supply Chain Management",
+        "department_teaching": "IM",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM363IA",
+        "name": "Design of Experiments",
+        "department_teaching": "IM",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM364TA",
+        "name": "Project Management",
+        "department_teaching": "IM",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "IM367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "IM",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "ME362IA",
+        "name": "Design of Machine Elements",
+        "department_teaching": "ME",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME363IA",
+        "name": "Finite Element Analysis",
+        "department_teaching": "ME",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME364TA",
+        "name": "Control Engineering",
+        "department_teaching": "ME",
+        "year": 3,
+        "semester": 6,
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ME367P",
+        "name": "Interdisciplinary Project",
+        "department_teaching": "ME",
+        "year": 3,
+        "semester": 6,
+        "credits": 2,
+        "type": "project",
+        "theory_hours": 0,
+        "lab_hours": 2
+    }
+]

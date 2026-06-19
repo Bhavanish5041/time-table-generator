@@ -1,0 +1,178 @@
+[
+  {
+    "id": "MA211TC",
+    "name": "Fundamentals of Linear Algebra, Calculus and Statistics",
+    "department_teaching": "MAT",
+    "year": 1,
+    "semester": 1,
+    "credits": 4,
+    "type": "theory",
+    "theory_hours": 4,
+    "lab_hours": 0
+  },
+  {
+    "id": "CM211IA",
+    "name": "Chemistry of Smart Materials and Devices",
+    "department_teaching": "CHE",
+    "year": 1,
+    "semester": 1,
+    "credits": 4,
+    "type": "theory_lab",
+    "theory_hours": 3,
+    "lab_hours": 1
+  },
+  {
+    "id": "ME112GL",
+    "name": "Computer Aided Engineering Graphics",
+    "department_teaching": "ME",
+    "year": 1,
+    "semester": 1,
+    "credits": 3,
+    "type": "theory_lab",
+    "theory_hours": 1,
+    "lab_hours": 2
+  },
+  {
+    "id": "XX113XTX",
+    "name": "Engineering Science Course-I",
+    "department_teaching": "MULTI",
+    "year": 1,
+    "semester": 1,
+    "credits": 3,
+    "type": "theory",
+    "theory_hours": 3,
+    "lab_hours": 0
+  },
+  {
+    "id": "XX115XIX",
+    "name": "Programming Languages Course",
+    "department_teaching": "CS",
+    "year": 1,
+    "semester": 1,
+    "credits": 3,
+    "type": "theory_lab",
+    "theory_hours": 2,
+    "lab_hours": 1
+  },
+  {
+    "id": "HS111EL",
+    "name": "Communicative English-I",
+    "department_teaching": "HSS",
+    "year": 1,
+    "semester": 1,
+    "credits": 1,
+    "type": "lab",
+    "theory_hours": 0,
+    "lab_hours": 1
+  },
+  {
+    "id": "HS114TC",
+    "name": "Fundamentals of Indian Constitution",
+    "department_teaching": "HSS",
+    "year": 1,
+    "semester": 1,
+    "credits": 1,
+    "type": "theory",
+    "theory_hours": 1,
+    "lab_hours": 0
+  },
+  {
+    "id": "HS115YL",
+    "name": "Scientific Foundations of Health - Yoga Practice",
+    "department_teaching": "HSS",
+    "year": 1,
+    "semester": 1,
+    "credits": 1,
+    "type": "lab",
+    "theory_hours": 0,
+    "lab_hours": 1
+  },
+  {
+    "id": "MA221TC",
+    "name": "Number Theory, Vector Calculus and Computational Methods",
+    "department_teaching": "MAT",
+    "year": 1,
+    "semester": 2,
+    "credits": 4,
+    "type": "theory",
+    "theory_hours": 4,
+    "lab_hours": 0
+  },
+  {
+    "id": "PY221IC",
+    "name": "Quantum Physics for Engineers",
+    "department_teaching": "PHY",
+    "year": 1,
+    "semester": 2,
+    "credits": 4,
+    "type": "theory_lab",
+    "theory_hours": 3,
+    "lab_hours": 1
+  },
+  {
+    "id": "CS222IA",
+    "name": "Principles of Programming Using C",
+    "department_teaching": "CS",
+    "year": 1,
+    "semester": 2,
+    "credits": 3,
+    "type": "theory_lab",
+    "theory_hours": 2,
+    "lab_hours": 1
+  },
+  {
+    "id": "XX123XTX",
+    "name": "Engineering Science Course-II",
+    "department_teaching": "MULTI",
+    "year": 1,
+    "semester": 2,
+    "credits": 3,
+    "type": "theory",
+    "theory_hours": 3,
+    "lab_hours": 0
+  },
+  {
+    "id": "XX124XTX",
+    "name": "Emerging Technology Course",
+    "department_teaching": "MULTI",
+    "year": 1,
+    "semester": 2,
+    "credits": 3,
+    "type": "theory",
+    "theory_hours": 3,
+    "lab_hours": 0
+  },
+  {
+    "id": "HS121EL",
+    "name": "Communicative English-II",
+    "department_teaching": "HSS",
+    "year": 1,
+    "semester": 2,
+    "credits": 1,
+    "type": "lab",
+    "theory_hours": 0,
+    "lab_hours": 1
+  },
+  {
+    "id": "HS122KS_HS123KB",
+    "name": "Kannada Course",
+    "department_teaching": "HSS",
+    "year": 1,
+    "semester": 2,
+    "credits": 1,
+    "type": "theory",
+    "theory_hours": 1,
+    "lab_hours": 0
+  },
+  {
+    "id": "ME121DL",
+    "name": "IDEA Lab",
+    "department_teaching": "ME",
+    "year": 1,
+    "semester": 2,
+    "credits": 1,
+    "type": "lab",
+    "theory_hours": 0,
+    "lab_hours": 1
+  }
+]

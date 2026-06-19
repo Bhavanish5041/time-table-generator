@@ -4,12 +4,15 @@
 // ============================================================
 
 const RESULT_KEY = 'timetable_generator_result';
+const THEME_KEY = 'timetable_generator_theme';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  initThemeToggle();
+  initParityToggle();
 
   // Load data from localStorage (or load sample if empty)
   if (!TimetableData.load()) {
-    TimetableData.loadSampleData();
+    await TimetableData.loadSampleData();
   }
 
   // Detect page by body id
@@ -30,6 +33,120 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
   }
 });
+
+// ---- THEME TOGGLE ----
+function initThemeToggle() {
+  injectThemeStyles();
+
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+  applyTheme(savedTheme);
+
+  document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+    button.addEventListener('click', () => {
+      const nextTheme = document.documentElement.classList.contains('theme-light') ? 'dark' : 'light';
+      localStorage.setItem(THEME_KEY, nextTheme);
+      applyTheme(nextTheme);
+    });
+  });
+}
+
+function applyTheme(theme) {
+  const isLight = theme === 'light';
+  document.documentElement.classList.toggle('theme-light', isLight);
+  document.documentElement.classList.toggle('dark', !isLight);
+
+  document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+    const icon = button.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = isLight ? 'dark_mode' : 'light_mode';
+    button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    button.setAttribute('title', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+  });
+}
+
+function injectThemeStyles() {
+  if (document.getElementById('mixed-theme-overrides')) return;
+
+  const style = document.createElement('style');
+  style.id = 'mixed-theme-overrides';
+  style.textContent = `
+    html.theme-light,
+    html.theme-light body {
+      background: #f8fafc !important;
+      color: #0f172a !important;
+    }
+
+    html.theme-light .bg-background,
+    html.theme-light .dark\\:bg-background {
+      background-color: #f8fafc !important;
+    }
+
+    html.theme-light .bg-surface,
+    html.theme-light .bg-surface-bright,
+    html.theme-light .dark\\:bg-surface-bright {
+      background-color: #ffffff !important;
+    }
+
+    html.theme-light .bg-surface-container-lowest,
+    html.theme-light .bg-surface-container-low,
+    html.theme-light .dark\\:bg-surface-container-low {
+      background-color: #f1f5f9 !important;
+    }
+
+    html.theme-light .bg-surface-container,
+    html.theme-light .bg-surface-variant {
+      background-color: #e2e8f0 !important;
+    }
+
+    html.theme-light .bg-surface-container-high,
+    html.theme-light .bg-surface-container-highest {
+      background-color: #ffffff !important;
+    }
+
+    html.theme-light .bg-secondary-container,
+    html.theme-light .bg-primary-container {
+      background-color: #e2e8f0 !important;
+    }
+
+    html.theme-light .bg-primary {
+      background-color: #334155 !important;
+    }
+
+    html.theme-light .text-on-background,
+    html.theme-light .text-on-surface,
+    html.theme-light .text-on-secondary-container,
+    html.theme-light .text-on-primary-container {
+      color: #0f172a !important;
+    }
+
+    html.theme-light .text-on-surface-variant,
+    html.theme-light .text-primary {
+      color: #475569 !important;
+    }
+
+    html.theme-light .text-on-primary-fixed {
+      color: #0f172a !important;
+    }
+
+    html.theme-light .bg-primary.text-on-primary-fixed,
+    html.theme-light .bg-primary .text-on-primary-fixed,
+    html.theme-light .text-on-primary {
+      color: #ffffff !important;
+    }
+
+    html.theme-light .border-outline-variant,
+    html.theme-light .border-outline {
+      border-color: #cbd5e1 !important;
+    }
+
+    html.theme-light input,
+    html.theme-light select,
+    html.theme-light textarea {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 // ---- TOAST ----
 function showToast(message, type = 'info') {
@@ -59,9 +176,56 @@ function loadResult() {
 }
 
 // ================================================================
+// SEMESTER PARITY TOGGLE
+// ================================================================
+function initParityToggle() {
+  const btnOdd = document.getElementById('btn-sem-odd');
+  const btnEven = document.getElementById('btn-sem-even');
+
+  function updateParityUI() {
+    const parity = localStorage.getItem('timetable_semester_parity') || 'odd';
+    const activeClass = 'bg-primary-container text-on-primary-container font-semibold';
+    const inactiveClass = 'text-on-surface-variant hover:bg-surface-container-high';
+
+    if (btnOdd && btnEven) {
+      if (parity === 'odd') {
+        btnOdd.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${activeClass}`;
+        btnEven.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${inactiveClass}`;
+      } else {
+        btnEven.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${activeClass}`;
+        btnOdd.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${inactiveClass}`;
+      }
+    }
+  }
+
+  updateParityUI();
+
+  if (btnOdd) {
+    btnOdd.addEventListener('click', () => {
+      localStorage.setItem('timetable_semester_parity', 'odd');
+      updateParityUI();
+      if (typeof currentStep !== 'undefined') updateWizardUI(); // Re-render the current setup step
+    });
+  }
+
+  if (btnEven) {
+    btnEven.addEventListener('click', () => {
+      localStorage.setItem('timetable_semester_parity', 'even');
+      updateParityUI();
+      if (typeof currentStep !== 'undefined') updateWizardUI(); // Re-render the current setup step
+    });
+  }
+}
+
+// ================================================================
 // PAGE: SETUP (main.html)
 // ================================================================
 let currentStep = 1;
+
+function getActiveSemesters() {
+  const parity = localStorage.getItem('timetable_semester_parity') || 'odd';
+  return parity === 'even' ? [2, 4, 6, 8] : [1, 3, 5, 7];
+}
 
 function initSetupPage() {
   renderSetupBranches();
@@ -86,7 +250,7 @@ function initSetupPage() {
 
   const btnNext = document.getElementById('btn-next-step');
   const btnPrev = document.getElementById('btn-prev-step');
-  
+
   if (btnPrev) {
     btnPrev.addEventListener('click', () => {
       if (currentStep > 1) {
@@ -105,8 +269,8 @@ function initSetupPage() {
         // On final step, validate before navigating
         const validation = TimetableData.validate();
         if (!validation.valid) {
-            showToast(validation.errors[0], 'error');
-            return;
+          showToast(validation.errors[0], 'error');
+          return;
         }
         TimetableData.save();
         showToast('Configuration Saved!', 'success');
@@ -120,17 +284,17 @@ function initSetupPage() {
 
 function updateWizardUI() {
   const stepContainerIds = ['step-branches', 'step-subjects', 'step-sections', 'step-teachers'];
-  
+
   // Update progress indicators
   for (let i = 1; i <= 4; i++) {
     const stepEl = document.getElementById(`step-indicator-${i}`);
-    const containerEl = document.getElementById(stepContainerIds[i-1]);
-    
+    const containerEl = document.getElementById(stepContainerIds[i - 1]);
+
     if (stepEl) {
       const circle = stepEl.querySelector('.indicator-circle');
       const text = stepEl.querySelector('.indicator-text');
       stepEl.classList.add('cursor-pointer');
-      
+
       if (i < currentStep) {
         circle.className = 'w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[10px] font-bold indicator-circle';
         text.className = 'font-label-sm text-label-sm text-emerald-500 uppercase tracking-wider indicator-text';
@@ -142,7 +306,7 @@ function updateWizardUI() {
         text.className = 'font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider indicator-text';
       }
     }
-    
+
     if (containerEl) {
       if (i === currentStep) {
         containerEl.classList.remove('hidden');
@@ -157,11 +321,11 @@ function updateWizardUI() {
   // Update prev/next buttons
   const btnPrev = document.getElementById('btn-prev-step');
   const btnNextText = document.getElementById('btn-next-step-text');
-  
+
   if (btnPrev) {
     btnPrev.style.display = currentStep === 1 ? 'none' : 'flex';
   }
-  
+
   if (btnNextText) {
     btnNextText.textContent = currentStep === 4 ? 'Save & Generate' : 'Next Step';
   }
@@ -178,16 +342,16 @@ function updateWizardUI() {
 function renderSetupBranches() {
   const container = document.getElementById('branches-list');
   if (!container) return;
-  
+
   const branches = TimetableData.getBranches();
   // Keep the decorative vertical line
   container.innerHTML = `
     <div class="absolute left-[39px] top-4 bottom-10 w-[1px] bg-[#333338] z-0"></div>
     <div class="flex flex-col gap-component-gap relative z-10" id="branches-cards"></div>
   `;
-  
+
   const cardsContainer = document.getElementById('branches-cards');
-  
+
   branches.forEach(branch => {
     const card = document.createElement('div');
     card.className = 'flex items-start';
@@ -214,7 +378,7 @@ function renderSetupBranches() {
           <div>
             <label class="block font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">Semesters Active</label>
             <div class="flex items-center gap-2 h-[34px]">
-              ${[1,2,3,4].map(sem => `
+              ${getActiveSemesters().map(sem => `
                 <div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-DEFAULT border border-outline-variant ${branch.semesters.includes(sem) ? '' : 'opacity-50'}">
                   <span class="w-1.5 h-1.5 rounded-full ${branch.semesters.includes(sem) ? 'bg-primary' : 'bg-outline-variant'}"></span>
                   <span class="font-caption text-caption">S${sem}</span>
@@ -251,10 +415,11 @@ function populateFilterOptions(filterBranchId, filterSemId) {
   if (!selBranch || !selSem) return;
 
   const branches = TimetableData.getBranches();
-  
+
   // Keep current selection if possible
   const currentBranch = selBranch.value;
-  
+  const currentSem = selSem.value;
+
   selBranch.innerHTML = '<option value="">Select Branch</option>';
   branches.forEach(b => {
     const opt = document.createElement('option');
@@ -262,11 +427,26 @@ function populateFilterOptions(filterBranchId, filterSemId) {
     opt.text = b.name;
     selBranch.appendChild(opt);
   });
-  
+
+  const activeSems = getActiveSemesters();
+  selSem.innerHTML = '<option value="">Select Semester</option>';
+  activeSems.forEach(sem => {
+    const opt = document.createElement('option');
+    opt.value = sem;
+    opt.text = `Semester ${sem}`;
+    selSem.appendChild(opt);
+  });
+
   if (currentBranch && branches.find(b => b.id === currentBranch)) {
     selBranch.value = currentBranch;
   } else if (branches.length > 0) {
     selBranch.value = branches[0].id; // Default to first branch
+  }
+
+  if (currentSem && activeSems.includes(parseInt(currentSem))) {
+    selSem.value = currentSem;
+  } else if (activeSems.length > 0) {
+    selSem.value = activeSems[0]; // Default to first active sem
   }
 }
 
@@ -276,18 +456,15 @@ function populateFilterOptions(filterBranchId, filterSemId) {
 function renderSetupSubjects() {
   const container = document.getElementById('subjects-list');
   if (!container) return;
-  
+
   populateFilterOptions('filter-subject-branch', 'filter-subject-semester');
-  
+
   const selBranch = document.getElementById('filter-subject-branch');
   const selSem = document.getElementById('filter-subject-semester');
-  
-  // Default semester to 1 if not selected
-  if (!selSem.value) selSem.value = '1';
-  
+
   const branchId = selBranch.value;
-  const semester = parseInt(selSem.value) || 1;
-  
+  const semester = parseInt(selSem.value);
+
   // Re-render when filters change
   selBranch.onchange = renderSetupSubjects;
   selSem.onchange = renderSetupSubjects;
@@ -296,16 +473,16 @@ function renderSetupSubjects() {
     container.innerHTML = '<div class="text-on-surface-variant p-4">Please select a branch and semester above.</div>';
     return;
   }
-  
+
   const subjects = TimetableData.getSubjectsByBranchSem(branchId, semester);
-  
+
   container.innerHTML = `
     <div class="absolute left-[39px] top-4 bottom-10 w-[1px] bg-[#333338] z-0"></div>
     <div class="flex flex-col gap-component-gap relative z-10" id="subjects-cards"></div>
   `;
-  
+
   const cardsContainer = document.getElementById('subjects-cards');
-  
+
   subjects.forEach(sub => {
     const card = document.createElement('div');
     card.className = 'flex items-start';
@@ -349,14 +526,14 @@ function renderSetupSubjects() {
     `;
     cardsContainer.appendChild(card);
   });
-  
+
   // Add Subject button logic
   const btnAdd = document.getElementById('btn-add-subject');
   if (btnAdd) {
-      btnAdd.onclick = () => {
-          TimetableData.addSubject('New Subject', 'SUBXXX', 3, branchId, semester);
-          renderSetupSubjects();
-      };
+    btnAdd.onclick = () => {
+      TimetableData.addSubject('New Subject', 'SUBXXX', 3, branchId, semester);
+      renderSetupSubjects();
+    };
   }
 
   // Update handlers
@@ -385,18 +562,15 @@ function renderSetupSubjects() {
 function renderSetupSections() {
   const container = document.getElementById('sections-list');
   if (!container) return;
-  
+
   populateFilterOptions('filter-section-branch', 'filter-section-semester');
-  
+
   const selBranch = document.getElementById('filter-section-branch');
   const selSem = document.getElementById('filter-section-semester');
-  
-  // Default semester to 1 if not selected
-  if (!selSem.value) selSem.value = '1';
-  
+
   const branchId = selBranch.value;
-  const semester = parseInt(selSem.value) || 1;
-  
+  const semester = parseInt(selSem.value);
+
   // Re-render when filters change
   selBranch.onchange = renderSetupSections;
   selSem.onchange = renderSetupSections;
@@ -405,13 +579,13 @@ function renderSetupSections() {
     container.innerHTML = '<div class="text-on-surface-variant p-4">Please select a branch and semester above.</div>';
     return;
   }
-  
+
   const sections = TimetableData.getSectionsByBranchSem(branchId, semester);
-  
+
   container.innerHTML = `<div class="grid grid-cols-3 gap-4" id="sections-cards"></div>`;
-  
+
   const cardsContainer = document.getElementById('sections-cards');
-  
+
   sections.forEach(sec => {
     const card = document.createElement('div');
     card.className = 'bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex justify-between items-center group relative overflow-hidden';
@@ -430,16 +604,16 @@ function renderSetupSections() {
     `;
     cardsContainer.appendChild(card);
   });
-  
+
   // Add Section button logic
   const btnAdd = document.getElementById('btn-add-section');
   if (btnAdd) {
-      btnAdd.onclick = () => {
-          const names = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-          const newName = names[sections.length % names.length]; // Simple logic to assign A, B, C
-          TimetableData.addSection(newName, branchId, semester);
-          renderSetupSections();
-      };
+    btnAdd.onclick = () => {
+      const names = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const newName = names[sections.length % names.length]; // Simple logic to assign A, B, C
+      TimetableData.addSection(newName, branchId, semester);
+      renderSetupSections();
+    };
   }
 
   // Delete handler
@@ -457,14 +631,40 @@ function renderSetupSections() {
 function renderSetupTeachers() {
   const container = document.getElementById('teachers-list');
   if (!container) return;
-  
-  const teachers = TimetableData.getTeachers();
-  const subjects = TimetableData.getSubjects(); // All subjects available to map
-  
+
+  populateFilterOptions('filter-teacher-branch', 'filter-teacher-semester');
+
+  const selBranch = document.getElementById('filter-teacher-branch');
+  const selSem = document.getElementById('filter-teacher-semester');
+
+  const branchId = selBranch.value;
+  const semester = parseInt(selSem.value);
+
+  // Re-render when filters change
+  if (selBranch && selSem) {
+    selBranch.onchange = renderSetupTeachers;
+    selSem.onchange = renderSetupTeachers;
+  }
+
+  if (!branchId) {
+    container.innerHTML = '<div class="text-on-surface-variant p-4">Please select a branch and semester above.</div>';
+    return;
+  }
+
+  const allTeachers = TimetableData.getTeachers();
+  const branchSubjects = TimetableData.getSubjectsByBranchSem(branchId, semester);
+  const branchSubjectIds = branchSubjects.map(s => s.id);
+
+  // Only show teachers who teach at least one subject in this branch/sem, OR have no subjects assigned yet
+  const teachers = allTeachers.filter(t => {
+    if (t.subjectIds.length === 0) return true;
+    return t.subjectIds.some(id => branchSubjectIds.includes(id));
+  });
+
   container.innerHTML = `<div class="grid grid-cols-2 gap-4" id="teachers-cards"></div>`;
-  
+
   const cardsContainer = document.getElementById('teachers-cards');
-  
+
   teachers.forEach(tch => {
     const assignedSubjectIds = Array.isArray(tch.subjectIds) ? tch.subjectIds : [];
     const card = document.createElement('div');
@@ -484,7 +684,7 @@ function renderSetupTeachers() {
       <div>
         <label class="block font-caption text-caption text-on-surface-variant mb-2 uppercase tracking-wider">Assigned Subjects</label>
         <div class="flex flex-col gap-2 max-h-40 overflow-y-auto pr-2 custom-scroll">
-            ${subjects.map(sub => `
+            ${branchSubjects.map(sub => `
                 <label class="flex items-center gap-2 cursor-pointer p-1 hover:bg-surface-container rounded transition-colors">
                     <input type="checkbox" class="tch-subj-checkbox accent-primary" 
                            data-tid="${tch.id}" data-sid="${sub.id}" ${assignedSubjectIds.includes(sub.id) ? 'checked' : ''} />
@@ -496,35 +696,35 @@ function renderSetupTeachers() {
     `;
     cardsContainer.appendChild(card);
   });
-  
+
   // Add Teacher button logic
   const btnAdd = document.getElementById('btn-add-teacher');
   if (btnAdd) {
-      btnAdd.onclick = () => {
-          TimetableData.addTeacher('New Teacher', []);
-          renderSetupTeachers();
-      };
+    btnAdd.onclick = () => {
+      TimetableData.addTeacher('New Teacher', []);
+      renderSetupTeachers();
+    };
   }
 
   // Update handlers
   cardsContainer.querySelectorAll('.tch-name-input').forEach(inp => {
     inp.addEventListener('change', (e) => { TimetableData.updateTeacher(e.target.dataset.id, { name: e.target.value }); });
   });
-  
+
   cardsContainer.querySelectorAll('.tch-subj-checkbox').forEach(chk => {
-    chk.addEventListener('change', (e) => { 
-        const tid = e.target.dataset.tid;
-        const sid = e.target.dataset.sid;
-        const teacher = TimetableData.getTeacherById(tid);
-        if(teacher) {
-            let subjects = Array.isArray(teacher.subjectIds) ? [...teacher.subjectIds] : [];
-            if (e.target.checked) {
-                if(!subjects.includes(sid)) subjects.push(sid);
-            } else {
-                subjects = subjects.filter(id => id !== sid);
-            }
-            TimetableData.updateTeacher(tid, { subjectIds: subjects });
+    chk.addEventListener('change', (e) => {
+      const tid = e.target.dataset.tid;
+      const sid = e.target.dataset.sid;
+      const teacher = TimetableData.getTeacherById(tid);
+      if (teacher) {
+        let subjects = Array.isArray(teacher.subjectIds) ? [...teacher.subjectIds] : [];
+        if (e.target.checked) {
+          if (!subjects.includes(sid)) subjects.push(sid);
+        } else {
+          subjects = subjects.filter(id => id !== sid);
         }
+        TimetableData.updateTeacher(tid, { subjectIds: subjects });
+      }
     });
   });
 
@@ -541,7 +741,7 @@ function renderSetupTeachers() {
 // PAGE: GENERATE
 // ================================================================
 function initGeneratePage() {
-  // Sync range slider labels
+  // ---- Sync range slider labels ----
   const popSlider = document.getElementById('param-population');
   const popLabel = document.getElementById('param-population-label');
   if (popSlider && popLabel) {
@@ -559,8 +759,9 @@ function initGeneratePage() {
 
   if (btnGenerate) {
     btnGenerate.addEventListener('click', () => {
-      // Validate data first
-      const validation = TimetableData.validate();
+      const currentParity = localStorage.getItem('timetable_semester_parity') || 'odd';
+      // Validate data first (only for the selected parity)
+      const validation = TimetableData.validate(currentParity);
       if (!validation.valid) {
         showToast(validation.errors[0], 'error');
         return;
@@ -577,7 +778,12 @@ function initGeneratePage() {
       const btnText = document.getElementById('btn-generate-text');
 
       GeneticAlgorithm.run(
-        { populationSize: popSize, maxGenerations: maxGen, mutationRate: mutRate },
+        {
+          populationSize: popSize,
+          maxGenerations: maxGen,
+          mutationRate: mutRate,
+          semesterParity: localStorage.getItem('timetable_semester_parity') || 'odd'
+        },
         // Progress callback
         (gen, maxGen, bestFitness) => {
           const pct = Math.round((gen / maxGen) * 100);
@@ -611,7 +817,7 @@ function initGeneratePage() {
           if (progBar) progBar.style.width = '100%';
 
           if (result.fitness.hardViolations === 0) {
-            showToast('Optimal timetable generated!', 'success');
+            showToast(`Optimal ${semesterParity} semester timetable generated!`, 'success');
           } else {
             showToast(`Done with ${result.fitness.hardViolations} hard violation(s).`, 'error');
           }
@@ -640,30 +846,128 @@ function initTimetablePage() {
   }
 
   const data = TimetableData.getAllData();
-  const sections = data.sections;
+  const generatedSectionIds = new Set(Object.keys(result.timetable || {}));
+  const sections = data.sections.filter(section => generatedSectionIds.has(section.id));
   const branches = data.branches;
+  const teachers = getTeachersInTimetable(result.timetable, data.teachers);
 
-  // Populate section dropdown
-  const selSection = document.getElementById('tt-section-select');
-  if (selSection) {
-    selSection.innerHTML = '';
-    sections.forEach(s => {
-      const branch = branches.find(b => b.id === s.branchId);
-      const opt = document.createElement('option');
-      opt.value = s.id;
-      opt.text = `${branch?.name || '?'} Sem-${s.semester} Sec-${s.name}`;
-      selSection.appendChild(opt);
-    });
-    selSection.addEventListener('change', () => renderGrid(selSection.value, result.timetable, data));
+  const selView = document.getElementById('tt-view-select');
+  const lblView = document.getElementById('tt-view-label');
+  const btnSectionView = document.getElementById('btn-section-view');
+  const btnTeacherView = document.getElementById('btn-teacher-view');
 
-    // Render initial
-    if (selSection.value) {
-      renderGrid(selSection.value, result.timetable, data);
+  let currentView = 'section'; // 'section' or 'teacher'
+
+  function updateViewUI() {
+    if (!selView || !lblView) return;
+
+    selView.innerHTML = '';
+
+    if (currentView === 'section') {
+      lblView.textContent = 'SECTION';
+      btnSectionView.className = 'px-3 py-1 bg-surface-variant text-on-surface rounded font-body-md text-body-md';
+      btnTeacherView.className = 'px-3 py-1 text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors';
+
+      if (sections.length === 0) {
+        addDisabledOption(selView, 'No generated sections');
+      }
+
+      sections.forEach(s => {
+        const branch = branches.find(b => b.id === s.branchId);
+        const opt = document.createElement('option');
+        opt.value = s.id;
+        opt.text = `${branch?.name || '?'} Sem-${s.semester} Sec-${s.name}`;
+        selView.appendChild(opt);
+      });
+    } else {
+      lblView.textContent = 'TEACHER';
+      btnTeacherView.className = 'px-3 py-1 bg-surface-variant text-on-surface rounded font-body-md text-body-md';
+      btnSectionView.className = 'px-3 py-1 text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors';
+
+      if (teachers.length === 0) {
+        addDisabledOption(selView, 'No generated teachers');
+      }
+
+      teachers.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.text = t.name;
+        selView.appendChild(opt);
+      });
+    }
+
+    renderCurrentView();
+  }
+
+  function renderCurrentView() {
+    if (!selView.value) {
+      renderTimetableEmptyState(currentView === 'section' ? 'No generated sections to display.' : 'No generated teachers to display.');
+      return;
+    }
+    if (currentView === 'section') {
+      renderGrid(selView.value, result.timetable, data);
+    } else {
+      renderTeacherGrid(selView.value, result.timetable, data);
     }
   }
 
+  if (selView) {
+    selView.addEventListener('change', renderCurrentView);
+  }
+
+  if (btnSectionView) {
+    btnSectionView.addEventListener('click', () => {
+      if (currentView !== 'section') {
+        currentView = 'section';
+        updateViewUI();
+      }
+    });
+  }
+
+  if (btnTeacherView) {
+    btnTeacherView.addEventListener('click', () => {
+      if (currentView !== 'teacher') {
+        currentView = 'teacher';
+        updateViewUI();
+      }
+    });
+  }
+
+  // Initialize
+  updateViewUI();
+
   // Violations
   renderViolationsPanel(result, data);
+}
+
+function addDisabledOption(select, text) {
+  const opt = document.createElement('option');
+  opt.value = '';
+  opt.text = text;
+  opt.disabled = true;
+  opt.selected = true;
+  select.appendChild(opt);
+}
+
+function getTeachersInTimetable(timetable, teachers) {
+  const teacherIds = new Set();
+  Object.values(timetable || {}).forEach(sectionGrid => {
+    sectionGrid.forEach(dayGrid => {
+      dayGrid.forEach(cell => {
+        if (cell?.teacherId) teacherIds.add(cell.teacherId);
+      });
+    });
+  });
+  return teachers.filter(teacher => teacherIds.has(teacher.id));
+}
+
+function renderTimetableEmptyState(message) {
+  const body = document.getElementById('timetable-body');
+  if (!body) return;
+  body.innerHTML = `
+    <div class="col-span-6 min-h-[240px] flex items-center justify-center text-on-surface-variant font-body-md text-body-md">
+      ${message}
+    </div>`;
 }
 
 function renderGrid(sectionId, timetable, data) {
@@ -672,22 +976,56 @@ function renderGrid(sectionId, timetable, data) {
   body.innerHTML = '';
 
   const grid = timetable[sectionId];
-  if (!grid) return;
+  if (!grid) {
+    renderTimetableEmptyState('This section was not included in the generated timetable.');
+    return;
+  }
 
   const slotLabels = data.slotLabels;
+  const breakIndices = data.breakIndices || new Set();
+  const numDays = data.days.length;
 
-  for (let slot = 0; slot < 6; slot++) {
+  // Build mapping: visual slot index → teaching slot index
+  // Visual slots include breaks; teaching slots are the GA grid indices
+  let teachingIdx = 0;
+
+  for (let visualSlot = 0; visualSlot < slotLabels.length; visualSlot++) {
+    const isBreak = breakIndices.has(visualSlot);
+
     // Time label cell
     const timeCell = document.createElement('div');
     timeCell.className = 'border-b border-r border-outline-variant p-2 flex items-center justify-center font-caption text-caption text-on-surface-variant';
-    timeCell.innerHTML = slotLabels[slot].replace('-', '<br/>');
+
+    if (isBreak) {
+      // Break row — time label
+      timeCell.innerHTML = `<span class="italic text-xs">${slotLabels[visualSlot]}</span>`;
+      timeCell.style.background = 'rgba(99, 102, 241, 0.08)';
+      body.appendChild(timeCell);
+
+      // Break row — span across all day columns
+      for (let day = 0; day < numDays; day++) {
+        const breakCell = document.createElement('div');
+        const isLast = day === numDays - 1;
+        breakCell.className = `border-b ${isLast ? '' : 'border-r'} border-outline-variant p-1 flex items-center justify-center`;
+        breakCell.style.background = 'rgba(99, 102, 241, 0.08)';
+        if (day === Math.floor(numDays / 2)) {
+          breakCell.innerHTML = `<span class="font-caption text-caption text-primary/60 italic text-xs">${slotLabels[visualSlot] === 'LUNCH BREAK' ? 'Lunch Break' : 'Short Break'}</span>`;
+        }
+        body.appendChild(breakCell);
+      }
+      continue; // Don't increment teachingIdx for breaks
+    }
+
+    timeCell.innerHTML = slotLabels[visualSlot].replace('-', '<br/>');
     body.appendChild(timeCell);
 
+    const slot = teachingIdx; // This is the GA grid slot index
+
     // Day cells
-    for (let day = 0; day < 6; day++) {
+    for (let day = 0; day < numDays; day++) {
       const cell = grid[day][slot];
       const div = document.createElement('div');
-      const isLast = day === 5;
+      const isLast = day === numDays - 1;
       div.className = `border-b ${isLast ? '' : 'border-r'} border-outline-variant p-2 relative`;
 
       if (!cell) {
@@ -709,7 +1047,7 @@ function renderGrid(sectionId, timetable, data) {
       } else {
         const subject = data.subjects.find(s => s.id === cell.subjectId);
         const teacher = data.teachers.find(t => t.id === cell.teacherId);
-        const isLab = cell.type === 'lab';
+        const isLab = cell.type === 'lab' || cell.type === 'practical';
         const accentColor = isLab ? 'bg-primary' : 'bg-integrity-success';
 
         if (isLab) div.classList.add('bg-surface-container-highest');
@@ -717,13 +1055,131 @@ function renderGrid(sectionId, timetable, data) {
         div.innerHTML = `
           <div class="absolute top-1 left-1 bottom-1 w-1 ${accentColor} rounded-l"></div>
           <div class="ml-2 pl-2 flex flex-col justify-center h-full">
-            <span class="font-body-md text-body-md text-on-surface font-semibold">${subject?.code || '?'}${isLab ? ' Lab' : ''}</span>
+            <span class="font-body-md text-body-md text-on-surface font-semibold">${subject?.name || '?'}${isLab ? ' Lab' : ''}</span>
             <span class="font-caption text-caption text-on-surface-variant">${teacher?.name || '?'}</span>
           </div>`;
       }
 
       body.appendChild(div);
     }
+
+    teachingIdx++;
+  }
+}
+
+function renderTeacherGrid(teacherId, timetable, data) {
+  const body = document.getElementById('timetable-body');
+  if (!body) return;
+  body.innerHTML = '';
+
+  const slotLabels = data.slotLabels;
+  const breakIndices = data.breakIndices || new Set();
+  const numDays = data.days.length;
+
+  let teachingIdx = 0;
+
+  for (let visualSlot = 0; visualSlot < slotLabels.length; visualSlot++) {
+    const isBreak = breakIndices.has(visualSlot);
+
+    const timeCell = document.createElement('div');
+    timeCell.className = 'border-b border-r border-outline-variant p-2 flex items-center justify-center font-caption text-caption text-on-surface-variant';
+
+    if (isBreak) {
+      timeCell.innerHTML = `<span class="italic text-xs">${slotLabels[visualSlot]}</span>`;
+      timeCell.style.background = 'rgba(99, 102, 241, 0.08)';
+      body.appendChild(timeCell);
+
+      for (let day = 0; day < numDays; day++) {
+        const breakCell = document.createElement('div');
+        const isLast = day === numDays - 1;
+        breakCell.className = `border-b ${isLast ? '' : 'border-r'} border-outline-variant p-1 flex items-center justify-center`;
+        breakCell.style.background = 'rgba(99, 102, 241, 0.08)';
+        if (day === Math.floor(numDays / 2)) {
+          breakCell.innerHTML = `<span class="font-caption text-caption text-primary/60 italic text-xs">${slotLabels[visualSlot] === 'LUNCH BREAK' ? 'Lunch Break' : 'Short Break'}</span>`;
+        }
+        body.appendChild(breakCell);
+      }
+      continue;
+    }
+
+    timeCell.innerHTML = slotLabels[visualSlot].replace('-', '<br/>');
+    body.appendChild(timeCell);
+
+    const slot = teachingIdx;
+
+    for (let day = 0; day < numDays; day++) {
+      let cellText = '';
+      let cellColor = '';
+      let isLabCont = false;
+      let found = false;
+
+      // Search all sections for this teacher
+      for (const sectionId of Object.keys(timetable)) {
+        const cell = timetable[sectionId][day][slot];
+        if (cell && cell.teacherId === teacherId) {
+          found = true;
+          if (cell.type === 'lab_cont') {
+            isLabCont = true;
+          } else {
+            const subject = data.subjects.find(s => s.id === cell.subjectId);
+            const section = data.sections.find(s => s.id === sectionId);
+            const branch = section ? data.branches.find(b => b.id === section.branchId) : null;
+            const isLab = cell.type === 'lab' || cell.type === 'practical';
+            cellColor = isLab ? 'bg-primary' : 'bg-integrity-success';
+
+            cellText = `
+              <div class="absolute top-1 left-1 bottom-1 w-1 ${cellColor} rounded-l"></div>
+              <div class="ml-2 pl-2 flex flex-col justify-center h-full">
+                <span class="font-body-md text-body-md text-on-surface font-semibold">${subject?.name || '?'}${isLab ? ' Lab' : ''}</span>
+                <span class="font-caption text-caption text-on-surface-variant">${branch?.name || '?'} Sec-${section?.name || '?'}</span>
+              </div>`;
+          }
+          break; // Stop searching once found
+        }
+      }
+
+      const div = document.createElement('div');
+      const isLast = day === numDays - 1;
+      div.className = `border-b ${isLast ? '' : 'border-r'} border-outline-variant p-2 relative`;
+
+      if (found) {
+        if (isLabCont) {
+          div.classList.add('bg-surface-container-highest');
+          div.innerHTML = `
+            <div class="absolute top-1 left-1 bottom-1 w-1 bg-primary rounded-l"></div>
+            <div class="ml-2 pl-2 flex flex-col justify-center h-full">
+              <span class="font-caption text-caption text-on-surface-variant italic">(Lab cont.)</span>
+            </div>`;
+        } else {
+          if (cellColor === 'bg-primary') div.classList.add('bg-surface-container-highest');
+          div.innerHTML = cellText;
+        }
+      } else {
+        // Not found, maybe it's a rest slot after a lab for this teacher?
+        // Let's check the previous slot to see if they were in a lab_cont
+        let wasInLabCont = false;
+        if (slot > 0) {
+          for (const sectionId of Object.keys(timetable)) {
+            const prevCell = timetable[sectionId][day][slot - 1];
+            if (prevCell && prevCell.teacherId === teacherId && prevCell.type === 'lab_cont') {
+              wasInLabCont = true;
+              break;
+            }
+          }
+        }
+
+        if (wasInLabCont) {
+          div.innerHTML = `<div class="flex items-center justify-center h-full font-caption text-caption text-integrity-success italic">Free Slot</div>`;
+          div.classList.add('bg-surface-container-lowest');
+        } else {
+          div.innerHTML = '';
+        }
+      }
+
+      body.appendChild(div);
+    }
+
+    teachingIdx++;
   }
 }
 
@@ -777,14 +1233,21 @@ function initExportPage() {
   }
 
   const data = TimetableData.getAllData();
-  const branches = data.branches;
-  const sections = data.sections;
+  const generatedSectionIds = new Set(Object.keys(result.timetable || {}));
+  const sections = data.sections.filter(section => generatedSectionIds.has(section.id));
+  const generatedBranchIds = new Set(sections.map(section => section.branchId));
+  const branches = data.branches.filter(branch => generatedBranchIds.has(branch.id));
 
   const selBranch = document.getElementById('export-branch-select');
   const selSection = document.getElementById('export-section-select');
 
   // Populate branches
   if (selBranch) {
+    selBranch.innerHTML = '';
+    if (branches.length === 0) {
+      addDisabledOption(selBranch, 'No generated branches');
+    }
+
     branches.forEach(b => {
       const opt = document.createElement('option');
       opt.value = b.id;
@@ -826,6 +1289,15 @@ function initExportPage() {
     }
   });
 
+  document.getElementById('btn-export-pdf')?.addEventListener('click', () => {
+    const sid = selSection?.value;
+    if (sid) {
+      TimetableExport.printTimetable(sid, result.timetable, data);
+    } else {
+      showToast('Please select a section to export.', 'error');
+    }
+  });
+
   // Initial preview
   setTimeout(() => updatePreview(selSection, result, data), 100);
 }
@@ -834,6 +1306,12 @@ function updateExportSections(branchId, selSection, sections, branches) {
   if (!selSection) return;
   selSection.innerHTML = '';
   const filtered = sections.filter(s => s.branchId === branchId);
+
+  if (filtered.length === 0) {
+    addDisabledOption(selSection, 'No generated sections');
+    return;
+  }
+
   filtered.forEach(s => {
     const opt = document.createElement('option');
     opt.value = s.id;
@@ -844,6 +1322,13 @@ function updateExportSections(branchId, selSection, sections, branches) {
 
 function updatePreview(selSection, result, data) {
   const preview = document.getElementById('export-preview');
-  if (!preview || !selSection?.value) return;
+  if (!preview) return;
+  if (!selSection?.value) {
+    preview.innerHTML = `
+      <div class="h-full min-h-[240px] flex items-center justify-center text-on-surface-variant font-body-md text-body-md">
+        No generated section selected.
+      </div>`;
+    return;
+  }
   preview.innerHTML = TimetableExport.generatePreviewHTML(selSection.value, result.timetable, data);
 }

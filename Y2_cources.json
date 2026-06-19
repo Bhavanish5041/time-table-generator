@@ -1,0 +1,713 @@
+[
+    {
+        "id": "MA231ET",
+        "name": "Mathematics for AI and ML",
+        "department_teaching": "MAT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "MA231CT",
+        "name": "Linear Algebra and Probability Theory",
+        "department_teaching": "MAT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "MA231BT",
+        "name": "Statistics, Laplace Transform and Numerical Methods",
+        "department_teaching": "MAT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "MA232AT",
+        "name": "Linear Algebra, Fourier Transforms and Statistics",
+        "department_teaching": "MAT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "XX232TX",
+        "name": "Basket Course - Group A",
+        "department_teaching": "MULTI",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "HS237LX",
+        "name": "Ability Enhancement Course",
+        "department_teaching": "HSS",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "CS139AT",
+        "name": "Bridge Course - C Programming",
+        "department_teaching": "CS",
+        "credits": 0,
+        "type": "audit",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "AI233AI",
+        "name": "Data Structures and Applications",
+        "department_teaching": "AIML",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AI234AI",
+        "name": "Foundations of Cyber Physical Systems",
+        "department_teaching": "AIML",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CI235AT",
+        "name": "Statistical Foundations for Data Science",
+        "department_teaching": "AIML",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CI237DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "AIML",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "CS233AI",
+        "name": "Data Structures and Applications",
+        "department_teaching": "CSE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS234AI",
+        "name": "Applied Digital Logic Design and Computer Organization",
+        "department_teaching": "CSE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS235AI",
+        "name": "Operating Systems",
+        "department_teaching": "CSE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS237DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "CSE",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "IS233AI",
+        "name": "Data Structures and Applications",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IS234AT",
+        "name": "Logic Design and Computer Organization",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CD235AI",
+        "name": "Operating Systems",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IS237DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "ISE",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "EC233AI",
+        "name": "Analog Microelectronic Circuits",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC234AI",
+        "name": "Analysis and Design of Digital Circuits",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC235AT",
+        "name": "Network Analysis and Control Engineering",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EE233AI",
+        "name": "Electronics Linear Integrated Circuits",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EE234AT",
+        "name": "Analysis and Design of Digital Circuits",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EE235AT",
+        "name": "Signals and Network Analysis",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ET233AI",
+        "name": "Linear Integrated Circuits and Applications",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET234AI",
+        "name": "Analysis and Design of Digital Circuits",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET235AT",
+        "name": "Circuit Analysis and Signal Handling",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CV233AI",
+        "name": "Surveying",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CV234AI",
+        "name": "Concrete Technology",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CV235AT",
+        "name": "Mechanics of Materials",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ME233AI",
+        "name": "Solid Mechanics",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME234AI",
+        "name": "Engineering Thermodynamics",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME235AL",
+        "name": "Metrology and Machine Drawing",
+        "department_teaching": "ME",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "CH233AI",
+        "name": "Momentum Transfer",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH234AI",
+        "name": "Particle Technology",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH235AT",
+        "name": "Chemical Process Calculations",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "BT233AI",
+        "name": "Cell and Molecular Biology",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT234AI",
+        "name": "Biochemistry",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT235AT",
+        "name": "Thermodynamics and Bioseparation Techniques",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "AS233AI",
+        "name": "Fluid Mechanics",
+        "department_teaching": "AS",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AS234AI",
+        "name": "Mechanics of Fluids",
+        "department_teaching": "AS",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AS235AT",
+        "name": "Structural Mechanics",
+        "department_teaching": "AS",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "IM233AI",
+        "name": "Work Systems Design",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM234AI",
+        "name": "Manufacturing Processes",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM235AT",
+        "name": "Digital Technology",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CS241AT",
+        "name": "Discrete Mathematical Structures and Combinatorics",
+        "department_teaching": "CS",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "CD343AI",
+        "name": "Design and Analysis of Algorithms",
+        "department_teaching": "CD",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AI244AI",
+        "name": "Artificial Intelligence and Machine Learning",
+        "department_teaching": "AIML",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CY245AT",
+        "name": "Computer Networks",
+        "department_teaching": "CY",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "XX242TX",
+        "name": "Basket Course - Group A",
+        "department_teaching": "MULTI",
+        "credits": 3,
+        "type": "theory",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "HS247LX",
+        "name": "Ability Enhancement Course - Group C",
+        "department_teaching": "HSS",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "HS248AT",
+        "name": "Universal Human Values",
+        "department_teaching": "HSS",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "MA149AT",
+        "name": "Bridge Course Mathematics",
+        "department_teaching": "MAT",
+        "credits": 0,
+        "type": "audit",
+        "theory_hours": 3,
+        "lab_hours": 0
+    },
+    {
+        "id": "AS344AI",
+        "name": "Aircraft Structures",
+        "department_teaching": "AS",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "AS345AT",
+        "name": "Fundamentals of Avionics",
+        "department_teaching": "AS",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "AS247DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "AS",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "BT344AI",
+        "name": "Biochemistry",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "BT345AT",
+        "name": "Bioprocess Calculations",
+        "department_teaching": "BT",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH344AI",
+        "name": "Process Heat Transfer",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CH345AT",
+        "name": "Thermodynamics",
+        "department_teaching": "CH",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CH247DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "CH",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "CS344AI",
+        "name": "IoT and Embedded Computing",
+        "department_teaching": "CS",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CS246TX",
+        "name": "Professional Elective - Group B",
+        "department_teaching": "CS",
+        "credits": 2,
+        "type": "theory",
+        "theory_hours": 2,
+        "lab_hours": 0
+    },
+    {
+        "id": "CV344AI",
+        "name": "Building Planning and Drawing",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "CV345AT",
+        "name": "Structural Analysis",
+        "department_teaching": "CV",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "CV247DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "CV",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "EC244AI",
+        "name": "Communication Engineering",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "EC345AT",
+        "name": "Principles of Electromagnetics",
+        "department_teaching": "ECE",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "EC247DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "ECE",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "EE244AI",
+        "name": "Power Electronics and Applications",
+        "department_teaching": "EEE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ET244AI",
+        "name": "Communication Engineering",
+        "department_teaching": "ETE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM244AI",
+        "name": "Operations Research",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "IM345AT",
+        "name": "Marketing Management",
+        "department_teaching": "IM",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "IM247DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "IM",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    },
+    {
+        "id": "IS244AI",
+        "name": "Web Technologies",
+        "department_teaching": "ISE",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME244AI",
+        "name": "Fluid Mechanics",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory_lab",
+        "theory_hours": 3,
+        "lab_hours": 1
+    },
+    {
+        "id": "ME245AT",
+        "name": "Theory of Machines",
+        "department_teaching": "ME",
+        "credits": 4,
+        "type": "theory",
+        "theory_hours": 4,
+        "lab_hours": 0
+    },
+    {
+        "id": "ME247DL",
+        "name": "Design Thinking Lab",
+        "department_teaching": "ME",
+        "credits": 2,
+        "type": "lab",
+        "theory_hours": 0,
+        "lab_hours": 2
+    }
+]

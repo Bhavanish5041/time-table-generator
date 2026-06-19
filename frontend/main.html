@@ -145,9 +145,9 @@
             <span class="material-symbols-outlined text-3xl" data-weight="fill">grid_view</span>
         </div>
         <div class="flex flex-col gap-4 w-full px-2">
-            <a class="text-on-surface-variant flex flex-col items-center gap-1 p-2 hover:bg-surface-container-highest transition-colors rounded-lg scale-95 transition-transform duration-150"
+            <a class="bg-secondary-container text-on-secondary-container rounded-lg flex flex-col items-center gap-1 p-2 scale-95 transition-transform duration-150"
                 href="main.html">
-                <span class="material-symbols-outlined">dashboard</span>
+                <span class="material-symbols-outlined" data-weight="fill">dashboard</span>
                 <span class="font-caption text-caption">Dashboard</span>
             </a>
             <a class="text-on-surface-variant flex flex-col items-center gap-1 p-2 hover:bg-surface-container-highest transition-colors rounded-lg scale-95 transition-transform duration-150"
@@ -155,9 +155,9 @@
                 <span class="material-symbols-outlined">calendar_today</span>
                 <span class="font-caption text-caption">Timetable</span>
             </a>
-            <a class="bg-secondary-container text-on-secondary-container rounded-lg flex flex-col items-center gap-1 p-2 scale-95 transition-transform duration-150"
+            <a class="text-on-surface-variant flex flex-col items-center gap-1 p-2 hover:bg-surface-container-highest transition-colors rounded-lg scale-95 transition-transform duration-150"
                 href="Generate(dark).html">
-                <span class="material-symbols-outlined" data-weight="fill">science</span>
+                <span class="material-symbols-outlined">science</span>
                 <span class="font-caption text-caption">Generate</span>
             </a>
             <a class="text-on-surface-variant flex flex-col items-center gap-1 p-2 hover:bg-surface-container-highest transition-colors rounded-lg scale-95 transition-transform duration-150"
@@ -180,12 +180,16 @@
         <div class="flex items-center gap-6">
             <h1 class="font-headline-md text-headline-md text-on-surface">Timetable Generator</h1>
             <div class="h-4 w-px bg-outline-variant"></div>
-            <nav class="flex gap-6">
-                <span class="text-on-surface-variant font-body-md text-body-md">Year 2024</span>
-                <span class="text-on-surface-variant font-body-md text-body-md">Semester 1</span>
+            <nav class="flex gap-2">
+                <button id="btn-sem-odd" class="bg-primary-container text-on-primary-container font-semibold px-4 py-1.5 rounded-l-DEFAULT font-body-md text-body-md transition-colors border border-r-0 border-outline-variant">Odd</button>
+                <button id="btn-sem-even" class="text-on-surface-variant hover:bg-surface-container-high px-4 py-1.5 rounded-r-DEFAULT font-body-md text-body-md transition-colors border border-outline-variant">Even</button>
             </nav>
         </div>
         <div class="flex items-center gap-4">
+            <button class="text-on-surface-variant hover:text-primary opacity-80 transition-opacity flex items-center justify-center w-8 h-8 rounded-full hover:bg-surface-container"
+                data-theme-toggle title="Switch to light mode">
+                <span class="material-symbols-outlined">light_mode</span>
+            </button>
             <button class="text-on-surface-variant hover:text-primary opacity-80 transition-opacity">
                 <span class="material-symbols-outlined">notifications</span>
             </button>
@@ -440,6 +444,19 @@
                         <span class="material-symbols-outlined text-[18px]">add</span> Add Teacher
                     </button>
                 </div>
+                <!-- Branch/Semester Filter -->
+                <div class="flex items-center gap-4 mb-6">
+                    <select id="filter-teacher-branch" class="bg-surface-container border border-outline-variant rounded px-3 py-2 text-body-md text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">Select Branch</option>
+                    </select>
+                    <select id="filter-teacher-semester" class="bg-surface-container border border-outline-variant rounded px-3 py-2 text-body-md text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">Select Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                    </select>
+                </div>
                 <div id="teachers-list" class="relative flex-1"></div>
             </div>
 
@@ -534,11 +551,11 @@
     <!-- Toast Container -->
     <div id="toast-container" style="position:fixed;top:80px;right:24px;z-index:9999;"></div>
     <!-- Scripts -->
-    <script src="../js/data.js?v=5"></script>
-    <script src="../js/constraints.js?v=3"></script>
-    <script src="../js/genetic.js?v=3"></script>
-    <script src="../js/export.js?v=3"></script>
-    <script src="../js/app.js?v=5"></script>
+    <script src="../js/data.js?v=16"></script>
+    <script src="../js/constraints.js?v=16"></script>
+    <script src="../js/genetic.js?v=16"></script>
+    <script src="../js/export.js?v=16"></script>
+    <script src="../js/app.js?v=16"></script>
 </body>
 
 </html>

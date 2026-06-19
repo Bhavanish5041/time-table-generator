@@ -10,10 +10,57 @@ const GeneticAlgorithm = (() => {
   let onProgress = null;
   let onComplete = null;
 
+  // Teaching slot pairs that are physically contiguous (no break between them).
+  // Slot 0 = 9:00-10:00, 1 = 10:00-11:00, [SHORT BREAK], 2 = 11:30-12:30, 3 = 12:30-1:30, [LUNCH], 4 = 2:30-3:30, 5 = 3:30-4:30
+  // Valid consecutive pairs: (0,1), (2,3), (4,5)
+  // Invalid pairs across breaks: (1,2) has short break, (3,4) has lunch break
+  const VALID_LAB_STARTS = [0, 2, 4]; // Teaching slots where a 2-hour lab can start
+
+  function isBasketCourse(data, subjectId) {
+    const sub = data.subjects.find(s => s.id === subjectId);
+    return sub ? sub.name.toLowerCase().includes('basket') : false;
+  }
+
+  function preAllocateBasketCourses(data) {
+    const anchors = {}; // format: anchors[semester] = [ {day, slot}, ... ]
+    const numDays = data.days.length;
+    const numSlots = 6;
+
+    const basketSlotsRequired = {}; // semester -> max theorySlots for any basket course in this sem
+    for (const sub of data.subjects) {
+      if (sub.name.toLowerCase().includes('basket')) {
+        if (!basketSlotsRequired[sub.semester]) basketSlotsRequired[sub.semester] = 0;
+        basketSlotsRequired[sub.semester] = Math.max(basketSlotsRequired[sub.semester], sub.theorySlots);
+      }
+    }
+
+    for (const sem of Object.keys(basketSlotsRequired)) {
+      anchors[sem] = [];
+      const theorySlots = basketSlotsRequired[sem];
+      let placed = 0;
+      
+      const allSlots = [];
+      for (let d = 0; d < numDays; d++) {
+        for (let s = 0; s < numSlots; s++) {
+          allSlots.push({ day: d, slot: s });
+        }
+      }
+      const attempts = shuffleArray(allSlots);
+
+      for (const { day, slot } of attempts) {
+        anchors[sem].push({ day, slot });
+        placed++;
+        if (placed >= theorySlots) break;
+      }
+    }
+    return anchors;
+  }
+
   /**
    * Build the list of assignments needed for a given section.
-   * Returns an array of tasks: { subjectId, teacherId, type: 'theory'|'lab' }
-   * Each theory slot is one task. Each lab session produces two entries (lab + lab_cont).
+   * Returns an array of tasks: { subjectId, teacherId, type: 'theory'|'lab', labHours }
+   * Each theory slot is one task. Each lab session produces one 'lab_session' entry
+   * with labHours indicating how many consecutive slots it needs.
    */
   function buildSectionTasks(sectionId, data, teacherAssignment) {
     const section = data.sections.find(s => s.id === sectionId);
@@ -38,12 +85,21 @@ const GeneticAlgorithm = (() => {
         });
       }
 
-      // Lab sessions (each lab = 2 consecutive slots + 1 rest)
-      for (let i = 0; i < subject.labSessions; i++) {
+      // Lab sessions — labSessions holds the number of lab hours
+      // 1-hour labs are single-slot practicals (any slot, no consecutive requirement)
+      // 2+ hour labs need consecutive block placement
+      if (subject.labSessions === 1) {
         tasks.push({
           subjectId: subject.id,
           teacherId: teacherId,
-          type: 'lab_session' // Will be expanded into lab + lab_cont during placement
+          type: 'practical' // Single-hour lab, placed like theory but shown as lab
+        });
+      } else if (subject.labSessions >= 2) {
+        tasks.push({
+          subjectId: subject.id,
+          teacherId: teacherId,
+          type: 'lab_session',
+          labHours: subject.labSessions  // How many consecutive slots this lab needs
         });
       }
     }
@@ -95,40 +151,98 @@ const GeneticAlgorithm = (() => {
   /**
    * Create a random chromosome (timetable).
    */
-  function createRandomChromosome(data, teacherAssignment) {
+  function createRandomChromosome(data, teacherAssignment, globalBasketSlots) {
     const timetable = {};
+
+    const numDays = data.days.length;
+    const numSlots = 6; // Teaching slots per day
 
     for (const section of data.sections) {
       // Initialize empty grid
-      const grid = Array.from({ length: 6 }, () => Array(6).fill(null));
+      const grid = Array.from({ length: numDays }, () => Array(numSlots).fill(null));
       const tasks = buildSectionTasks(section.id, data, teacherAssignment);
 
-      // Separate labs and theory
+      // Separate labs, theory, and basket tasks
       const labTasks = tasks.filter(t => t.type === 'lab_session');
-      const theoryTasks = tasks.filter(t => t.type === 'theory');
+      const basketTasks = tasks.filter(t => (t.type === 'theory' || t.type === 'practical') && isBasketCourse(data, t.subjectId));
+      const theoryTasks = tasks.filter(t => (t.type === 'theory' || t.type === 'practical') && !isBasketCourse(data, t.subjectId));
 
-      // Place labs first (they need consecutive slots + rest)
+      // 1. Place Basket tasks FIRST using global anchors (1 set of anchors per semester)
+      const basketCounts = {};
+      for (const bt of basketTasks) {
+        const subject = data.subjects.find(s => s.id === bt.subjectId);
+        const sem = subject.semester;
+        
+        if (!basketCounts[bt.subjectId]) basketCounts[bt.subjectId] = 0;
+        const index = basketCounts[bt.subjectId]++;
+        
+        // Find the global anchor for this semester
+        if (globalBasketSlots && globalBasketSlots[sem]) {
+          const anchor = globalBasketSlots[sem][index];
+          if (anchor) {
+            grid[anchor.day][anchor.slot] = {
+              subjectId: bt.subjectId,
+              teacherId: bt.teacherId,
+              type: bt.type
+            };
+          }
+        }
+      }
+
+      // 2. Place labs — they need consecutive slots within the SAME physical block (no break in between)
       for (const lab of labTasks) {
         let placed = false;
-        const attempts = shuffledSlots();
+        const hours = lab.labHours || 2; // Default to 2-hour lab
+        const attempts = shuffledLabSlots(hours);
 
         for (const { day, slot } of attempts) {
-          if (canPlaceLab(grid, day, slot)) {
+          if (canPlaceLab(grid, day, slot, hours)) {
+            // Place the first slot as 'lab', rest as 'lab_cont'
             grid[day][slot] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab' };
-            grid[day][slot + 1] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab_cont' };
-            // Rest slot after lab — mark as null (already null, so just skip slot+2)
+            for (let h = 1; h < hours; h++) {
+              grid[day][slot + h] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab_cont' };
+            }
             placed = true;
             break;
           }
         }
 
         if (!placed) {
-          // Force placement in first available (may violate constraints — GA will evolve)
-          for (let d = 0; d < 6; d++) {
-            for (let s = 0; s < 4; s++) { // Max slot 4 so lab + rest fits
-              if (grid[d][s] === null && grid[d][s + 1] === null) {
+          // Force placement in first available valid block (may violate some constraints — GA will evolve)
+          for (let d = 0; d < numDays; d++) {
+            for (const startSlot of VALID_LAB_STARTS) {
+              if (startSlot + hours - 1 < numSlots) {
+                let canPlace = true;
+                for (let h = 0; h < hours; h++) {
+                  if (grid[d][startSlot + h] !== null) { canPlace = false; break; }
+                }
+                if (canPlace) {
+                  grid[d][startSlot] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab' };
+                  for (let h = 1; h < hours; h++) {
+                    grid[d][startSlot + h] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab_cont' };
+                  }
+                  placed = true;
+                  break;
+                }
+              }
+            }
+            if (placed) break;
+          }
+        }
+
+        if (!placed) {
+          // Last resort: place anywhere with consecutive empty slots (may break across a break period)
+          for (let d = 0; d < numDays; d++) {
+            for (let s = 0; s <= numSlots - hours; s++) {
+              let canPlace = true;
+              for (let h = 0; h < hours; h++) {
+                if (grid[d][s + h] !== null) { canPlace = false; break; }
+              }
+              if (canPlace) {
                 grid[d][s] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab' };
-                grid[d][s + 1] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab_cont' };
+                for (let h = 1; h < hours; h++) {
+                  grid[d][s + h] = { subjectId: lab.subjectId, teacherId: lab.teacherId, type: 'lab_cont' };
+                }
                 placed = true;
                 break;
               }
@@ -140,13 +254,9 @@ const GeneticAlgorithm = (() => {
 
       // Place theory classes in remaining empty slots
       const emptySlots = [];
-      for (let d = 0; d < 6; d++) {
-        for (let s = 0; s < 6; s++) {
+      for (let d = 0; d < numDays; d++) {
+        for (let s = 0; s < numSlots; s++) {
           if (grid[d][s] === null) {
-            // Check it's not a rest-after-lab slot
-            if (s > 0 && grid[d][s - 1] && grid[d][s - 1].type === 'lab_cont') {
-              continue; // This slot is reserved for rest
-            }
             emptySlots.push({ day: d, slot: s });
           }
         }
@@ -159,7 +269,7 @@ const GeneticAlgorithm = (() => {
         grid[day][slot] = {
           subjectId: theoryTasks[i].subjectId,
           teacherId: theoryTasks[i].teacherId,
-          type: 'theory'
+          type: theoryTasks[i].type
         };
       }
 
@@ -169,23 +279,45 @@ const GeneticAlgorithm = (() => {
     return timetable;
   }
 
-  function canPlaceLab(grid, day, slot) {
-    // Need slots: slot (lab), slot+1 (lab_cont), slot+2 (rest — must be free)
-    if (slot + 2 > 5) {
-      // If slot+1 is the last slot (5), rest is after school — acceptable
-      if (slot + 1 > 5) return false;
-      return grid[day][slot] === null && grid[day][slot + 1] === null;
+  /**
+   * Check if a lab of `hours` duration can be placed starting at (day, slot).
+   * The lab must fit within a single physical block (no break splitting).
+   */
+  function canPlaceLab(grid, day, slot, hours) {
+    const numSlots = 6;
+    // Check the block doesn't exceed grid bounds
+    if (slot + hours - 1 >= numSlots) return false;
+
+    // Ensure the lab doesn't cross a break boundary.
+    // Physical blocks: [0,1], [2,3], [4,5]
+    // A lab of N hours starting at slot S must have all slots in the same block or adjacent valid blocks.
+    // For a 2-hour lab: the start must be at an even slot (0, 2, 4)
+    // For a 1-hour lab: any slot works (it's really just one slot, treated as theory-like)
+    if (hours >= 2) {
+      // Check that start slot is a valid lab start
+      if (!VALID_LAB_STARTS.includes(slot)) return false;
     }
-    return grid[day][slot] === null &&
-           grid[day][slot + 1] === null &&
-           grid[day][slot + 2] === null; // Reserve for rest
+
+    // Check all needed slots are empty
+    for (let h = 0; h < hours; h++) {
+      if (grid[day][slot + h] !== null) return false;
+    }
+
+    return true;
   }
 
-  function shuffledSlots() {
+  /**
+   * Generate shuffled candidate (day, slot) pairs for lab placement.
+   * Only considers valid starting positions that won't cross breaks.
+   */
+  function shuffledLabSlots(hours) {
+    const numDays = TimetableData.DAYS.length;
     const slots = [];
-    for (let d = 0; d < 6; d++) {
-      for (let s = 0; s <= 3; s++) { // Slots 0-3 to allow lab(2) + rest(1) = 3 slots
-        slots.push({ day: d, slot: s });
+    for (let d = 0; d < numDays; d++) {
+      for (const s of VALID_LAB_STARTS) {
+        if (s + hours - 1 < 6) { // Ensure it fits
+          slots.push({ day: d, slot: s });
+        }
       }
     }
     return shuffleArray(slots);
@@ -231,7 +363,7 @@ const GeneticAlgorithm = (() => {
   /**
    * Mutation: for a random section, swap two theory slots, or move a lab session.
    */
-  function mutate(chromosome, mutationRate) {
+  function mutate(chromosome, mutationRate, data) {
     const sectionIds = Object.keys(chromosome);
 
     for (const sid of sectionIds) {
@@ -242,10 +374,10 @@ const GeneticAlgorithm = (() => {
 
       if (mutationType < 0.6) {
         // Swap two theory slots
-        swapTheorySlots(grid);
+        swapTheorySlots(grid, data);
       } else if (mutationType < 0.85) {
         // Move a theory class to an empty slot
-        moveTheoryToEmpty(grid);
+        moveTheoryToEmpty(grid, data);
       } else {
         // Try to move a lab session
         moveLabSession(grid);
@@ -253,16 +385,18 @@ const GeneticAlgorithm = (() => {
     }
   }
 
-  function swapTheorySlots(grid) {
+  function swapTheorySlots(grid, data) {
+    const numDays = TimetableData.DAYS.length;
+    const numSlots = 6;
     const theorySlots = [];
-    const emptySlots = [];
 
-    for (let d = 0; d < 6; d++) {
-      for (let s = 0; s < 6; s++) {
-        if (grid[d][s] && grid[d][s].type === 'theory') {
-          theorySlots.push({ day: d, slot: s });
-        } else if (grid[d][s] === null) {
-          emptySlots.push({ day: d, slot: s });
+    for (let d = 0; d < numDays; d++) {
+      for (let s = 0; s < numSlots; s++) {
+        const cell = grid[d][s];
+        if (cell && (cell.type === 'theory' || cell.type === 'practical')) {
+          if (!isBasketCourse(data, cell.subjectId)) {
+            theorySlots.push({ day: d, slot: s });
+          }
         }
       }
     }
@@ -282,19 +416,21 @@ const GeneticAlgorithm = (() => {
     }
   }
 
-  function moveTheoryToEmpty(grid) {
+  function moveTheoryToEmpty(grid, data) {
+    const numDays = TimetableData.DAYS.length;
+    const numSlots = 6;
     const theorySlots = [];
     const emptySlots = [];
 
-    for (let d = 0; d < 6; d++) {
-      for (let s = 0; s < 6; s++) {
-        if (grid[d][s] && grid[d][s].type === 'theory') {
-          theorySlots.push({ day: d, slot: s });
-        } else if (grid[d][s] === null) {
-          // Check not a rest slot
-          if (!(s > 0 && grid[d][s - 1] && grid[d][s - 1].type === 'lab_cont')) {
-            emptySlots.push({ day: d, slot: s });
+    for (let d = 0; d < numDays; d++) {
+      for (let s = 0; s < numSlots; s++) {
+        const cell = grid[d][s];
+        if (cell && (cell.type === 'theory' || cell.type === 'practical')) {
+          if (!isBasketCourse(data, cell.subjectId)) {
+            theorySlots.push({ day: d, slot: s });
           }
+        } else if (cell === null) {
+          emptySlots.push({ day: d, slot: s });
         }
       }
     }
@@ -309,9 +445,11 @@ const GeneticAlgorithm = (() => {
 
   function moveLabSession(grid) {
     // Find lab starts
+    const numDays = TimetableData.DAYS.length;
+    const numSlots = 6;
     const labStarts = [];
-    for (let d = 0; d < 6; d++) {
-      for (let s = 0; s < 6; s++) {
+    for (let d = 0; d < numDays; d++) {
+      for (let s = 0; s < numSlots; s++) {
         if (grid[d][s] && grid[d][s].type === 'lab') {
           labStarts.push({ day: d, slot: s });
         }
@@ -323,26 +461,39 @@ const GeneticAlgorithm = (() => {
     const lab = labStarts[Math.floor(Math.random() * labStarts.length)];
     const labData = { ...grid[lab.day][lab.slot] };
 
-    // Remove old lab
-    grid[lab.day][lab.slot] = null;
-    if (lab.slot + 1 < 6 && grid[lab.day][lab.slot + 1] && grid[lab.day][lab.slot + 1].type === 'lab_cont') {
-      grid[lab.day][lab.slot + 1] = null;
+    // Determine how many consecutive slots this lab occupies
+    let labHours = 1;
+    for (let s = lab.slot + 1; s < numSlots; s++) {
+      if (grid[lab.day][s] && grid[lab.day][s].type === 'lab_cont' && grid[lab.day][s].subjectId === labData.subjectId) {
+        labHours++;
+      } else {
+        break;
+      }
     }
 
-    // Try to place in new position
-    const attempts = shuffledSlots();
+    // Remove old lab
+    for (let h = 0; h < labHours; h++) {
+      grid[lab.day][lab.slot + h] = null;
+    }
+
+    // Try to place in new valid position
+    const attempts = shuffledLabSlots(labHours);
     for (const { day, slot } of attempts) {
-      if (canPlaceLab(grid, day, slot)) {
+      if (canPlaceLab(grid, day, slot, labHours)) {
         grid[day][slot] = { ...labData, type: 'lab' };
-        grid[day][slot + 1] = { ...labData, type: 'lab_cont' };
+        for (let h = 1; h < labHours; h++) {
+          grid[day][slot + h] = { ...labData, type: 'lab_cont' };
+        }
         return;
       }
     }
 
     // Failed — put it back
     grid[lab.day][lab.slot] = { ...labData, type: 'lab' };
-    if (lab.slot + 1 < 6) {
-      grid[lab.day][lab.slot + 1] = { ...labData, type: 'lab_cont' };
+    for (let h = 1; h < labHours; h++) {
+      if (lab.slot + h < numSlots) {
+        grid[lab.day][lab.slot + h] = { ...labData, type: 'lab_cont' };
+      }
     }
   }
 
@@ -366,7 +517,10 @@ const GeneticAlgorithm = (() => {
     onProgress = progressCallback;
     onComplete = completeCallback;
 
-    const data = TimetableData.getAllData();
+    // Use filtered data if semester parity is specified
+    const data = params.semesterParity
+      ? TimetableData.getAllDataFiltered(params.semesterParity)
+      : TimetableData.getAllData();
     const popSize = params.populationSize || 200;
     const maxGen = params.maxGenerations || 500;
     let mutRate = params.mutationRate || 0.05;
@@ -375,11 +529,14 @@ const GeneticAlgorithm = (() => {
 
     // Assign teachers to sections first
     const teacherAssignment = assignTeachersToSections(data);
+    
+    // Globally anchor basket courses for perfectly synced scheduling
+    const globalBasketSlots = preAllocateBasketCourses(data);
 
     // Initialize population
     let population = [];
     for (let i = 0; i < popSize; i++) {
-      population.push(createRandomChromosome(data, teacherAssignment));
+      population.push(createRandomChromosome(data, teacherAssignment, globalBasketSlots));
     }
 
     // Evaluate initial fitness
@@ -446,7 +603,7 @@ const GeneticAlgorithm = (() => {
         const p2Idx = tournamentSelect(population, fitnesses);
 
         let child = crossover(population[p1Idx], population[p2Idx]);
-        mutate(child, mutRate);
+        mutate(child, mutRate, data);
 
         nextPop.push(child);
         nextFit.push(Constraints.quickFitness(child, data));

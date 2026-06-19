@@ -9,14 +9,18 @@ const TimetableData = (() => {
   let teachers = [];
   let sections = [];
 
-  const STORAGE_KEY = 'timetable_generator_data';
-  const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const SLOTS_PER_DAY = 6;
+  const STORAGE_KEY = 'timetable_generator_data_v5';
+  const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  const SLOTS_PER_DAY = 8; // Total visual rows (6 teaching + 2 breaks)
+  const TEACHING_SLOTS = 6; // Actual schedulable slots
   const SLOT_LABELS = [
-    '9:00-10:00', '10:00-11:00', '11:00-12:00',
-    '12:00-1:00', '2:00-3:00', '3:00-4:00'
+    '9:00-10:00', '10:00-11:00', 'SHORT BREAK',
+    '11:30-12:30', '12:30-1:30', 'LUNCH BREAK',
+    '2:30-3:30', '3:30-4:30'
   ];
-  const SEMESTERS = [1, 2, 3, 4];
+  // Indices in SLOT_LABELS that are breaks (not schedulable)
+  const BREAK_INDICES = new Set([2, 5]);
+  const SEMESTERS = [1, 2, 3, 4, 5, 6, 7, 8];
 
   // ---- ID Generator ----
   let _idCounter = 0;
@@ -26,7 +30,7 @@ const TimetableData = (() => {
   }
 
   // ---- BRANCH CRUD ----
-  function addBranch(name, semesters = [1, 2, 3, 4]) {
+  function addBranch(name, semesters = [1, 2, 3, 4, 5, 6, 7, 8]) {
     const branch = {
       id: generateId('BR'),
       name: name.trim().toUpperCase(),
@@ -67,8 +71,9 @@ const TimetableData = (() => {
   }
 
   // ---- SUBJECT CRUD ----
-  function addSubject(name, code, credits, branchId, semester) {
-    const hasLab = credits === 4;
+  function addSubject(name, code, credits, branchId, semester, hasLabFlag, exactTheory, exactLab) {
+    const isMath = name.toLowerCase().includes('math') || code.toUpperCase().startsWith('MA');
+    const hasLab = hasLabFlag !== undefined ? hasLabFlag : (credits === 4 && !isMath);
     const subject = {
       id: generateId('SUB'),
       name: name.trim(),
@@ -78,8 +83,8 @@ const TimetableData = (() => {
       branchId: branchId,
       semester: semester,
       // Derived: weekly theory slots and lab sessions
-      theorySlots: hasLab ? 3 : credits,
-      labSessions: hasLab ? 1 : 0
+      theorySlots: exactTheory !== undefined ? exactTheory : (hasLab ? 3 : credits),
+      labSessions: exactLab !== undefined ? exactLab : (hasLab ? 1 : 0)
     };
     subjects.push(subject);
     save();
@@ -93,7 +98,8 @@ const TimetableData = (() => {
     if (updates.code !== undefined) subject.code = updates.code.trim().toUpperCase();
     if (updates.credits !== undefined) {
       subject.credits = updates.credits;
-      subject.isLab = updates.credits === 4;
+      const isMath = subject.name.toLowerCase().includes('math') || subject.code.toUpperCase().startsWith('MA');
+      subject.isLab = updates.credits === 4 && !isMath;
       subject.theorySlots = subject.isLab ? 3 : subject.credits;
       subject.labSessions = subject.isLab ? 1 : 0;
     }
@@ -123,12 +129,13 @@ const TimetableData = (() => {
   }
 
   // ---- SECTION CRUD ----
-  function addSection(name, branchId, semester) {
+  function addSection(name, branchId, semester, strength = 0) {
     const section = {
       id: generateId('SEC'),
       name: name.trim().toUpperCase(),
       branchId: branchId,
-      semester: semester
+      semester: semester,
+      strength: strength
     };
     sections.push(section);
     save();
@@ -204,6 +211,8 @@ const TimetableData = (() => {
       if (!raw) return false;
       const data = JSON.parse(raw);
       branches = data.branches || [];
+      if (branches.length === 0) return false; // Force sample data if completely empty
+
       subjects = data.subjects || [];
       teachers = (data.teachers || []).map(t => ({
         ...t,
@@ -211,6 +220,60 @@ const TimetableData = (() => {
       }));
       sections = data.sections || [];
       _idCounter = data._idCounter || 0;
+      
+      // Auto-patch: Filter out sections with invalid/corrupted branch IDs
+      sections = sections.filter(s => branches.some(b => b.id === s.branchId));
+      // Auto-patch: Upgrade branches to support 8 semesters
+      for (const branch of branches) {
+        if (!branch.semesters || branch.semesters.length < 8) {
+          branch.semesters = [1, 2, 3, 4, 5, 6, 7, 8];
+        }
+      }
+
+      // Auto-patch: Math should never have labs
+      for (const sub of subjects) {
+        const isMath = sub.name.toLowerCase().includes('math') || (sub.code && sub.code.toUpperCase().startsWith('MA'));
+        if (isMath && sub.isLab) {
+          sub.isLab = false;
+          sub.theorySlots = sub.credits;
+          sub.labSessions = 0;
+        }
+      }
+
+      // Auto-patch: Ensure every branch and semester has at least one default section ("A")
+      for (const branch of branches) {
+        for (const sem of branch.semesters) {
+          const branchSections = sections.filter(s => s.branchId === branch.id && s.semester === sem);
+          if (branchSections.length === 0) {
+            sections.push({
+              id: generateId('SEC'),
+              name: 'A',
+              branchId: branch.id,
+              semester: sem,
+              strength: 60
+            });
+          }
+        }
+      }
+
+      // Auto-patch: 1:1 Teacher Generation (replace dummy teachers)
+      if (teachers.length < 50 && subjects.length > 0) {
+        teachers = []; // Wipe the old dummy teachers
+        let teacherCounter = 1;
+        for (const sub of subjects) {
+          const subSections = sections.filter(s => s.branchId === sub.branchId && s.semester === sub.semester);
+          for (const sec of subSections) {
+            teachers.push({
+              id: generateId('TCH'),
+              name: `Prof. T${teacherCounter++} (${sub.code} - Sec ${sec.name})`,
+              subjectIds: [sub.id]
+            });
+          }
+        }
+      }
+
+      save(); // Save the patched data
+
       return true;
     } catch (e) {
       console.warn('localStorage load failed:', e);
@@ -228,7 +291,7 @@ const TimetableData = (() => {
   }
 
   // ---- VALIDATION ----
-  function validate() {
+  function validate(parity = null) {
     const errors = [];
     const warnings = [];
 
@@ -236,8 +299,10 @@ const TimetableData = (() => {
       errors.push('No branches defined. Add at least one branch.');
     }
 
+    const activeSemesters = parity === 'even' ? [2, 4, 6, 8] : (parity === 'odd' ? [1, 3, 5, 7] : [1, 2, 3, 4, 5, 6, 7, 8]);
+
     branches.forEach(branch => {
-      branch.semesters.forEach(sem => {
+      branch.semesters.filter(sem => activeSemesters.includes(sem)).forEach(sem => {
         const branchSubjects = getSubjectsByBranchSem(branch.id, sem);
         const branchSections = getSectionsByBranchSem(branch.id, sem);
 
@@ -257,19 +322,16 @@ const TimetableData = (() => {
           }
         });
 
-        // Check total slots don't exceed available (6 days × 6 slots = 36)
+        // Check total slots don't exceed available (5 days × 6 teaching slots = 30)
         const totalSlots = branchSubjects.reduce((sum, sub) => {
-          let slots = sub.theorySlots;
-          if (sub.labSessions > 0) {
-            // Each lab = 2 slots + 1 rest = effectively 3 slots
-            slots += sub.labSessions * 3;
-          }
-          return sum + slots;
+          // theorySlots = hours of theory per week, labSessions = hours of lab per week
+          return sum + sub.theorySlots + sub.labSessions;
         }, 0);
 
-        if (totalSlots > 36) {
+        const maxTeachingSlots = DAYS.length * TEACHING_SLOTS;
+        if (totalSlots > maxTeachingSlots) {
           errors.push(
-            `${branch.name} Sem-${sem}: Total required slots (${totalSlots}) exceed available 36 slots/week.`
+            `${branch.name} Sem-${sem}: Total required slots (${totalSlots}) exceed available ${maxTeachingSlots} slots/week.`
           );
         }
 
@@ -293,139 +355,133 @@ const TimetableData = (() => {
       sections: [...sections],
       days: DAYS,
       slotsPerDay: SLOTS_PER_DAY,
+      teachingSlots: TEACHING_SLOTS,
       slotLabels: SLOT_LABELS,
+      breakIndices: BREAK_INDICES,
       semesters: SEMESTERS
     };
   }
 
+  /**
+   * Get data filtered by semester parity.
+   * @param {'odd'|'even'} parity - 'odd' for semesters 1,3; 'even' for 2,4
+   * @returns {Object} Same shape as getAllData but filtered
+   */
+  function getAllDataFiltered(parity) {
+    const activeSemesters = parity === 'even' ? [2, 4, 6, 8] : [1, 3, 5, 7];
+
+    const filteredSections = sections.filter(s => activeSemesters.includes(s.semester));
+    const filteredSubjects = subjects.filter(s => activeSemesters.includes(s.semester));
+    const filteredSubjectIds = new Set(filteredSubjects.map(s => s.id));
+
+    // Only include teachers who teach at least one active subject
+    const filteredTeachers = teachers
+      .map(t => ({
+        ...t,
+        subjectIds: t.subjectIds.filter(sid => filteredSubjectIds.has(sid))
+      }))
+      .filter(t => t.subjectIds.length > 0);
+
+    return {
+      branches: [...branches],
+      subjects: filteredSubjects,
+      teachers: filteredTeachers,
+      sections: filteredSections,
+      days: DAYS,
+      slotsPerDay: SLOTS_PER_DAY,
+      teachingSlots: TEACHING_SLOTS,
+      slotLabels: SLOT_LABELS,
+      breakIndices: BREAK_INDICES,
+      semesters: activeSemesters
+    };
+  }
+
   // ---- SAMPLE DATA ----
-  function loadSampleData() {
+  /**
+   * Load sample data asynchronously from the JSON files.
+   */
+  async function loadSampleData() {
     clearAll();
 
-    // Branches
-    const cse = addBranch('CSE', [1, 2, 3, 4]);
-    const ece = addBranch('ECE', [1, 2, 3, 4]);
+    try {
+      // Fetch data from root since the HTML files are in /frontend/
+      const timestamp = Date.now();
+      const [deptRes, secRes, subjRes] = await Promise.all([
+        fetch(`../departments.json?v=${timestamp}`),
+        fetch(`../sections.json?v=${timestamp}`),
+        fetch(`../subjects.json?v=${timestamp}`)
+      ]);
 
-    // --- CSE Sem 1 ---
-    const cse1_math = addSubject('Engineering Mathematics-I', 'MA101', 4, cse.id, 1);
-    const cse1_phy = addSubject('Engineering Physics', 'PH101', 3, cse.id, 1);
-    const cse1_cp = addSubject('C Programming', 'CS101', 4, cse.id, 1);
-    const cse1_bee = addSubject('Basic Electrical Engg', 'EE101', 3, cse.id, 1);
-    const cse1_eng = addSubject('Technical English', 'EN101', 2, cse.id, 1);
+      const deptDefs = await deptRes.json();
+      const secDefs = await secRes.json();
+      const subjDefs = await subjRes.json();
 
-    // --- CSE Sem 2 ---
-    const cse2_math = addSubject('Engineering Mathematics-II', 'MA201', 4, cse.id, 2);
-    const cse2_chem = addSubject('Engineering Chemistry', 'CH201', 3, cse.id, 2);
-    const cse2_ds = addSubject('Data Structures', 'CS201', 4, cse.id, 2);
-    const cse2_dld = addSubject('Digital Logic Design', 'CS202', 3, cse.id, 2);
-    const cse2_evs = addSubject('Environmental Science', 'EV201', 2, cse.id, 2);
+      // Create branches
+      const branchMap = {};
+      for (const dept of deptDefs) {
+        const branch = addBranch(dept.name, [1, 2, 3, 4, 5, 6, 7, 8]); // Pass dept.name instead of dept.id so the UI looks correct
+        branchMap[dept.id] = branch;
+      }
 
-    // --- CSE Sem 3 ---
-    const cse3_math = addSubject('Discrete Mathematics', 'MA301', 3, cse.id, 3);
-    const cse3_oop = addSubject('Object Oriented Programming', 'CS301', 4, cse.id, 3);
-    const cse3_os = addSubject('Operating Systems', 'CS302', 4, cse.id, 3);
-    const cse3_dbms = addSubject('Database Management', 'CS303', 3, cse.id, 3);
-    const cse3_eco = addSubject('Engineering Economics', 'HS301', 2, cse.id, 3);
+      // Create sections for both odd and even semesters based on the year
+      for (const sec of secDefs) {
+        const branch = branchMap[sec.department];
+        if (!branch) continue;
+        const oddSemester = (sec.year - 1) * 2 + 1;
+        const evenSemester = oddSemester + 1;
+        addSection(sec.section, branch.id, oddSemester, sec.strength || 0);
+        addSection(sec.section, branch.id, evenSemester, sec.strength || 0);
+      }
 
-    // --- CSE Sem 4 ---
-    const cse4_algo = addSubject('Design & Analysis of Algorithms', 'CS401', 4, cse.id, 4);
-    const cse4_cn = addSubject('Computer Networks', 'CS402', 4, cse.id, 4);
-    const cse4_se = addSubject('Software Engineering', 'CS403', 3, cse.id, 4);
-    const cse4_toc = addSubject('Theory of Computation', 'CS404', 3, cse.id, 4);
-    const cse4_mgt = addSubject('Management Studies', 'HS401', 2, cse.id, 4);
+      // Ensure every branch and semester has at least one default section ("A")
+      for (const key of Object.keys(branchMap)) {
+        const branch = branchMap[key];
+        for (let sem = 1; sem <= 8; sem++) {
+          const branchSections = getSectionsByBranchSem(branch.id, sem);
+          if (branchSections.length === 0) {
+            addSection('A', branch.id, sem, 60); // Default strength 60
+          }
+        }
+      }
 
-    // --- ECE Sem 1 ---
-    const ece1_math = addSubject('Engineering Mathematics-I', 'MA101', 4, ece.id, 1);
-    const ece1_phy = addSubject('Engineering Physics', 'PH102', 3, ece.id, 1);
-    const ece1_bec = addSubject('Basic Electronics', 'EC101', 4, ece.id, 1);
-    const ece1_bee = addSubject('Basic Electrical Engg', 'EE102', 3, ece.id, 1);
-    const ece1_eng = addSubject('Technical English', 'EN102', 2, ece.id, 1);
+      // Create subjects from the new subjects.json format
+      // Format: [ { college, branch, semesters: [ { semester, subjects: [ { name, credits } ] } ] } ]
+      const createdSubjects = [];
+      for (const branchData of subjDefs) {
+        // Handle CSE vs CS mapping if necessary
+        const branchId = branchData.branch === 'CSE' ? 'CS' : branchData.branch;
+        const branch = branchMap[branchId];
+        if (!branch) continue;
 
-    // --- ECE Sem 2 ---
-    const ece2_math = addSubject('Engineering Mathematics-II', 'MA202', 4, ece.id, 2);
-    const ece2_ss = addSubject('Signals & Systems', 'EC201', 3, ece.id, 2);
-    const ece2_edc = addSubject('Electronic Devices & Circuits', 'EC202', 4, ece.id, 2);
-    const ece2_ntw = addSubject('Network Theory', 'EC203', 3, ece.id, 2);
-    const ece2_evs = addSubject('Environmental Science', 'EV202', 2, ece.id, 2);
+        let subjectCounter = 1;
+        for (const semData of branchData.semesters) {
+          const semester = semData.semester;
+          for (const sub of semData.subjects) {
+            // Use the code from JSON if available, else generate a placeholder
+            const code = sub.code || `${branchId}${semester}0${subjectCounter++}`;
+            const hasLabFlag = sub.type ? sub.type.includes('lab') : undefined;
+            const newSub = addSubject(sub.name, code, sub.credits, branch.id, semester, hasLabFlag, sub.theory_hours, sub.lab_hours);
+            createdSubjects.push(newSub);
+          }
+        }
+      }
 
-    // --- ECE Sem 3 ---
-    const ece3_ac = addSubject('Analog Circuits', 'EC301', 4, ece.id, 3);
-    const ece3_dc = addSubject('Digital Communication', 'EC302', 3, ece.id, 3);
-    const ece3_emft = addSubject('Electromagnetic Field Theory', 'EC303', 3, ece.id, 3);
-    const ece3_mp = addSubject('Microprocessors', 'EC304', 4, ece.id, 3);
-    const ece3_prob = addSubject('Probability & Statistics', 'MA302', 2, ece.id, 3);
+      // Generate a unique teacher for EVERY (Subject, Section) pair
+      let teacherCounter = 1;
+      for (const sub of createdSubjects) {
+        const subSections = getSectionsByBranchSem(sub.branchId, sub.semester);
+        for (const sec of subSections) {
+          addTeacher(`Prof. T${teacherCounter++} (${sub.code} - Sec ${sec.name})`, [sub.id]);
+        }
+      }
 
-    // --- ECE Sem 4 ---
-    const ece4_vlsi = addSubject('VLSI Design', 'EC401', 4, ece.id, 4);
-    const ece4_dsp = addSubject('Digital Signal Processing', 'EC402', 3, ece.id, 4);
-    const ece4_comm = addSubject('Communication Systems', 'EC403', 4, ece.id, 4);
-    const ece4_ctrl = addSubject('Control Systems', 'EC404', 3, ece.id, 4);
-    const ece4_mgt = addSubject('Management Studies', 'HS402', 2, ece.id, 4);
-
-    // --- Sections ---
-    // CSE: 2 sections per semester
-    [1, 2, 3, 4].forEach(sem => {
-      addSection('A', cse.id, sem);
-      addSection('B', cse.id, sem);
-    });
-    // ECE: 1 section per semester
-    [1, 2, 3, 4].forEach(sem => {
-      addSection('A', ece.id, sem);
-    });
-
-    // --- Teachers ---
-    // Math teachers (shared across branches)
-    const tMath1 = addTeacher('Dr. Sharma', [cse1_math.id, ece1_math.id]);
-    const tMath2 = addTeacher('Dr. Iyer', [cse1_math.id, cse2_math.id, ece2_math.id]);
-    const tMath3 = addTeacher('Prof. Gupta', [cse2_math.id, cse3_math.id, ece3_prob.id]);
-    const tMath4 = addTeacher('Dr. Reddy', [ece1_math.id, ece2_math.id]);
-
-    // Physics / Chemistry
-    const tPhy1 = addTeacher('Dr. Kumar', [cse1_phy.id, ece1_phy.id]);
-    const tPhy2 = addTeacher('Dr. Singh', [cse1_phy.id, ece1_phy.id]);
-    const tChem = addTeacher('Dr. Patel', [cse2_chem.id]);
-    const tChem2 = addTeacher('Dr. Ananya', [cse2_chem.id]);
-
-    // CSE teachers
-    const tCS1 = addTeacher('Prof. Anil', [cse1_cp.id, cse2_ds.id]);
-    const tCS2 = addTeacher('Prof. Meena', [cse1_cp.id, cse3_oop.id]);
-    const tCS3 = addTeacher('Dr. Verma', [cse2_ds.id, cse3_os.id]);
-    const tCS4 = addTeacher('Prof. Kavitha', [cse2_dld.id, cse3_dbms.id]);
-    const tCS5 = addTeacher('Dr. Ramesh', [cse3_os.id, cse4_algo.id]);
-    const tCS6 = addTeacher('Prof. Deepa', [cse3_oop.id, cse4_cn.id]);
-    const tCS7 = addTeacher('Dr. Mohan', [cse4_algo.id, cse4_se.id]);
-    const tCS8 = addTeacher('Prof. Lakshmi', [cse4_cn.id, cse4_toc.id]);
-    const tCS9 = addTeacher('Dr. Suresh', [cse3_dbms.id, cse4_se.id]);
-    const tCS10 = addTeacher('Prof. Arjun', [cse2_dld.id, cse4_toc.id]);
-
-    // EE teachers
-    const tEE1 = addTeacher('Prof. Bhat', [cse1_bee.id, ece1_bee.id]);
-    const tEE2 = addTeacher('Dr. Rao', [cse1_bee.id, ece1_bee.id]);
-
-    // English / Humanities
-    const tEng1 = addTeacher('Prof. Priya', [cse1_eng.id, ece1_eng.id]);
-    const tEng2 = addTeacher('Prof. Neha', [cse1_eng.id, ece1_eng.id]);
-    const tEvs = addTeacher('Dr. Sunita', [cse2_evs.id, ece2_evs.id]);
-    const tEco = addTeacher('Prof. Ashok', [cse3_eco.id]);
-    const tMgt1 = addTeacher('Dr. Joshi', [cse4_mgt.id, ece4_mgt.id]);
-    const tMgt2 = addTeacher('Prof. Das', [cse4_mgt.id, ece4_mgt.id]);
-
-    // ECE teachers
-    const tEC1 = addTeacher('Dr. Prasad', [ece1_bec.id, ece2_edc.id]);
-    const tEC2 = addTeacher('Prof. Swathi', [ece1_bec.id, ece3_ac.id]);
-    const tEC3 = addTeacher('Dr. Naik', [ece2_ss.id, ece3_dc.id]);
-    const tEC4 = addTeacher('Prof. Hegde', [ece2_edc.id, ece3_mp.id]);
-    const tEC5 = addTeacher('Dr. Murthy', [ece2_ntw.id, ece3_emft.id]);
-    const tEC6 = addTeacher('Prof. Kiran', [ece3_ac.id, ece4_vlsi.id]);
-    const tEC7 = addTeacher('Dr. Anand', [ece3_mp.id, ece4_dsp.id]);
-    const tEC8 = addTeacher('Prof. Rekha', [ece4_vlsi.id, ece4_comm.id]);
-    const tEC9 = addTeacher('Dr. Srinivas', [ece4_dsp.id, ece4_ctrl.id]);
-    const tEC10 = addTeacher('Prof. Bharathi', [ece3_dc.id, ece4_comm.id]);
-    const tEC11 = addTeacher('Dr. Nair', [ece3_emft.id, ece4_ctrl.id]);
-
-    save();
-    console.log('Sample data loaded successfully.');
-    return true;
+      save();
+      console.log('Sample data loaded from JSON successfully.');
+      return true;
+    } catch (e) {
+      console.error('Failed to load JSON data:', e);
+      return false;
+    }
   }
 
   // ---- PUBLIC API ----
@@ -433,7 +489,9 @@ const TimetableData = (() => {
     // Constants
     DAYS,
     SLOTS_PER_DAY,
+    TEACHING_SLOTS,
     SLOT_LABELS,
+    BREAK_INDICES,
     SEMESTERS,
 
     // Branch
@@ -454,7 +512,7 @@ const TimetableData = (() => {
     save, load, clearAll,
 
     // Validation & Data
-    validate, getAllData,
+    validate, getAllData, getAllDataFiltered,
 
     // Sample
     loadSampleData

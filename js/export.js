@@ -29,8 +29,22 @@ const TimetableExport = (() => {
     rows.push(header.map(h => `"${h}"`).join(','));
 
     // Data rows
-    for (let slot = 0; slot < data.slotsPerDay; slot++) {
-      const row = [data.slotLabels[slot]];
+    const breakIndices = data.breakIndices || new Set();
+    let teachingIdx = 0;
+
+    for (let visualSlot = 0; visualSlot < data.slotLabels.length; visualSlot++) {
+      if (breakIndices.has(visualSlot)) {
+        // Break row
+        const row = [data.slotLabels[visualSlot]];
+        for (let day = 0; day < data.days.length; day++) {
+          row.push(data.slotLabels[visualSlot] === 'LUNCH BREAK' ? '--- LUNCH ---' : '--- BREAK ---');
+        }
+        rows.push(row.map(c => `"${c}"`).join(','));
+        continue;
+      }
+
+      const slot = teachingIdx;
+      const row = [data.slotLabels[visualSlot]];
 
       for (let day = 0; day < data.days.length; day++) {
         const cell = grid[day][slot];
@@ -53,6 +67,7 @@ const TimetableExport = (() => {
       }
 
       rows.push(row.map(c => `"${c}"`).join(','));
+      teachingIdx++;
     }
 
     return rows.join('\n');
@@ -76,8 +91,21 @@ const TimetableExport = (() => {
     const header = ['Time Slot', ...data.days];
     rows.push(header.map(h => `"${h}"`).join(','));
 
-    for (let slot = 0; slot < data.slotsPerDay; slot++) {
-      const row = [data.slotLabels[slot]];
+    let teachingIdx = 0;
+
+    for (let visualSlot = 0; visualSlot < data.slotLabels.length; visualSlot++) {
+      const breakIndices = data.breakIndices || new Set();
+      if (breakIndices.has(visualSlot)) {
+        const row = [data.slotLabels[visualSlot]];
+        for (let day = 0; day < data.days.length; day++) {
+          row.push(data.slotLabels[visualSlot] === 'LUNCH BREAK' ? '--- LUNCH ---' : '--- BREAK ---');
+        }
+        rows.push(row.map(c => `"${c}"`).join(','));
+        continue;
+      }
+
+      const slot = teachingIdx;
+      const row = [data.slotLabels[visualSlot]];
 
       for (let day = 0; day < data.days.length; day++) {
         let cellText = '---';
@@ -98,6 +126,7 @@ const TimetableExport = (() => {
       }
 
       rows.push(row.map(c => `"${c}"`).join(','));
+      teachingIdx++;
     }
 
     return rows.join('\n');
@@ -164,7 +193,7 @@ const TimetableExport = (() => {
     const section = data.sections.find(s => s.id === sectionId);
     const branch = section ? data.branches.find(b => b.id === section.branchId) : null;
 
-    const title = `${branch?.name || 'Unknown'} — Section ${section?.name || '?'} — Semester ${section?.semester || '?'}`;
+    const title = `${branch?.name || 'Unknown'} - Section ${section?.name || '?'} - Semester ${section?.semester || '?'}`;
 
     // Build print-friendly HTML table
     let tableHTML = `
@@ -178,9 +207,23 @@ const TimetableExport = (() => {
         <tbody>
     `;
 
-    for (let slot = 0; slot < data.slotsPerDay; slot++) {
+    const breakIndices = data.breakIndices || new Set();
+    let teachingIdx = 0;
+
+    for (let visualSlot = 0; visualSlot < data.slotLabels.length; visualSlot++) {
+      if (breakIndices.has(visualSlot)) {
+        tableHTML += '<tr>';
+        tableHTML += `<td class="time-col" style="background:#eef2ff;color:#6366f1;font-style:italic;">${data.slotLabels[visualSlot]}</td>`;
+        for (let day = 0; day < data.days.length; day++) {
+          tableHTML += `<td style="background:#eef2ff;color:#6366f1;text-align:center;font-style:italic;font-size:10px;">☕</td>`;
+        }
+        tableHTML += '</tr>';
+        continue;
+      }
+
+      const slot = teachingIdx;
       tableHTML += '<tr>';
-      tableHTML += `<td class="time-col">${data.slotLabels[slot]}</td>`;
+      tableHTML += `<td class="time-col">${data.slotLabels[visualSlot]}</td>`;
 
       for (let day = 0; day < data.days.length; day++) {
         const cell = grid[day][slot];
@@ -190,7 +233,7 @@ const TimetableExport = (() => {
           if (slot > 0 && grid[day][slot - 1] && grid[day][slot - 1].type === 'lab_cont') {
             tableHTML += '<td class="rest-cell">FREE</td>';
           } else {
-            tableHTML += '<td class="empty-cell">—</td>';
+            tableHTML += '<td class="empty-cell">-</td>';
           }
         } else if (cell.type === 'lab_cont') {
           tableHTML += '<td class="lab-cont-cell">↑ Lab</td>';
@@ -207,6 +250,7 @@ const TimetableExport = (() => {
       }
 
       tableHTML += '</tr>';
+      teachingIdx++;
     }
 
     tableHTML += '</tbody></table>';
@@ -215,7 +259,7 @@ const TimetableExport = (() => {
       <!DOCTYPE html>
       <html>
       <head>
-        <title>${title} — Timetable</title>
+        <title>${title} - Timetable</title>
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
@@ -354,7 +398,7 @@ const TimetableExport = (() => {
     const section = data.sections.find(s => s.id === sectionId);
     const branch = section ? data.branches.find(b => b.id === section.branchId) : null;
 
-    let html = `<div class="export-preview-title">${branch?.name || '?'} — Section ${section?.name || '?'} — Sem ${section?.semester || '?'}</div>`;
+    let html = `<div class="export-preview-title">${branch?.name || '?'} - Section ${section?.name || '?'} - Sem ${section?.semester || '?'}</div>`;
     html += '<table class="preview-table"><thead><tr><th>Time</th>';
 
     for (const day of data.days) {
@@ -362,8 +406,21 @@ const TimetableExport = (() => {
     }
     html += '</tr></thead><tbody>';
 
-    for (let slot = 0; slot < data.slotsPerDay; slot++) {
-      html += `<tr><td class="pv-time">${data.slotLabels[slot]}</td>`;
+    const breakIndices = data.breakIndices || new Set();
+    let teachingIdx = 0;
+
+    for (let visualSlot = 0; visualSlot < data.slotLabels.length; visualSlot++) {
+      if (breakIndices.has(visualSlot)) {
+        html += `<tr><td class="pv-time" style="background:rgba(99,102,241,0.08);font-style:italic;font-size:10px;">${data.slotLabels[visualSlot]}</td>`;
+        for (let day = 0; day < data.days.length; day++) {
+          html += `<td style="background:rgba(99,102,241,0.08);text-align:center;font-style:italic;color:#6366f1;font-size:10px;">☕</td>`;
+        }
+        html += '</tr>';
+        continue;
+      }
+
+      const slot = teachingIdx;
+      html += `<tr><td class="pv-time">${data.slotLabels[visualSlot]}</td>`;
 
       for (let day = 0; day < data.days.length; day++) {
         const cell = grid[day][slot];
@@ -372,7 +429,7 @@ const TimetableExport = (() => {
           if (slot > 0 && grid[day][slot - 1] && grid[day][slot - 1].type === 'lab_cont') {
             html += '<td class="pv-rest">FREE</td>';
           } else {
-            html += '<td class="pv-empty">—</td>';
+            html += '<td class="pv-empty">-</td>';
           }
         } else if (cell.type === 'lab_cont') {
           html += '<td class="pv-labcont">↑</td>';
@@ -385,6 +442,7 @@ const TimetableExport = (() => {
       }
 
       html += '</tr>';
+      teachingIdx++;
     }
 
     html += '</tbody></table>';
