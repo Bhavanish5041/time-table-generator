@@ -4,16 +4,15 @@
 // ============================================================
 
 const RESULT_KEY = 'timetable_generator_result';
-const THEME_KEY = 'timetable_generator_theme';
+
 
 document.addEventListener('DOMContentLoaded', async () => {
-  initThemeToggle();
+
   initParityToggle();
 
-  // Load data from localStorage (or load sample if empty)
-  if (!TimetableData.load()) {
-    await TimetableData.loadSampleData();
-  }
+  // Always load fresh data from JSON files to ensure we use the real course data.
+  // localStorage is only used for mid-session persistence (e.g., wizard state).
+  await TimetableData.loadSampleData();
 
   // Detect page by body id
   const pageId = document.body.id;
@@ -34,128 +33,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// ---- THEME TOGGLE ----
-function initThemeToggle() {
-  injectThemeStyles();
-
-  const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
-  applyTheme(savedTheme);
-
-  document.querySelectorAll('[data-theme-toggle]').forEach(button => {
-    button.addEventListener('click', () => {
-      const nextTheme = document.documentElement.classList.contains('theme-light') ? 'dark' : 'light';
-      localStorage.setItem(THEME_KEY, nextTheme);
-      applyTheme(nextTheme);
-    });
-  });
-}
-
-function applyTheme(theme) {
-  const isLight = theme === 'light';
-  document.documentElement.classList.toggle('theme-light', isLight);
-  document.documentElement.classList.toggle('dark', !isLight);
-
-  document.querySelectorAll('[data-theme-toggle]').forEach(button => {
-    const icon = button.querySelector('.material-symbols-outlined');
-    if (icon) icon.textContent = isLight ? 'dark_mode' : 'light_mode';
-    button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-    button.setAttribute('title', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-  });
-}
-
-function injectThemeStyles() {
-  if (document.getElementById('mixed-theme-overrides')) return;
-
-  const style = document.createElement('style');
-  style.id = 'mixed-theme-overrides';
-  style.textContent = `
-    html.theme-light,
-    html.theme-light body {
-      background: #f8fafc !important;
-      color: #0f172a !important;
-    }
-
-    html.theme-light .bg-background,
-    html.theme-light .dark\\:bg-background {
-      background-color: #f8fafc !important;
-    }
-
-    html.theme-light .bg-surface,
-    html.theme-light .bg-surface-bright,
-    html.theme-light .dark\\:bg-surface-bright {
-      background-color: #ffffff !important;
-    }
-
-    html.theme-light .bg-surface-container-lowest,
-    html.theme-light .bg-surface-container-low,
-    html.theme-light .dark\\:bg-surface-container-low {
-      background-color: #f1f5f9 !important;
-    }
-
-    html.theme-light .bg-surface-container,
-    html.theme-light .bg-surface-variant {
-      background-color: #e2e8f0 !important;
-    }
-
-    html.theme-light .bg-surface-container-high,
-    html.theme-light .bg-surface-container-highest {
-      background-color: #ffffff !important;
-    }
-
-    html.theme-light .bg-secondary-container,
-    html.theme-light .bg-primary-container {
-      background-color: #e2e8f0 !important;
-    }
-
-    html.theme-light .bg-primary {
-      background-color: #334155 !important;
-    }
-
-    html.theme-light .text-on-background,
-    html.theme-light .text-on-surface,
-    html.theme-light .text-on-secondary-container,
-    html.theme-light .text-on-primary-container {
-      color: #0f172a !important;
-    }
-
-    html.theme-light .text-on-surface-variant,
-    html.theme-light .text-primary {
-      color: #475569 !important;
-    }
-
-    html.theme-light .text-on-primary-fixed {
-      color: #0f172a !important;
-    }
-
-    html.theme-light .bg-primary.text-on-primary-fixed,
-    html.theme-light .bg-primary .text-on-primary-fixed,
-    html.theme-light .text-on-primary {
-      color: #ffffff !important;
-    }
-
-    html.theme-light .border-outline-variant,
-    html.theme-light .border-outline {
-      border-color: #cbd5e1 !important;
-    }
-
-    html.theme-light input,
-    html.theme-light select,
-    html.theme-light textarea {
-      background-color: #ffffff !important;
-      color: #0f172a !important;
-    }
-  `;
-  document.head.appendChild(style);
-}
 
 // ---- TOAST ----
 function showToast(message, type = 'info') {
   const container = document.getElementById('toast-container');
   if (!container) return;
   const toast = document.createElement('div');
-  toast.style.cssText = `padding:12px 20px;margin-bottom:8px;border-radius:6px;color:#fff;font-size:13px;font-family:Inter,sans-serif;
-    box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity 0.3s ease;max-width:360px;`;
-  toast.style.background = type === 'error' ? '#ef4444' : type === 'success' ? '#10b981' : '#6366f1';
+  toast.style.cssText = `padding:14px 24px;margin-bottom:8px;border-radius:16px;color:#fff;font-size:14px;font-family:Epilogue,sans-serif;
+    box-shadow:0 8px 24px rgba(39,19,16,0.25);transition:opacity 0.3s ease;max-width:400px;backdrop-filter:blur(12px);`;
+  toast.style.background = type === 'error' ? '#ba1a1a' : type === 'success' ? '#2e7d32' : '#3E2723';
   toast.textContent = message;
   container.appendChild(toast);
   setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3500);
@@ -184,16 +70,16 @@ function initParityToggle() {
 
   function updateParityUI() {
     const parity = localStorage.getItem('timetable_semester_parity') || 'odd';
-    const activeClass = 'bg-primary-container text-on-primary-container font-semibold';
-    const inactiveClass = 'text-on-surface-variant hover:bg-surface-container-high';
+    const activeClass = 'bg-primary-container text-on-primary-container font-semibold shadow-sm';
+    const inactiveClass = 'bg-transparent text-on-surface-variant font-normal hover:bg-surface-variant/30';
 
     if (btnOdd && btnEven) {
       if (parity === 'odd') {
-        btnOdd.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${activeClass}`;
-        btnEven.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${inactiveClass}`;
+        btnOdd.className = `flex-1 py-[8px] px-[16px] rounded-full flex items-center justify-center gap-2 font-label-md text-label-md transition-all duration-200 ${activeClass}`;
+        btnEven.className = `flex-1 py-[8px] px-[16px] rounded-full flex items-center justify-center gap-2 font-label-md text-label-md transition-all duration-200 ${inactiveClass}`;
       } else {
-        btnEven.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${activeClass}`;
-        btnOdd.className = `flex-1 py-2.5 px-4 flex items-center justify-center gap-2 font-body-md text-body-md transition-all duration-200 ${inactiveClass}`;
+        btnEven.className = `flex-1 py-[8px] px-[16px] rounded-full flex items-center justify-center gap-2 font-label-md text-label-md transition-all duration-200 ${activeClass}`;
+        btnOdd.className = `flex-1 py-[8px] px-[16px] rounded-full flex items-center justify-center gap-2 font-label-md text-label-md transition-all duration-200 ${inactiveClass}`;
       }
     }
   }
@@ -275,7 +161,7 @@ function initSetupPage() {
         TimetableData.save();
         showToast('Configuration Saved!', 'success');
         setTimeout(() => {
-          window.location.href = 'Generate(dark).html';
+          window.location.href = 'generate.html';
         }, 500);
       }
     });
@@ -296,13 +182,13 @@ function updateWizardUI() {
       stepEl.classList.add('cursor-pointer');
 
       if (i < currentStep) {
-        circle.className = 'w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[10px] font-bold indicator-circle';
-        text.className = 'font-label-sm text-label-sm text-emerald-500 uppercase tracking-wider indicator-text';
+        circle.className = 'w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[12px] font-bold shadow-md indicator-circle';
+        text.className = 'font-label-sm text-label-sm text-secondary uppercase tracking-wider indicator-text';
       } else if (i === currentStep) {
-        circle.className = 'w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary-fixed text-[10px] font-bold ring-4 ring-background indicator-circle';
-        text.className = 'font-label-sm text-label-sm text-primary uppercase tracking-wider indicator-text';
+        circle.className = 'w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[12px] font-bold ring-4 ring-background shadow-md indicator-circle';
+        text.className = 'font-label-sm text-label-sm text-secondary uppercase tracking-wider indicator-text';
       } else {
-        circle.className = 'w-6 h-6 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center text-on-surface-variant text-[10px] font-bold indicator-circle';
+        circle.className = 'w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container flex items-center justify-center text-on-surface-variant text-[12px] font-bold indicator-circle';
         text.className = 'font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider indicator-text';
       }
     }
@@ -344,47 +230,42 @@ function renderSetupBranches() {
   if (!container) return;
 
   const branches = TimetableData.getBranches();
-  // Keep the decorative vertical line
-  container.innerHTML = `
-    <div class="absolute left-[39px] top-4 bottom-10 w-[1px] bg-[#333338] z-0"></div>
-    <div class="flex flex-col gap-component-gap relative z-10" id="branches-cards"></div>
-  `;
+  container.innerHTML = `<div class="flex flex-col gap-4" id="branches-cards"></div>`;
 
   const cardsContainer = document.getElementById('branches-cards');
 
   branches.forEach(branch => {
     const card = document.createElement('div');
-    card.className = 'flex items-start';
+    card.className = 'volumetric-pane rounded-2xl p-6 relative overflow-hidden group';
     card.innerHTML = `
-      <div class="w-10 h-10 border-b border-l border-[#333338] rounded-bl-lg translate-y-4 -translate-x-px"></div>
-      <div class="bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex-1 relative overflow-hidden group">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">${branch.name}</h3>
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-full"></div>
+      <div class="flex justify-between items-start mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-secondary-fixed-variant text-[20px]">domain</span>
           </div>
-          <button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity btn-del-branch"
-                  data-id="${branch.id}" title="Delete branch">
-            <span class="material-symbols-outlined text-[18px]">delete</span>
-          </button>
+          <h3 class="font-title-md text-title-md text-primary">${branch.name}</h3>
         </div>
-        <div class="grid grid-cols-3 gap-6">
-          <div>
-            <label class="block font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">Branch Code</label>
-            <input class="branch-name-input w-full bg-surface-container border border-outline-variant rounded-DEFAULT px-3 py-1.5 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors"
-                   type="text" value="${branch.name}" data-id="${branch.id}" />
-          </div>
-          <div>
-            <label class="block font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">Semesters Active</label>
-            <div class="flex items-center gap-2 h-[34px]">
-              ${getActiveSemesters().map(sem => `
-                <div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-DEFAULT border border-outline-variant ${branch.semesters.includes(sem) ? '' : 'opacity-50'}">
-                  <span class="w-1.5 h-1.5 rounded-full ${branch.semesters.includes(sem) ? 'bg-primary' : 'bg-outline-variant'}"></span>
-                  <span class="font-caption text-caption">S${sem}</span>
-                </div>
-              `).join('')}
-            </div>
+        <button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity btn-del-branch"
+                data-id="${branch.id}" title="Delete branch">
+          <span class="material-symbols-outlined text-[18px]">delete</span>
+        </button>
+      </div>
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Branch Code</label>
+          <input class="branch-name-input w-full inset-panel rounded-xl px-4 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
+                 type="text" value="${branch.name}" data-id="${branch.id}" />
+        </div>
+        <div>
+          <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Semesters Active</label>
+          <div class="flex items-center gap-2 h-[38px]">
+            ${getActiveSemesters().map(sem => `
+              <div class="flex items-center gap-1 inset-panel px-3 py-1.5 rounded-full ${branch.semesters.includes(sem) ? '' : 'opacity-40'}">
+                <span class="w-2 h-2 rounded-full ${branch.semesters.includes(sem) ? 'bg-secondary' : 'bg-outline-variant'}"></span>
+                <span class="font-label-sm text-label-sm">S${sem}</span>
+              </div>
+            `).join('')}
           </div>
         </div>
       </div>
@@ -392,14 +273,12 @@ function renderSetupBranches() {
     cardsContainer.appendChild(card);
   });
 
-  // Event delegation for name changes
   cardsContainer.querySelectorAll('.branch-name-input').forEach(inp => {
     inp.addEventListener('change', (e) => {
       TimetableData.updateBranch(e.target.dataset.id, { name: e.target.value });
     });
   });
 
-  // Event delegation for delete
   cardsContainer.querySelectorAll('.btn-del-branch').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = e.currentTarget.dataset.id;
@@ -476,53 +355,53 @@ function renderSetupSubjects() {
 
   const subjects = TimetableData.getSubjectsByBranchSem(branchId, semester);
 
-  container.innerHTML = `
-    <div class="absolute left-[39px] top-4 bottom-10 w-[1px] bg-[#333338] z-0"></div>
-    <div class="flex flex-col gap-component-gap relative z-10" id="subjects-cards"></div>
-  `;
+  container.innerHTML = `<div class="flex flex-col gap-4" id="subjects-cards"></div>`;
 
   const cardsContainer = document.getElementById('subjects-cards');
 
   subjects.forEach(sub => {
     const card = document.createElement('div');
-    card.className = 'flex items-start';
+    card.className = 'volumetric-pane rounded-2xl p-6 relative overflow-hidden group';
     card.innerHTML = `
-      <div class="w-10 h-10 border-b border-l border-[#333338] rounded-bl-lg translate-y-4 -translate-x-px"></div>
-      <div class="bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex-1 relative overflow-hidden group">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500"></div>
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">${sub.name} (${sub.code})</h3>
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-full"></div>
+      <div class="flex justify-between items-start mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+            <span class="material-symbols-outlined text-blue-600 text-[20px]">menu_book</span>
           </div>
-          <button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity btn-del-subject"
-                  data-id="${sub.id}" title="Delete subject">
-            <span class="material-symbols-outlined text-[18px]">delete</span>
-          </button>
+          <h3 class="font-title-md text-title-md text-primary">${sub.name} (${sub.code})</h3>
         </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div>
-            <label class="block font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">Subject Name</label>
-            <input class="subj-name-input w-full bg-surface-container border border-outline-variant rounded-DEFAULT px-3 py-1.5 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors"
-                   type="text" value="${sub.name}" data-id="${sub.id}" />
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-                <label class="block font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">Code</label>
-                <input class="subj-code-input w-full bg-surface-container border border-outline-variant rounded-DEFAULT px-3 py-1.5 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors"
-                       type="text" value="${sub.code}" data-id="${sub.id}" />
-            </div>
-            <div>
-                <label class="block font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">Credits</label>
-                <select class="subj-credits-input w-full bg-surface-container border border-outline-variant rounded-DEFAULT px-3 py-1.5 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors" data-id="${sub.id}">
-                    <option value="2" ${sub.credits === 2 ? 'selected' : ''}>2 (Theory)</option>
-                    <option value="3" ${sub.credits === 3 ? 'selected' : ''}>3 (Theory)</option>
-                    <option value="4" ${sub.credits === 4 ? 'selected' : ''}>4 (Lab)</option>
-                </select>
-            </div>
-          </div>
-        </div>
+        <button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity btn-del-subject"
+                data-id="${sub.id}" title="Delete subject">
+          <span class="material-symbols-outlined text-[18px]">delete</span>
+        </button>
       </div>
+      <div class="grid grid-cols-2 gap-6">
+      <div>
+          <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Subject Name</label>
+          <input class="subj-name-input w-full inset-panel rounded-xl px-4 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
+                 type="text" value="${sub.name}" data-id="${sub.id}" />
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+              <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Code</label>
+              <input class="subj-code-input w-full inset-panel rounded-xl px-4 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
+                     type="text" value="${sub.code}" data-id="${sub.id}" />
+          </div>
+          <div>
+              <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Credits</label>
+              <select class="subj-credits-input w-full inset-panel rounded-xl px-4 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/20 outline-none transition-all" data-id="${sub.id}">
+                  <option value="2" ${sub.credits === 2 ? 'selected' : ''}>2 (Theory)</option>
+                  <option value="3" ${sub.credits === 3 ? 'selected' : ''}>3 (Theory)</option>
+                  <option value="4" ${sub.credits === 4 ? 'selected' : ''}>4 (Lab)</option>
+              </select>
+          </div>
+          <div>
+              <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Classes/Week</label>
+              <input class="subj-cpw-input w-full inset-panel rounded-xl px-4 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
+                     type="number" min="1" max="6" value="${sub.theorySlots}" data-id="${sub.id}" />
+          </div>
+        </div>
     `;
     cardsContainer.appendChild(card);
   });
@@ -544,7 +423,10 @@ function renderSetupSubjects() {
     inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { code: e.target.value }); });
   });
   cardsContainer.querySelectorAll('.subj-credits-input').forEach(inp => {
-    inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { credits: parseInt(e.target.value) }); });
+    inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { credits: parseInt(e.target.value) }); renderSetupSubjects(); });
+  });
+  cardsContainer.querySelectorAll('.subj-cpw-input').forEach(inp => {
+    inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { theorySlots: parseInt(e.target.value) }); });
   });
 
   // Delete handler
@@ -588,14 +470,14 @@ function renderSetupSections() {
 
   sections.forEach(sec => {
     const card = document.createElement('div');
-    card.className = 'bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex justify-between items-center group relative overflow-hidden';
+    card.className = 'volumetric-pane rounded-2xl p-5 flex justify-between items-center group relative overflow-hidden';
     card.innerHTML = `
-      <div class="absolute left-0 top-0 bottom-0 w-1 bg-amber-500"></div>
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center font-bold text-on-surface border border-outline-variant">
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-amber-500 rounded-full"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center font-bold text-amber-700 text-lg">
             ${sec.name}
         </div>
-        <span class="font-body-md text-on-surface">Section ${sec.name}</span>
+        <span class="font-label-md text-label-md text-on-surface">Section ${sec.name}</span>
       </div>
       <button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity btn-del-section"
               data-id="${sec.id}" title="Delete section">
@@ -668,12 +550,12 @@ function renderSetupTeachers() {
   teachers.forEach(tch => {
     const assignedSubjectIds = Array.isArray(tch.subjectIds) ? tch.subjectIds : [];
     const card = document.createElement('div');
-    card.className = 'bg-surface-container-high border border-outline-variant rounded-lg p-card-padding flex flex-col gap-4 relative overflow-hidden group';
+    card.className = 'volumetric-pane rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden group';
     card.innerHTML = `
-      <div class="absolute left-0 top-0 bottom-0 w-1 bg-purple-500"></div>
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-purple-500 rounded-full"></div>
       <div class="flex justify-between items-start">
         <div class="flex-1 mr-4">
-            <input class="tch-name-input w-full bg-transparent border-b border-outline-variant px-1 py-1 font-headline-md text-headline-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+            <input class="tch-name-input w-full bg-transparent border-b-2 border-outline-variant px-1 py-1 font-title-md text-title-md text-primary focus:outline-none focus:border-secondary transition-colors"
                    type="text" value="${tch.name}" data-id="${tch.id}" />
         </div>
         <button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity btn-del-teacher"
@@ -682,11 +564,11 @@ function renderSetupTeachers() {
         </button>
       </div>
       <div>
-        <label class="block font-caption text-caption text-on-surface-variant mb-2 uppercase tracking-wider">Assigned Subjects</label>
-        <div class="flex flex-col gap-2 max-h-40 overflow-y-auto pr-2 custom-scroll">
+        <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Assigned Subjects</label>
+        <div class="flex flex-col gap-2 max-h-40 overflow-y-auto pr-2 custom-scrollbar">
             ${branchSubjects.map(sub => `
-                <label class="flex items-center gap-2 cursor-pointer p-1 hover:bg-surface-container rounded transition-colors">
-                    <input type="checkbox" class="tch-subj-checkbox accent-primary" 
+                <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-surface-container rounded-xl transition-colors">
+                    <input type="checkbox" class="tch-subj-checkbox accent-secondary w-4 h-4" 
                            data-tid="${tch.id}" data-sid="${sub.id}" ${assignedSubjectIds.includes(sub.id) ? 'checked' : ''} />
                     <span class="font-body-md text-body-md text-on-surface flex-1">${sub.code}</span>
                 </label>

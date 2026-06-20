@@ -3831,14 +3831,6 @@
             "lab_hours": 0
           },
           {
-            "name": "Artificial Intelligence and Machine Learning",
-            "code": "IS353IA",
-            "credits": 4,
-            "type": "theory_lab",
-            "theory_hours": 3,
-            "lab_hours": 1
-          },
-          {
             "name": "Database Management Systems",
             "code": "CD252IA",
             "credits": 4,

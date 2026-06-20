@@ -103,6 +103,10 @@ const TimetableData = (() => {
       subject.theorySlots = subject.isLab ? 3 : subject.credits;
       subject.labSessions = subject.isLab ? 1 : 0;
     }
+    // Allow overriding classes per week independently
+    if (updates.theorySlots !== undefined) {
+      subject.theorySlots = updates.theorySlots;
+    }
     save();
     return subject;
   }
