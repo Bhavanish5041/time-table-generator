@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniSched Pro - Timetable Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-secondary-fixed-variant": "#723619",
+                    "secondary-container": "#fda681",
+                    "tertiary-container": "#3e271e",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#745853",
+                    "primary": "#271310",
+                    "primary-fixed": "#ffdad4",
+                    "outline-variant": "#d3c3c0",
+                    "surface-container-highest": "#e3e3de",
+                    "on-background": "#1a1c19",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#3e2723",
+                    "on-tertiary-fixed-variant": "#5b4137",
+                    "inverse-on-surface": "#f1f1ec",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f4f4ef",
+                    "on-tertiary-fixed": "#2b160f",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "error": "#ba1a1a",
+                    "surface": "#fafaf5",
+                    "on-error-container": "#93000a",
+                    "background": "#fafaf5",
+                    "surface-bright": "#fafaf5",
+                    "inverse-surface": "#2f312e",
+                    "secondary": "#8f4c2e",
+                    "outline": "#827472",
+                    "secondary-fixed-dim": "#ffb596",
+                    "on-primary-fixed": "#2b1613",
+                    "on-surface": "#1a1c19",
+                    "on-tertiary-container": "#ae8d81",
+                    "on-secondary-fixed": "#360f00",
+                    "tertiary": "#27130b",
+                    "on-secondary-container": "#773a1d",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-primary-container": "#ae8d87",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#e3beb8",
+                    "surface-container": "#eeeee9",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e3",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#e3beb8",
+                    "surface-dim": "#dadad5",
+                    "on-surface-variant": "#504442",
+                    "tertiary-fixed": "#ffdbce",
+                    "tertiary-fixed-dim": "#e4beb2",
+                    "surface-variant": "#e3e3de"
+                },
+                "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                "spacing": { "lg": "24px", "sm": "8px", "md": "16px", "base": "4px", "xl": "32px", "xs": "4px", "gutter": "24px" },
+                "fontFamily": {
+                    "display-lg": ["Epilogue"], "label-sm": ["Epilogue"], "label-md": ["Epilogue"],
+                    "title-md": ["Epilogue"], "body-lg": ["Epilogue"], "headline-lg": ["Epilogue"], "body-md": ["Epilogue"]
+                },
+                "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                },
+                boxShadow: {
+                    'mocha-aura': '0 20px 40px -10px rgba(143, 76, 46, 0.12), 0 8px 16px -4px rgba(143, 76, 46, 0.08)',
+                }
+            },
+        },
+    }
+</script>
+<style>
+    body { background: radial-gradient(circle at top right, rgba(253,166,129,0.05) 0%, transparent 40%), radial-gradient(circle at bottom left, rgba(143,76,46,0.05) 0%, transparent 40%); background-color: #fafaf5; background-attachment: fixed; font-family: 'Epilogue', sans-serif; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(130, 116, 114, 0.3); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(143, 76, 46, 0.5); }
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 20px 40px -10px rgba(143, 76, 46, 0.12);
+    }
+</style>
+</head>
+<body id="page-timetable" class="bg-background text-on-background font-body-md antialiased min-h-screen flex selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- SideNavBar -->
+<nav class="bg-surface/80 backdrop-blur-xl font-title-md text-title-md fixed left-0 top-0 bottom-0 z-40 flex flex-col p-lg w-72 border-r border-outline-variant/30 shadow-[30px_0_60px_-15px_rgba(164,93,61,0.15)]">
+    <div class="mb-xl flex items-center gap-md">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary-container to-secondary flex items-center justify-center shadow-mocha-aura text-on-secondary shadow-lg">
+            <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">domain</span>
+        </div>
+        <div>
+            <h1 class="font-display-lg text-title-md font-bold text-primary leading-tight" style="font-size:24px;line-height:28px;">UniSched Pro</h1>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Academic Management</p>
+        </div>
+    </div>
+    <ul class="flex flex-col gap-sm flex-1">
+        <li><a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-all duration-300 group" href="main.html">
+            <span class="material-symbols-outlined opacity-70 group-hover:opacity-100 transition-opacity">settings_input_component</span>
+            <span>Setup Wizard</span>
+        </a></li>
+        <li><a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-all duration-300 group" href="generate.html">
+            <span class="material-symbols-outlined opacity-70 group-hover:opacity-100 transition-opacity">auto_awesome</span>
+            <span>Generate</span>
+        </a></li>
+        <li><a class="flex items-center gap-md px-md py-sm text-on-secondary-container bg-secondary-container/50 backdrop-blur-md rounded-lg border-l-4 border-secondary" href="timetable.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            <span class="font-bold">Timetable</span>
+        </a></li>
+        <li><a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-all duration-300 group" href="export.html">
+            <span class="material-symbols-outlined opacity-70 group-hover:opacity-100 transition-opacity">ios_share</span>
+            <span>Export</span>
+        </a></li>
+    </ul>
+    <div class="mt-auto pt-lg border-t border-outline-variant/30">
+        <ul class="flex flex-col gap-xs">
+            <li><a class="flex items-center gap-md px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+                <span class="material-symbols-outlined text-[18px]">settings</span> Settings
+            </a></li>
+            <li><a class="flex items-center gap-md px-md py-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+                <span class="material-symbols-outlined text-[18px]">help</span> Support
+            </a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- TopAppBar -->
+<header class="bg-surface/90 backdrop-blur-md fixed top-0 right-0 left-72 z-30 h-20 flex justify-between items-center px-xl border-b border-outline-variant/20 shadow-sm">
+    <div class="flex items-center gap-md">
+        <span class="font-headline-lg text-headline-lg text-primary" style="font-size:24px;">Timetable Overview</span>
+    </div>
+    <div class="flex items-center gap-md">
+
+        <button class="p-base text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-1 ml-72 pt-20 p-gutter min-h-screen overflow-x-hidden">
+    <!-- Controls Bar -->
+    <div class="flex justify-between items-center mb-lg">
+        <div class="flex gap-md items-center">
+            <div class="flex flex-col gap-xs">
+                <label id="tt-view-label" class="font-label-sm text-label-sm text-on-surface-variant uppercase">Section</label>
+                <select id="tt-view-select" class="bg-surface-container-low border border-outline-variant/50 rounded-full py-2 px-lg font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none shadow-inner">
+                </select>
+            </div>
+            <div class="h-8 w-px bg-outline-variant/30 mx-sm"></div>
+            <!-- View Toggle -->
+            <div class="glass-panel rounded-full px-xs py-xs flex items-center gap-0">
+                <button id="btn-section-view" class="px-lg py-sm rounded-full bg-secondary-container/30 text-on-secondary-container font-label-md text-label-md shadow-sm">Section View</button>
+                <button id="btn-teacher-view" class="px-lg py-sm rounded-full text-on-surface-variant hover:bg-surface-variant/50 font-label-md text-label-md transition-colors">Teacher View</button>
+            </div>
+        </div>
+        <div class="flex gap-md items-center">
+            <div class="flex items-center gap-sm">
+                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Valid</span>
+            </div>
+            <div class="flex items-center gap-sm">
+                <div class="w-3 h-3 rounded-full bg-error"></div>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Conflict</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timetable Grid -->
+    <div id="timetable-grid" class="glass-panel rounded-3xl overflow-hidden flex flex-col mb-lg">
+        <div class="grid grid-cols-[80px_repeat(5,1fr)] border-b border-outline-variant/30 bg-surface/50 backdrop-blur-md">
+            <div class="p-3 border-r border-outline-variant/20 flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant uppercase">Time</div>
+            <div class="p-3 border-r border-outline-variant/20 font-label-sm text-label-sm text-center text-on-surface uppercase">Monday</div>
+            <div class="p-3 border-r border-outline-variant/20 font-label-sm text-label-sm text-center text-on-surface uppercase">Tuesday</div>
+            <div class="p-3 border-r border-outline-variant/20 font-label-sm text-label-sm text-center text-on-surface uppercase">Wednesday</div>
+            <div class="p-3 border-r border-outline-variant/20 font-label-sm text-label-sm text-center text-on-surface uppercase">Thursday</div>
+            <div class="p-3 font-label-sm text-label-sm text-center text-on-surface uppercase">Friday</div>
+        </div>
+        <div class="flex-1 overflow-y-auto">
+            <div class="grid grid-cols-[80px_repeat(5,1fr)] min-h-full" id="timetable-body">
+                <!-- Dynamically populated by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Violations Panel -->
+    <div id="violations-panel" class="glass-panel rounded-2xl p-lg">
+        <h3 class="font-label-sm text-label-sm text-on-surface mb-md flex items-center gap-sm uppercase tracking-wider">
+            <span class="material-symbols-outlined text-error text-[18px]">warning</span>
+            Constraint Violations
+        </h3>
+        <div id="violations-list" class="flex flex-col gap-sm">
+            <!-- Dynamically populated -->
+        </div>
+    </div>
+</main>
+
+<!-- Toast Container -->
+<div id="toast-container" style="position:fixed;top:80px;right:24px;z-index:9999;"></div>
+
+<!-- Scripts -->
+<script src="../js/data.js?v=17"></script>
+<script src="../js/constraints.js?v=17"></script>
+<script src="../js/backtracker.js?v=17"></script>
+<script src="../js/export.js?v=17"></script>
+<script src="../js/app.js?v=17"></script>
+</body>
+</html>

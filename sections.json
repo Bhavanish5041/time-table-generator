@@ -1,0 +1,647 @@
+[ 
+  {
+    "id": "CI_1A",
+    "department": "AI",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CI_1B",
+    "department": "AI",
+    "year": 1,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CI_1C",
+    "department": "AI",
+    "year": 1,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "CI_2A",
+    "department": "AI",
+    "year": 2,
+    "section": "A",
+    "strength": 80
+  },
+  {
+    "id": "CI_2B",
+    "department": "AI",
+    "year": 2,
+    "section": "B",
+    "strength": 80
+  },
+  {
+    "id": "AI_3A",
+    "department": "AI",
+    "year": 3,
+    "section": "A",
+    "strength": 70
+  },
+  {
+    "id": "AI_3B",
+    "department": "AI",
+    "year": 3,
+    "section": "B",
+    "strength": 70
+  },
+  {
+    "id": "AI_4A",
+    "department": "AI",
+    "year": 4,
+    "section": "A",
+    "strength": 80
+  },
+  {
+    "id": "CS_1A",
+    "department": "CS",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CS_1B",
+    "department": "CS",
+    "year": 1,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CS_1C",
+    "department": "CS",
+    "year": 1,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "CS_1D",
+    "department": "CS",
+    "year": 1,
+    "section": "D",
+    "strength": 75
+  },
+  {
+    "id": "CS_1E",
+    "department": "CS",
+    "year": 1,
+    "section": "E",
+    "strength": 75
+  },
+  {
+    "id": "CS_1F",
+    "department": "CS",
+    "year": 1,
+    "section": "F",
+    "strength": 75
+  },
+  {
+    "id": "CS_2A",
+    "department": "CS",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CS_2B",
+    "department": "CS",
+    "year": 2,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CS_2C",
+    "department": "CS",
+    "year": 2,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "CS_2D",
+    "department": "CS",
+    "year": 2,
+    "section": "D",
+    "strength": 75
+  },
+  {
+    "id": "CS_2E",
+    "department": "CS",
+    "year": 2,
+    "section": "E",
+    "strength": 75
+  },
+  {
+    "id": "CS_3A",
+    "department": "CS",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CS_3B",
+    "department": "CS",
+    "year": 3,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CS_3C",
+    "department": "CS",
+    "year": 3,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "CS_3D",
+    "department": "CS",
+    "year": 3,
+    "section": "D",
+    "strength": 75
+  },
+  {
+    "id": "CS_3E",
+    "department": "CS",
+    "year": 3,
+    "section": "E",
+    "strength": 75
+  },
+  {
+    "id": "CS_4A",
+    "department": "CS",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CS_4B",
+    "department": "CS",
+    "year": 4,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CS_4C",
+    "department": "CS",
+    "year": 4,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "EC_1A",
+    "department": "EC",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EC_1B",
+    "department": "EC",
+    "year": 1,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "EC_1C",
+    "department": "EC",
+    "year": 1,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "EC_1D",
+    "department": "EC",
+    "year": 1,
+    "section": "D",
+    "strength": 75
+  },
+  {
+    "id": "EC_2A",
+    "department": "EC",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EC_2B",
+    "department": "EC",
+    "year": 2,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "EC_2C",
+    "department": "EC",
+    "year": 2,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "EC_2D",
+    "department": "EC",
+    "year": 2,
+    "section": "D",
+    "strength": 75
+  },
+  {
+    "id": "EC_3A",
+    "department": "EC",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EC_3B",
+    "department": "EC",
+    "year": 3,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "EC_3C",
+    "department": "EC",
+    "year": 3,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "EC_3D",
+    "department": "EC",
+    "year": 3,
+    "section": "D",
+    "strength": 75
+  },
+  {
+    "id": "EC_4A",
+    "department": "EC",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EC_4B",
+    "department": "EC",
+    "year": 4,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "EC_4C",
+    "department": "EC",
+    "year": 4,
+    "section": "C",
+    "strength": 75
+  },
+  {
+    "id": "ME_1A",
+    "department": "ME",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ME_1B",
+    "department": "ME",
+    "year": 1,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "ME_2A",
+    "department": "ME",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ME_2B",
+    "department": "ME",
+    "year": 2,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "ME_3A",
+    "department": "ME",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ME_3B",
+    "department": "ME",
+    "year": 3,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "ME_4A",
+    "department": "ME",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ME_4B",
+    "department": "ME",
+    "year": 4,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "CE_1A",
+    "department": "CE",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CE_2A",
+    "department": "CE",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CE_3A",
+    "department": "CE",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CE_4A",
+    "department": "CE",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CE_4B",
+    "department": "CE",
+    "year": 4,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "EE_1A",
+    "department": "EE",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EE_2A",
+    "department": "EE",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EE_3A",
+    "department": "EE",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "EE_4A",
+    "department": "EE",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "BT_1A",
+    "department": "BT",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "BT_2A",
+    "department": "BT",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "BT_3A",
+    "department": "BT",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "BT_4A",
+    "department": "BT",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CH_1A",
+    "department": "CH",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CH_2A",
+    "department": "CH",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CH_3A",
+    "department": "CH",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CH_4A",
+    "department": "CH",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "AS_1A",
+    "department": "AS",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "AS_2A",
+    "department": "AS",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "AS_3A",
+    "department": "AS",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "AS_4A",
+    "department": "AS",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CD_1A",
+    "department": "CD",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CD_2A",
+    "department": "CD",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CD_3A",
+    "department": "CD",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CD_4A",
+    "department": "CD",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CY_1A",
+    "department": "CY",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CY_2A",
+    "department": "CY",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CY_3A",
+    "department": "CY",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "CY_4A",
+    "department": "CY",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IS_2A",
+    "department": "IS",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IS_2B",
+    "department": "IS",
+    "year": 2,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "IS_3A",
+    "department": "IS",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IS_3B",
+    "department": "IS",
+    "year": 3,
+    "section": "B",
+    "strength": 75
+  },
+  {
+    "id": "IS_4A",
+    "department": "IS",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ET_1A",
+    "department": "ET",
+    "year": 1,
+    "section": "A",
+    "strength": 75  
+  },
+  {
+    "id": "ET_2A",
+    "department": "ET",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ET_3A",
+    "department": "ET",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "ET_4A",
+    "department": "ET",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IM_1A",
+    "department": "IM",
+    "year": 1,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IM_2A",
+    "department": "IM",
+    "year": 2,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IM_3A",
+    "department": "IM",
+    "year": 3,
+    "section": "A",
+    "strength": 75
+  },
+  {
+    "id": "IM_4A",
+    "department": "IM",
+    "year": 4,
+    "section": "A",
+    "strength": 75
+   }
+
+]

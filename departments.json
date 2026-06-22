@@ -1,0 +1,21 @@
+[
+  { "id": "AI", "name": "Artificial Intelligence & Machine Learning" },
+  { "id": "CS", "name": "Computer Science & Engineering" },
+  { "id": "EC", "name": "Electronics & Communication Engineering" },
+  { "id": "ME", "name": "Mechanical Engineering" },
+  { "id": "CE", "name": "Civil Engineering" },
+  { "id": "EE", "name": "Electrical and Electronics Engineering" },
+  { "id": "BT", "name": "Biotechnology" },
+  { "id": "CH", "name": "Chemical Engineering" },
+  { "id": "AS", "name": "Aerospace Engineering" },
+  { "id": "CD", "name": "Computer Science & Engineering (Data Science)" },
+  { "id": "CY", "name": "Computer Science & Engineering (Cyber Security)" },
+  { "id": "IS", "name": "Information Science & Engineering" },
+  { "id": "ET", "name": "Electronics & Telecommunication Engineering" },
+  { "id": "IM", "name": "Industrial Engineering & Management" },
+  { "id": "EI", "name": "Electronics and Instrumentation Engineering"},
+  { "id": "MAT", "name": "Mathematics" },
+  { "id": "PHY", "name": "Physics" },
+  { "id": "CHE", "name": "Chemistry" },
+  { "id": "HSS", "name": "Humanities and Social Sciences" }
+]

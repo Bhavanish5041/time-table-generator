@@ -1,0 +1,2661 @@
+[
+ {
+    "name": "Dr.G JAYALATHA",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA221TC","MAT231TC"
+    ]
+  }, 
+  {
+    "name": "DR.HEMALATHA J N",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EE235AT"
+    ]
+  },
+  {
+    "name": "DR. RACHANA AKKI",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EE233AT", "AS363IA"
+    ]
+  },
+ {
+    "name": "Dr.SOWMYA M",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MAT231ET", "MA241TA"
+    ]
+  },   
+  {
+    "name": "DR.M UTTARAKUMARI",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC244AI", "EC353IA"
+    ]
+  }, 
+  
+  {
+    
+    "name": "DR.SUPREETH R",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS343AI", "HS271TA"
+    ]
+  },
+{
+    
+    "name": "Dr.SAVITHRI SHASHIDHAR",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TB","MA221TB","MA221TA","CY373TA"
+    ]
+  },
+    {
+    
+    "name": "Dr.NEETI GHIYA",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TB", "MAT231AT", "MA241AT"
+    ]
+  },
+  {
+    
+    "name": "DR.NEETASHIVAKUMAR",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT354TA"
+    ]
+  },
+  {
+    
+    "name": "SMT.NEETA B MAVI",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC235AT", "EC345AT"
+    ]
+  },
+  {
+    
+    "name": "Dr.P L RAJASHEKHAR",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA221TC", "MA231TB"
+    ]
+  },
+    {
+
+    "name": "Dr.NIVYA MUCHIKEL",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TB","MA221TB","MAT231TC", "MA231CT"
+    ]
+  },
+  {
+    
+    "name": "DR.SURESHA C",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EI343AI"
+    ]
+  },
+      {
+  
+    "name": "Dr.SUMA N MANJUNATH",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TB","MA221TC","MAT231TC"
+    ]
+  },
+      {
+
+    "name": "Dr.A SUJATHA",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TB","MA221TB", "MA149AT"
+    ]
+  },
+  {
+    
+    "name": "DR.SUJATHA S HIREMATH",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC373TA"
+    ]
+  },
+      {
+    
+    "name": "Dr.VYSHNAVI D",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TA","MA221TB","MA149AT"
+    ]
+  },
+      {
+    
+    "name": "Dr.KIRTHIGA M",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TA","CS241AT","MA149AT", "MA231TB"
+    ]
+  },
+      {
+    
+    "name": "Dr.Y SAILAJA",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TA","MA221TB", "MAT231AT"
+    ]
+  },
+      {
+    
+    "name": "Dr.VIDYA PATIL",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TA","MA221TA", "MA231TB"
+    ]
+  },
+  {
+    
+    "name": "Dr.VIDYA C",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH234AI", "CH345AT"
+    ]
+  },
+      {
+    
+    "name": "Dr.RAVI K M",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TD","MA221TA", "MA232AT"
+    ]
+  },
+  {
+  
+    "name": "Dr.H V RAVISH ARADHYA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC234AI"
+    ]
+  }, 
+  {
+    
+    "name": "DR.RAVISHANKAR HOLLA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EI243AI", "EC241AT"
+    ]
+  },  
+  {
+    
+    "name": "Dr.SATISH V M",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC", "MAT241TA"
+    ]
+  },
+   {
+    
+    "name": "Dr.PRASANNA KUMAR T",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","MAT231ET","CS241AT"
+    ]
+  },
+     {
+
+    "name": "Dr.C NANDEESH KUMAR",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","MA221TC"
+    ]
+  },
+  {
+    
+    "name": "DR.VENUGOPAL K",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA241TA"
+    ]
+  },
+  {
+  
+    "name": "DR.VENUGOPAL G",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV372IA", "CV247DL"
+    ]
+  },
+     {
+    
+    "name": "Dr.PRAKASH R",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","MA221TD","MA221TC"
+    ]
+  },
+     {
+    
+    "name": "Dr.HEMANTHKUMAR B",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","CS241AT","MA231DT"
+    ]
+  },
+     {
+    
+    "name": "Dr.NIRANJAN P K",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","MA221TC","MAT231TC"
+    ]
+  },
+   {
+    
+    "name": "Dr.SAKSHATH T N",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","CS241AT", "MA231TB"
+    ]
+  },
+  {
+    
+    "name": "Dr. V ANANTHRAM",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV233AI", "CV244AI"
+    ]
+  },
+  {
+    
+    "name": "Dr.RADHAKRISHNA",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV234AI"
+    ]
+  },
+
+  {
+    
+    "name": "Dr.RAJALAKSHMI MUDBIDRE",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH235AT", "HS248AT", "CH343AI", "HS271TA"
+    ]
+  },
+   {
+    
+    "name": "Dr.KIRAN KUMAR D L",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC", "MAT231TC", "MA231CT", "MA241TA"
+    ]
+  },
+      {
+    
+    "name": "DR.KIRAN V",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC363IA"
+    ]
+  },
+   {
+    
+    "name": "Dr.HARISH M",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","MA221TC"
+    ]
+  },
+   {
+    
+    "name": "Dr.SUMAN N P",
+    "department": "MAT",
+    "max_classes": 3,
+    "can_teach": [
+      "MA211TC","MA221TC", "MA232AT"
+    ]
+  },
+  {
+    
+    "name": "DR.R J BASAVARAJ",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH247DL", "CH354TA"
+    ]
+  },
+    {
+  
+    "name": "Dr.MANJUNATHA C ",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IB"
+    ]
+  },
+  {
+    
+    "name": "DR.SHAMBULINGA M",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "ET345AT", "ET247DL"
+    ]
+  },
+  {
+    
+    "name": "Dr.SHAM AAN M P",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IC"
+    ]
+  },
+     {
+    "name": "Dr.SRIDHARAN M",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IB"
+    ]
+  },
+     {
+  
+    "name": "Dr.VISHNUMURTHY K A",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IB"
+    ]
+  },
+     {
+    
+    "name": "Dr.RADHA N",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IC"
+    ]
+  },
+    {
+    
+    "name": "Dr.SWETHA S M",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IB"
+    ]
+  },
+  {
+  
+    "name": "Dr.RITA H S",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IC"
+    ]
+  },
+  {
+    
+    "name": "Dr.GIRISH KUMAR S",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IB"
+    ]
+  },
+  {
+    
+    "name": "DR.KUMARASWAMY",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS345AT"
+    ]
+  },
+  {
+    
+    "name": "DR.H V KUMARASWAMY",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "ET235AT"
+    ]
+  },
+  {
+    
+    "name": "Dr.DIVAKARA S G",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IB"
+    ]
+  },
+  {
+    
+    "name": "Dr.SWARNA M PATRA",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IC"
+    ]
+  },
+  {
+    
+    "name": "Dr.RAVIRAJ KUSANUR",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221ID"
+    ]
+  },
+  {
+    
+    "name": "DR.MAHESH A",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC241AT", "EC345AT", "EC353IA", "EC367P"
+    ]
+  },
+  {
+  
+    "name": "Dr.MAHESH R",
+    "department": "CHE",
+    "max_classes": 3,
+    "can_teach": [
+      "CM211IA","CM221IC", "HS125YL"
+    ]
+  },
+  {
+    
+    "name": "Dr.GIRISH KUMAR R ",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","ME121DL", "HS261TA"
+    ]
+  },
+  {
+    
+    "name": "Dr.KIRTHAN L J ",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME121DL", "ME233AI", "ME363IA"
+    ]
+  },
+  {
+    
+    "name": "DR.ROOPA J",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC234AI", "EI243AI", "EC367P"
+    ]
+  },
+  {
+    
+    "name": "DR.ROJAREDDY B",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "EI243AI", "ET373IA"
+    ]
+  },
+   {
+    
+    "name": "Dr.ROOPA T S",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","ME121DL"
+    ]
+  },
+     {
+    
+    "name": "Dr.SHANMUKHA N",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME354TA"
+    ]
+  },
+  {
+    
+    "name": "PROF. MUKESH M",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS233AI","AS362IA"
+    ]
+  },
+  {
+    
+    "name": "DR.VINUTHA MOSES",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH352IA", "CH364TA", "CH367P"
+    ]
+  },
+  {
+    
+    "name": "DR. RAVINDRA S KULKARNI",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS234AI"
+    ]
+  },
+   {
+    
+    "name": "Dr.HARISHA S K",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","ME121DL"
+    ]
+  },
+     {
+    
+    "name": "Dr.VENKATESH P R",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "HS248AT", "ME353IA"
+    ]
+  },
+     {
+    
+    "name": "Dr.ANUPAMA V JOSHI",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH362IA"
+    ]
+  },
+     {
+    
+    "name": "Dr.UJWAL SHREENAG MEDA",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH363IA"
+    ]
+  },
+
+     {
+    
+    "name": "MR.GAJANAN",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME112TA","ME122GL", "HS125YL", "ME234AI", "ME244AI"
+    ]
+  },
+     {
+    
+    "name": "Dr.ANJANEYA G",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME121DL", "ME353IA"
+    ]
+  },
+     {
+    
+    "name": "Dr.RAJKUMAR G R",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "HS251TA"
+    ]
+  },
+   {
+    
+    "name": "Dr.JINKA RANGANAYAKALU",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","ME121DL"
+    ]
+  },
+  {
+    
+    "name": "DR.RANGANATH D",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "HS351TA", "HS261TA"
+    ]
+  },
+   {
+    
+    "name": "Dr.KESHAV M",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","CI114AT","ME122GL","HS125YL", "ME252IA", "ME364TA"
+    ]
+  },
+  {
+    
+    "name": "Dr.BHARATISH A",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME364TA", "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "DR.RAMAA A",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "IM241AT", "IM247DL", "IM235AT"
+    ]
+  },
+  {
+    
+    "name": "Dr.RAMAKRISHNA HEGDE",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME245AI", "ME367P"
+    ]
+  },
+  {
+    
+    "name": "DR.KRISHNA M",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME363IA"
+    ]
+  },
+  {
+    
+    "name": "Dr.GANGADHARA ANGADI",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","HS125YL","ME121DL", "HS251TA", "ME367P"
+    ]
+  },
+  {
+    
+    "name": "Dr.MAHANTESH M MATH",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","ME121DL", "ME273TA"
+    ]
+  },
+  {
+    
+    "name": "DR.MAHALAKSHMI M N",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "ET364TA"
+    ]
+  },
+  {
+    
+    "name": "Dr.CHANDRAKUMAR R",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME112TA","ME122GL","ME121DL"
+    ]
+  },
+  {
+    "name": "Dr.KESHAVAMURTHY Y C",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME112TA","ME122GL","ME121DL", "ME235AI", "ME245AI", "ME247DL"
+    ]
+  },
+  {
+    
+    "name": "Dr.RAKESH KUMAR",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","CI114AT","ME122GL","ME121DL", "ME234AI", "ME244AI"
+    ]
+  },
+  {
+    
+    "name": "Dr.GIRISH V A",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","ME121DL", "ME235AI", "HS351TA", "ME367P"
+    ]
+  },
+  {
+    
+    "name": "Dr.NAGESH S",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME252IA"
+    ]
+  },
+  {
+    
+    "name": "Dr.RATNA PAL",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL", "ME247DL"
+    ]
+  },
+  {
+    
+    "name": "Dr.PRAPUL CHANDRA A C",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME112TA","ME122GL","ME121DL"
+    ]
+  },
+  {
+    
+    "name": "Dr.SRIHARI P V",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","HS121EL", "ME243AT", "ME273TA", "ME372IA"
+    ]
+  },
+   {
+    
+    "name": "PROF. MITHUN TP",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL", "EI233AI", "HS261TA"
+    ]
+  },
+    {
+    
+    "name": "Dr.NANJUNDARADHYA N V",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112TA","HS124TC", "ME362IA", "ME372IA"
+    ]
+  },
+      {
+    
+    "name": "Dr.SUJAN CHAKRABORTY",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME112GL","ME122GL","HS121EL", "ME354TA", "ME362IA", "ME372IA"
+    ]
+  },
+  {
+    
+    "name": "DR.S SRINIVASAN",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS255TBD", "AS372IA"
+    ]
+  },
+       {
+    
+    "name": "Dr.SOURABHA SRINIVASA HAVALDAR",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL", "HS248AT", "HS351TA", "HS261TA", "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "DR.ABHILASH KRISHNA",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EE362IA", "EE373TA"
+    ]
+  },
+     {
+    
+    "name": "Mr.SHIVAPRAKASH B G",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL","ME121DL", "HS351TA", "EC372IA"
+    ]
+  },
+       {
+    
+    "name": "Mr.JAGANNATHA GUPTHA V L",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME121DL", "ME233AI", "ME243AT"
+    ]
+  },
+  {
+    
+    "name": "DR.JAGADISH H PATIL",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CH373IA"
+    ]
+  },
+  {
+    
+    "name": "Dr.SRIDHAR R",
+    "department": "ME",
+    "max_classes": 3,
+    "can_teach": [
+      "ME121DL"
+    ]
+  },
+    {
+    "name": "Dr.B M RAJESH",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IB","PY221IC"
+    ]
+  },
+  {
+    
+    "name": "DR.ANALA M R",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS354TA", "CS363IA"
+    ]
+  },
+  {
+    "name": "Dr.NIRANJANA K M",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IB","PY221IC"
+    ]
+  },
+  {
+  
+    "name": "Dr.D N AVADHANI",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IB","PY221IC"
+    ]
+  },
+  {
+  
+    "name": "Dr.TRIBIKRAM GUPTA",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IB","PY221IC"
+    ]
+  },
+  {
+  
+    "name": "Dr.DILEEP M S",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IB","PY221IC"
+    ]
+  },
+  {
+  
+    "name": "Dr.T BHUVANESWARA BABU",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IA"
+    ]
+  },
+    {
+  
+    "name": "Dr.SUDHA KAMATH M K",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IA","PY221IC"
+    ]
+  },
+    {
+  
+    "name": "Dr.RINI GANGULY",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IA","PY221IC"
+    ]
+  },
+    {
+    "name": "Dr.KAVYA NAYAK",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IA","PY221IC"
+    ]
+  },
+    {
+
+    "name": "Dr.SHIREESHA G",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IA","PY221IC"
+    ]
+  },
+    {
+
+    "name": "Dr.SHUBHA S",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211IE","PY221IC"
+    ]
+  },
+    {
+    "name": "Dr.SHWETHA K P",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY211ID","PY221IC"
+    ]
+  },
+     {
+  
+    "name": "Dr.RAMYA P",
+    "department": "PHY",
+    "max_classes": 3,
+    "can_teach": [
+      "PY221IC"
+    ]
+  },
+   {
+    
+    "name": "Dr.SHYLASHREE N",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC112TA"
+    ]
+  },
+     {
+    
+    "name": "SMT.SHWETHA BALIGA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC112TA"
+    ]
+  },
+     {
+    
+    "name": "Dr.K S GEETHA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC112TA"
+    ]
+  },
+     {
+    
+    "name": "SMT.R SINDHU RAJENDRAN",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC112TA"
+    ]
+  },
+     {
+    
+    "name": "Dr.SABA FARHEEN N S",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC112TA", "EC367P"
+    ]
+  },
+     {
+    
+    "name": "SMT.ANUSHA L S",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC112TA", "HS125YL", "EC367P"
+    ]
+  },
+  {
+    
+    "name": "DR.NARENDRA KUMAR S",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT352IA", "BT363IA"
+    ]
+  },
+   {
+    
+    "name": "SRI. P NARASHIMARAJA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL", "EC352IA", "EC367P"
+    ]
+  },
+  {
+    
+    "name": "DR.RAJA VIDYA",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EC234AT", "EE364TA", "HS271TA"
+    ]
+  },
+   {
+    
+    "name": "Dr.DEEPASHREE DEVARAJ",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "HS351TA", "HS261TA"
+    ]
+  },
+   {
+    
+    "name": "SMT.PRATIBHA K",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "EC367P", "EC363IA"
+    ]
+  },
+   {
+    
+    "name": "Dr.ABHAY DESHPANDE",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "HS121EL", "EC233AI", "EC364TA"
+    ]
+  },
+     {
+    
+    "name": "Dr.RAJANI KATIYAR",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "EC241AT", "EC353IA", "EC364TA"
+    ]
+  },
+  {
+    
+    "name": "DR.B V UMA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC234AI", "HS248AT", "EC247DL"
+    ]
+  },
+   {
+    
+    "name": "Dr.RAJITH KUMAR B K",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","HS124TC", "HS125YL", "HS248AT", "EC247DL", "HS351TA", "EC354TA"
+    ]
+  },
+  {
+    
+    "name": "DR.ADINATHA",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS251TA", "EE372IA"
+    ]
+  },
+  {
+    
+    "name": "DR.B S KARIYAPPA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC352IA"
+    ]
+  },
+  {
+    
+    "name": "DR.KARTHIK VEL E",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS373TA"
+    ]
+  },
+     {
+    
+    "name": "Dr.ROHINI S HALLIKAR",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS124TC", "HS261TA", "HS271TA"
+    ]
+  },
+     {
+    
+    "name": "PROF.DEEPIKA P",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL", "EC234AI", "EC362IA"
+    ]
+  },
+  {
+    
+    "name": "DR.VEENADEVI S V",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC235AT", "EC244AI", "EC364TA"
+    ]
+  },
+  {
+    
+    "name": "DR.VEENADIVYA KRISHNAPPA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT", "HS351TA", "HS261TA", "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "RAVI M S",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL"
+    ]
+  },
+      {
+    
+    "name": "DR.PRAVEEN S",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC362IA"
+    ]
+  },
+      {
+    
+    "name": "SMT.SUJATA PRIYAMBADA MISHRA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL", "EC235AT", "EC364TA"
+    ]
+  },
+      {
+    
+    "name": "Dr.CHETHANA G",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL", "EC233AI", "HS248AT", "EC247DL"
+    ]
+  },
+        {
+    
+    "name": "SMT.SUJATHA D BEDIGAR",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "CS234AI", "EC234AI", "EC363IA"
+    ]
+  },
+  {
+    
+    "name": "DR.PARTH SARATHI P",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EE254TA", "EE363IA"
+    ]
+  },
+  {
+    
+    "name": "DR.SUNANDA C",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "ET345AT", "EE247DL", "EE352IA", "EE367P"
+    ]
+  },
+     {
+    
+    "name": "Dr.MADHU B R",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "EE112TA", "EE244AI", "EE353IA", "EE367P"
+    ]
+  },
+       {
+    
+    "name": "Dr.SUSHMITA SARKAR",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "HS121EL"
+    ]
+  },
+  {
+    
+    "name": "DR.SHILPA D R",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC352IA"
+    ]
+  },
+  {
+    
+    "name": "PROF.SHASHIKIRAN C R",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT","HS271TA", "HS125YL", "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "Mr. PARASHIVA MURTHY J M",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL"
+    ]
+  },
+  {
+    
+    "name": "DR.AJAY K M",
+    "department": "EE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT"
+    ]
+  },
+  {
+    
+    "name": "Dr.S NETHRAVATHI",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV112TA", "CV363IA"
+    ]
+  },
+  {
+    
+    "name": "DR.K A NETHRAVATHI",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC372IA"
+    ]
+  },
+     {
+    
+    "name": "Dr.GAJALAKSHMI",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT","HS125YL"
+    ]
+  },
+   
+   {
+    
+    "name": "PROF.ASHWIN T K",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL","HS248AT","HS271TA"
+    ]
+  },
+  {
+    
+    "name": "DR.H RAJU",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT"
+    ]
+  },
+  
+     {
+    
+    "name": "Dr.K MADHAVI",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT", "CV235AI", "CV364TA", "HS271TA"
+    ]
+  },
+       {
+    
+    "name": "PROF.RAVIKIRAN S WALI",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT","HS271TA", "HS125YL", "HS251TA", "HS261TA"
+    ]
+  },
+      {
+    
+    "name": "DR.A R VINOD",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV362IA"
+    ]
+  },
+   {
+    
+    "name": "DR.VIKAS M",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV345AT"
+    ]
+  },
+  {
+    
+    "name": "DR.SHANTHI P",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "ET354TA", "ET362IA"
+    ]
+  },
+  {
+    
+    "name": "DR.DURGA PRASHANTH L",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT", "CV353IA"
+    ]
+  },
+  {
+    
+    "name": "Dr. USHA PADMA",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "HS124TC", "HS351TA", "ET363IA", "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "DR.PADMAJA K V",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "DR.K R USHA RANI",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC235AT", "EC244AI"
+    ]
+  },
+   {
+    
+    "name": "Dr. PRAVEEN KUMAR GUPTA",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL", "HS124TC"
+    ]
+  },
+  {
+    
+    "name": "DR.K PRAVEEN KUMAR",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV373TA"
+    ]
+  },
+  {
+    
+    "name": "DR.AJEET KUMAR",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT241AT"
+    ]
+  },
+  {
+    
+    "name": "DR.RAJESWARA RAO",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "IM233AI", "IM247DL"
+    ]
+  },
+  {
+    
+    "name": "Dr. M RAJESHWARI",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT234AI", "BT362IA"
+    ]
+  },
+  {
+    
+    "name": "DR.SHOBHA N S",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "IM244AI", "IM352IA", "HS261TA", "IM367P"
+    ]
+  },
+  {
+    
+    "name": "Dr. H G ASHOK KUMAR",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT233AI"
+    ]
+  },
+  {
+    
+    "name": "DR.M GOVINDA RAJU",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC244AI", "EC354TA"
+    ]
+  },
+  {
+    
+    
+    "name": "Dr. BHAGYA R",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "HS125YL", "HS248AT", "ET352IA", "ET372IA"
+    ]
+  },
+         {
+    
+    "name": "PROF.GOWTHAM PRASAD M E",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT", "HS121EL", "CV343AI", "CV354TA", "CV365TDE"
+    ]
+  },
+  {
+    
+    "name": "Dr. VARUNA M",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL"
+    ]
+  },
+           {
+    
+    "name": "Dr.SHRITHI S BADAMI",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS361TA", "HS124TC", "HS351TA"
+    ]
+  },
+             {
+    
+    "name": "Dr.VAGEESH H P",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS271TA", "CV367P", "CV372IA"
+    ]
+  },
+               {
+    
+    "name": "Dr.RAMTHILAK",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS271TA", "CV367P", "HS271TA"
+    ]
+  },
+       {
+    
+    "name": "Dr.NAGENDRA NN",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT"
+    ]
+  },
+  {
+    
+    "name": "DR.C K NAGENDRA GUPTA",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "IM362IA", "IM373TA"
+    ]
+  },
+         {
+    
+    "name": "Dr.RANJANI G",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS234AT"
+    ]
+  },
+ {
+    "name": "Dr.VIKRAM N BAHADURDESAI",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "ME121DL","HS361TA","HS251TA", "IM345AT"
+    ]
+  },  
+  {
+  
+    "name": "Dr.VIVEKANAND S GOGI",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "ME121DL","CD373TA", "CD373TA"
+    ]
+  },  
+  {
+  
+    "name": "PROF.BHASKAR M G",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT","HS121EL", "IM247DL", "IM254TA"
+    ]
+  },
+  {
+    
+    "name": "DR.BHASKAR K",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS252IA", "AS362IA"
+    ]
+  },
+    {
+  
+    "name": "PROF.NANDINI B",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","HS125YL","HS361TA","HS251TA", "IM235AT", "IM364TA"
+    ]
+  },
+{
+    
+    "name": "Dr.CHITRA B T",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS124TC","HS361TA", "HS351TA"
+    ]
+  },
+    {
+    
+    "name": "Mrs.LALITHAMMA",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS122KS_HS123KB"
+    ]
+  },
+  {
+    
+    "name": "Mrs. S VANI SHREE",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS122KS_HS123KB"
+    ]
+  },
+             {
+    
+    "name": "Mrs.LAKSHMI R K",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS122KS_HS123KB"
+    ]
+  },
+               {
+    
+    "name": "PROF.SHRUTHI M N",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS361TA", "IM234AI", "IM343AI", "HS271TA"
+    ]
+  },
+                 {
+    
+    "name": "Dr.VIJAYKUMAR M N",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS361TA", "ME121DL", "IM353IA", "HS261TA"
+    ]
+  },
+  {
+    
+    "name": "Dr.G VIJAY KUMAR",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT235AI"
+    ]
+  },
+   {
+    
+    "name": "Dr.VINOD KALLUR",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "CH344AI", "CH353IA"
+    ]
+  },
+     {
+    
+    "name": "Dr.MANJULA SARODE",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL"
+    ]
+  },
+   {
+    
+    "name": "Dr.P L MURALIDHARA",
+    "department": "CH",
+    "max_classes": 3,
+    "can_teach": [
+      "HS124TC", "CH233AI", "CH372IA"
+    ]
+  },
+   {
+  
+    "name": "Dr.BENJAMIN ROHIT ",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI114AT", "AS235AT", "AS244AI"
+    ]
+  },
+  {
+    
+    "name": "DR.PROMIO CHARLES",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT", "AS253IA", "AS364TA", "AS367P"
+    ]
+  },
+    {
+    
+    "name": "Mr.PRANESH KUMAR S R",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","HS124TC", "AS247DL", "AS255TBA"
+    ]
+  },
+    {
+    
+    "name": "PROF.ANUPAMA KUMAR",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+    "AI363IA","CD343AI","AI372IA","AI481P", "CI237DL", "HS248AT", "AI254TA"
+    ]
+  }, 
+  {
+    
+    "name": "PROF.NARASIMHA SWAMY S",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "AI362IA","CY245AT","AI255TBA","AI373TA"
+    ]
+  },
+  {
+    
+    "name": "DR.N S NARAHARI",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "IM363IA", "IM372IA"
+    ]
+  }, 
+  {
+    
+    "name": "DR.JAYANTHI P N",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC241AT", "EC353IA"
+    ]
+  },
+  {
+    
+    "name": "PROF.VIJAYALAKSHMI M N",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "CI237DL","AI363IA","HS248AT","CD252IA","AI481P", "AI374TFB"
+    ]
+  }, 
+  {
+    
+    "name": "PROF.SHREYA B T",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT"
+    ]
+  },
+  {
+    
+    "name": "PROF.SOMESH NANDI",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "AI234AI","AI365TDD","AI253IA","AI481P"
+    ]
+  },    
+  {
+    
+    "name": "PROF.ARULALAN RAJAN",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "CI235AT","AI255TBC"
+    ]
+  },  
+  {
+    
+    "name": "PROF.RUSHIKESH P",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","HS121EL","IS233AI","AI364TA","AI481P"
+    ]
+  },
+     {
+    
+    "name": "PROF.HARSHITHA V",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","AI364TA","AI362IA","CD252IA","AI481P"
+    ]
+  },
+  {
+    
+    "name": "DR.HARSHA H",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC354TA"
+    ]
+  },
+  {
+    
+    "name": "PROF.SWETHA S",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL", "CS139AT"
+    ]
+  },
+       {
+    
+    "name": "DR.K VISHWAVARDHAN REDDY",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","AI234AI","AI244AI","AI481P", "AI253IA"
+    ]
+  },
+       {
+    
+    "name": "PROF.MANASA M",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","AI363IA","AI244AI","AI254TA","AI481P"
+    ]
+  },
+  {
+    
+    "name": "DR.DEEPAK BANA",
+    "department": "AS",
+    "max_classes": 3,
+    "can_teach": [
+      "AS254IA"
+    ]
+  },
+         {
+    
+    "name": "Dr.DEEPAMALA N",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","IS233AI","CY245AT","IS355TBC", "PLACEMENTS"
+    ]
+  },
+       {
+    
+    "name": "PROF.RAJESH R M",
+    "department": "AI",
+    "max_classes": 3,
+    "can_teach": [
+      "IS233AI","CD343AI","AI367P","AI365TDD","AI481P"
+    ]
+  },
+  {
+    
+    "name": "DR.RAMAVENKATESHWARAM",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC345AT", "EC247DL"
+    ]
+  },
+    {
+    
+    "name": "Dr.RAMAKANTH KUMAR P",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+     "IS355TBD", "CS367P"
+    ]
+  },
+          {
+    
+    "name": "Dr.SUMA B",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS233AI", "CS237DL", "IS353IA","CS363IA", "CD343AI"
+    ]
+  }, 
+  {
+    
+    "name": "PROF.KALA CHANDRASHEKAR",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+     "CD343AI","HS251TA"
+    ]
+  }, 
+  {
+    
+    "name": "DR.NAGASHREE N RAO",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT353AI", "BT364IA"
+    ]
+  },
+  {
+    
+    "name": "DR.M S NAGAKUMAR",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "HS271TA"
+    ]
+  },
+  {
+    
+    "name": "DR.P NAGARAJU",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "ET244AI", "ET353IA", "ET367P"
+    ]
+  },
+{
+    
+    "name": "Dr.G S NAGARAJA",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "ME121DL","CY245AT","IS355TBD"
+    ]
+  },  
+  {
+    
+    "name": "DR.SOWMYARANI C N",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CY245AT","CD252IA","CS362IA","CY374TFAB", "HS121EL"
+    ]
+  }, 
+  {
+    
+    "name": "DR.SOWMYA NAG K",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC244AI","EC233AI"
+    ]
+  },  
+  {
+    
+    "name": "DR.PRATIBA D",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS237DL","CD252IA", "CS367P"
+    ]
+  },      
+  {
+    
+    "name": "Dr.SRIVIDYA M S",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS237DL","CS344AI","CS373IA", "CS367P"
+    ]
+  }, 
+  {
+    
+    "name": "Dr.SRIVIDYA P",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC233AI", "EC362IA", "EC373TA"
+    ]
+  },   
+      {
+    
+    "name": "Dr.MOHANA",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS234AI","CS237DL","CS344AI","CS355TBE"
+    ]
+  },  
+  {
+    
+    "name": "Dr.SNEHA M",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS237DL","CD252IA","CS363IA","CS374TFE", "CS362IA"
+    ]
+  },   
+  {
+    
+    "name": "Dr.BADARI NATH K",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS234AI","CS237DL","CS344AI"
+    ]
+  },   
+  {
+    
+    "name": "PROF.DEEPIKA DASH",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS234AI","IS355TBD","CS363IA","CS481P"
+    ]
+  },          
+  {
+    
+    "name": "DR.ANITHA SANDEEP",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS233AI","CD343AI","CS241AT","CS354TA"
+    ]
+  }, 
+  {
+    
+    "name": "PROF.GANASHREE K C",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","IS233AI","CD343AI"
+    ]
+  },
+  
+  {
+    
+    "name": "Dr.KARANAM SUNIL KUMAR",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","IS233AI","CD343AI","CD252IA"
+    ]
+  },
+  {
+    
+    "name": "DR.SUNIL S",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV373TA"
+    ]
+  },
+  {
+    
+    "name": "PROF SANJANA R O",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","IS364TA"
+    ]
+  },       
+  {
+    
+    "name": "PROF.DEEPTHI L",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","CY245AT","CS354TA"
+    ]
+  },
+  {
+    
+    "name": "PROF.APOORVA UDAYKUMAR CHATE",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","HS251TA"
+    ]
+  },
+  {
+    
+    "name": "DR.JYOTI SHETTY",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA", "CS237DL", "CD362IA", "AI372IA"
+    ]
+  },
+       {
+    
+    "name": "PROF.SAHANA D SHEJWADKAR",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","IS364TA"
+    ]
+  },    
+       {
+    
+    "name": "Dr.PRAVEENA T",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","CS139AT","CY245AT"
+    ]
+  },
+         {
+    
+    "name": "MRS.MEKHALA VINOD PUROHIT",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","IS353IA", "CS367P"
+    ]
+  },
+         {
+    
+    "name": "Dr.HEMAVATHY R",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","CD252IA","CD374TFA"
+    ]
+  },
+         {
+    
+    "name": "PROF,SARASWATHI G DATAR",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","CD343AI","IS353IA","CD252IA"
+    ]
+  },
+         {
+    
+    "name": "Dr.SANDHYA S",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","CY245AT","CS372IA"
+    ]
+  },
+  {
+    
+    "name": "DR.SANDHYA H B",
+    "department": "ET",
+    "max_classes": 3,
+    "can_teach": [
+      "EC234AI", "ET247DL"
+    ]
+  },
+         {
+    
+    "name": "Dr.SMRITI SRIVASTAVA",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","CS237DL","CS241AT","CS354TA","CS363IA"
+    ]
+  },
+         {
+    
+    "name": "Dr.KRISHNAPPA H K",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","CS241AT","CS354TA","IS364TA","CS373IA"
+    ]
+  },
+         {
+    
+    "name": "Dr.CHETHANA R MURTHY",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","CS237DL","IS233AI","CD343AI","CS354TA","CS363IA","IS365TDA","IS362IA","CS481P"
+    ]
+  },
+  {
+    
+    "name": "DR.CHETHANA R",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "CD235AI", "IS365TDA", "IS362IA"
+    ]
+  },
+         {
+    
+    "name": "Dr.PRAPULLA S B",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","HS121EL","CS237DL","CS235AI","CS234AI","CS362IA"
+    ]
+  },
+         {
+    
+    "name": "PROF.RAJATHA",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","CS235AI","CS362IA","CS374TFA"
+    ]
+  },
+              {
+    
+    "name": "PROF.SAVITHRI KULKARNI",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","CS235AI","CS362IA", "CY373TA"
+    ]
+  },
+                {
+    
+    "name": "Dr.VINAY V HEGDE",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","IS353IA","HS361TA","CS374TFD", "CY245AT"
+    ]
+  },
+                  {
+    
+    "name": "Dr.AZRA NASREEN",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","CS235AI","CS237DL","IS364TA","CS372IA", "CS367P"
+    ]
+  },
+      {
+    
+    "name": "Dr.VEENA GADAD",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS237DL","CY245AT","CS266TED", "IS353IA"
+    ]
+  },  
+        {
+    
+    "name": "PROF.SHRADDHA H D",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT"
+    ]
+  },  
+          {
+    
+    "name": "Dr.MANONMANI S",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS361TA","CS375TGF","CS375TGF","CS375TGF"
+    ]
+  },  
+            {
+    
+    "name": "Dr.RAJASHREE SHETTAR",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS364TA", "CS367P"
+    ]
+  }, 
+  {
+    
+    "name": "DR.RAJASHREE P M",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC352IA"
+    ]
+  }, 
+    {
+  
+    "name": "Dr.SHIVANANDAPPA",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA", "BT343AI", "BT373AI"
+    ]
+  },
+  {
+    
+    "name": "DR.BINDU ASHWINI",
+    "department": "IM",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT", "HS261TA"
+    ]
+  },
+      {
+    
+    "name": "Dr.ASHWANI SHARMA",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA", "BT237DL", "BT367P", "HS271TA"
+    ]
+  },
+    {
+    
+    "name": "Dr.SUMATHRA M",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL", "BT344AI"
+    ]
+  },
+  {
+    
+    "name": "DR.A V NARAYAN",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "BT345AT", "HS251TA", "BT372IA"
+    ]
+  },
+      {
+    
+    "name": "Dr.LINGAYYA HIREMATH",
+    "department": "BT",
+    "max_classes": 3,
+    "can_teach": [
+      "HS271TA", "HS125YL", "HS361TA"
+    ]
+  },
+         {
+    
+    "name": "PROF.NITHYASHREE G D",
+    "department": "CD",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","HS121EL","CD252IA", "CD367P"
+    ]
+  },
+    {
+    
+    "name": "Dr.SINDHU D V",
+    "department": "CD",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","IS233AI","IS353IA","CD365TDC","CS481P"
+    ]
+  }, 
+        {
+    
+    "name": "Dr.JYOTHI SHETTY",
+    "department": "CS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS237DL","CS235AI","CD362IA","AI372IA"
+    ]
+  },  
+          {
+    
+    "name": "Dr.SOUMYA A",
+    "department": "CD",
+    "max_classes": 3,
+    "can_teach": [
+      "IS353IA","CD363IA","CS373IA","CS481P"
+    ]
+  }, 
+   {
+    
+    "name": "Dr.ASHWINI K B",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "CD343AI", "CD252IA"
+    ]
+  },
+ {
+    
+    "name": "Dr.SAGAR B M",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS233AI","CD343AI"
+    ]
+  },
+
+  {
+    
+    "name": "PROF.REKHA B S",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS121EL","IS367P", "IS233AI", "IS237DL"
+    ]
+  },
+          {
+   
+    "name": "PROF.SUSHMITHA N",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","CD235AI","CY245AT"
+    ]
+  },
+            {
+
+    "name": "PROF.POORNIMA KULKARNI",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+    "IS237DL","IS367P","CS363IA", "CS354TA", "IS367P"
+    ]
+  },
+  {
+    
+    "name": "PROF.VANISHREE K",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS481P", "IS237DL", "IS372IA"
+    ]
+  },
+  {
+    
+    "name": "Dr.MAMATHA G S",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS244AI"
+    ]
+  },
+  {
+    
+    "name": "PROF.RASHMI R",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT","HS361TA", "IS373TA"
+    ]
+  },
+  {
+    
+    "name": "Dr.KAVITHA S N",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "CI124TA","CY245AT","IS365TDA"
+    ]
+  },
+    {
+    
+    "name": "Dr.B K SRINIVAS",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS244AI", "IS234AT"
+    ]
+  },
+  {
+    
+    "name": "DR.T RAGHAVENDRA",
+    "department": "CE",
+    "max_classes": 3,
+    "can_teach": [
+      "CV352IA"
+    ]
+  },
+      {
+    
+    "name": "Dr.RAGHAVENDRA PRASAD",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "HS248AT","IS364TA", "IS353IA", "HS271TA"
+    ]
+  },
+         {
+    
+    "name": "Dr.PADMASHREE T",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS362IA", "CD252IA"
+    ]
+  },
+           {
+    
+    "name": "Dr.ANANLA M R",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "CS363IA"
+    ]
+  },
+  {
+    
+    "name": "DR. AVIK BANERJEE",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC345AT", "EC372IA"
+    ]
+  },
+           {
+    
+    "name": "Dr.MERIN MELEET",
+    "department": "IS",
+    "max_classes": 3,
+    "can_teach": [
+      "IS364TA", "IS353IA"
+    ]
+  },
+  {
+    
+    "name": "DR.ELEENA MOHAPATRA",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC373TA"
+    ]
+  },
+ {
+    "name": "PROF.SWETHA BABU PRASAD",
+    "department": "CY",
+    "max_classes": 3,
+    "can_teach": [
+      "CS222IA","CS354TA","CY255TBD","CY365TDB","CY481P", "CI124TA"
+    ]
+  }, 
+  {
+    
+    "name": "Dr.PAVITHRA H",
+    "department": "CY",
+    "max_classes": 3,
+    "can_teach": [
+      "CS235AI","CS237DL","IS364TA","CY362IA","CY372IA"
+    ]
+  },  
+    {
+    
+    "name": "PROF.NEETHU S",
+    "department": "CY",
+    "max_classes": 3,
+    "can_teach": [
+      "CS235AI","CS344AI","HS251TA"
+    ]
+  },  
+              {
+    
+    "name": "PROF.MANAS M N",
+    "department": "CY",
+    "max_classes": 3,
+    "can_teach": [
+      "CS237DL","HS251TA","HS361TA","IS364TA","CS372IA"
+    ]
+  },
+             {
+    
+    "name": "Dr.MINAL MOHARIR",
+    "department": "CY",
+    "max_classes": 3,
+    "can_teach": [
+   "CY363IA","CY481P", "CY367P"
+    ]
+  },
+       {
+    
+    "name": "DR.RAMESH K B ",
+    "department": "EI",
+    "max_classes": 3,
+    "can_teach": [
+      "CS234AI", "EI243AI", "EC354TA", "EC363IA"
+    ]
+  },
+  {
+    
+    "name": "DR.SOWMYA K B ",
+    "department": "EC",
+    "max_classes": 3,
+    "can_teach": [
+      "EC362IA"
+    ]
+  }
+]
