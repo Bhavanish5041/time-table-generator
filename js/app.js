@@ -48,19 +48,45 @@ function showToast(message, type = 'info') {
 }
 
 // ---- RESULT PERSISTENCE ----
+// In-memory cache survives navigation within the same tab session if using SPA,
+// but for multi-page: localStorage is the only bridge. So also add a size check:
+
 function saveResult(result) {
   try {
-    localStorage.setItem(RESULT_KEY, JSON.stringify(result));
-  } catch (e) { console.warn('Failed to save result:', e); }
+    const str = JSON.stringify(result);
+    if (str.length > 4 * 1024 * 1024) { // >4MB, split it
+      localStorage.setItem(RESULT_KEY + '_meta', JSON.stringify({
+        fitness: result.fitness,
+        elapsed: result.elapsed,
+        teacherAssignment: result.teacherAssignment
+      }));
+      localStorage.setItem(RESULT_KEY + '_tt', JSON.stringify(result.timetable));
+    } else {
+      localStorage.setItem(RESULT_KEY, str);
+      localStorage.removeItem(RESULT_KEY + '_meta');
+      localStorage.removeItem(RESULT_KEY + '_tt');
+    }
+  } catch (e) {
+    console.warn('localStorage save failed:', e);
+    showToast('Warning: result may not persist across pages.', 'info');
+  }
 }
 
 function loadResult() {
   try {
+    // Try split storage first
+    const metaStr = localStorage.getItem(RESULT_KEY + '_meta');
+    const ttStr = localStorage.getItem(RESULT_KEY + '_tt');
+    if (metaStr && ttStr) {
+      return { ...JSON.parse(metaStr), timetable: JSON.parse(ttStr) };
+    }
+    // Fall back to single key
     const raw = localStorage.getItem(RESULT_KEY);
     return raw ? JSON.parse(raw) : null;
-  } catch (e) { return null; }
+  } catch (e) {
+    return null;
+  }
 }
-
 // ================================================================
 // SEMESTER PARITY TOGGLE
 // ================================================================
@@ -152,8 +178,9 @@ function initSetupPage() {
         currentStep++;
         updateWizardUI();
       } else {
-        // On final step, validate before navigating
-        const validation = TimetableData.validate();
+        // FIXED: pass parity so only active semesters are validated
+        const parity = localStorage.getItem('timetable_semester_parity') || 'odd';
+        const validation = TimetableData.validate(parity);
         if (!validation.valid) {
           showToast(validation.errors[0], 'error');
           return;
@@ -167,7 +194,6 @@ function initSetupPage() {
     });
   }
 }
-
 function updateWizardUI() {
   const stepContainerIds = ['step-branches', 'step-subjects', 'step-sections', 'step-teachers'];
 
@@ -753,7 +779,8 @@ function initGeneratePage() {
           if (progBar) progBar.style.width = '100%';
 
           if (result.fitness.hardViolations === 0) {
-            showToast(`Optimal ${semesterParity} semester timetable generated!`, 'success');
+  // FIXED: use currentParity instead of undefined semesterParity
+            showToast(`Optimal ${currentParity} semester timetable generated!`, 'success');
           } else {
             showToast(`Done with ${result.fitness.hardViolations} hard violation(s).`, 'error');
           }
@@ -982,7 +1009,8 @@ function renderGrid(sectionId, timetable, data) {
           </div>`;
       } else {
         const subject = data.subjects.find(s => s.id === cell.subjectId);
-        const teacher = data.teachers.find(t => t.id === cell.teacherId);
+        const teacher = cell.teacherId ? data.teachers.find(t => t.id === cell.teacherId) : null;
+        const room = data.rooms.find(r => r.id === cell.roomId);
         const isLab = cell.type === 'lab' || cell.type === 'practical';
         const accentColor = isLab ? 'bg-primary' : 'bg-integrity-success';
 
@@ -991,8 +1019,9 @@ function renderGrid(sectionId, timetable, data) {
         div.innerHTML = `
           <div class="absolute top-1 left-1 bottom-1 w-1 ${accentColor} rounded-l"></div>
           <div class="ml-2 pl-2 flex flex-col justify-center h-full">
-            <span class="font-body-md text-body-md text-on-surface font-semibold">${subject?.name || '?'}${isLab ? ' Lab' : ''}</span>
-            <span class="font-caption text-caption text-on-surface-variant">${teacher?.name || '?'}</span>
+            <span class="font-body-md text-body-md text-on-surface font-semibold">${subject?.name || ''}${isLab ? ' Lab' : ''}</span>
+            ${teacher ? `<span class="font-caption text-caption text-on-surface-variant">${teacher.name}</span>` : ''}
+            ${room ? `<span class="font-caption text-caption text-secondary font-semibold text-[11px]">${room.id}</span>` : ''}
           </div>`;
       }
 

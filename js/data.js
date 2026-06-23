@@ -524,7 +524,7 @@ const TimetableData = (() => {
               const labSessions = courseDetails.lab_hours !== undefined ? Math.ceil(courseDetails.lab_hours / 2) : 0;
 
               const newSub = {
-                id: generateId('SUB'),
+                id: `SUB_${courseId}_${branchId}_${sem}`,
                 name: courseDetails.name,
                 code: courseDetails.id,
                 credits: courseDetails.credits,
@@ -545,9 +545,11 @@ const TimetableData = (() => {
       rooms = roomsDefs;
 
       // 6. Load teachers
+      // FIXED — stable ID derived from name, survives page reloads
       facultyDefs.forEach(f => {
+        const stableId = 'TCH_' + f.name.trim().toLowerCase().replace(/\s+/g, '_');
         teachers.push({
-          id: generateId('TCH'),
+          id: stableId,
           name: f.name,
           department: f.department,
           maxClasses: f.max_classes || 3,
