@@ -10,12 +10,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   initParityToggle();
 
-  // Always load fresh data from JSON files to ensure we use the real course data.
-  // localStorage is only used for mid-session persistence (e.g., wizard state).
-  await TimetableData.loadSampleData();
-
   // Detect page by body id
   const pageId = document.body.id;
+
+  // On the setup page, always load fresh data from JSON files.
+  // On other pages, try localStorage first to preserve IDs used during generation.
+  if (pageId === 'page-setup') {
+    await TimetableData.loadSampleData();
+  } else {
+    const loaded = TimetableData.load();
+    if (!loaded) {
+      await TimetableData.loadSampleData();
+    }
+  }
 
   switch (pageId) {
     case 'page-setup':
@@ -152,7 +159,7 @@ function initSetupPage() {
         currentStep++;
         updateWizardUI();
       } else {
-        // On final step, validate before navigating
+        // On final step (step 4), validate before navigating
         const validation = TimetableData.validate();
         if (!validation.valid) {
           showToast(validation.errors[0], 'error');
@@ -393,7 +400,8 @@ function renderSetupSubjects() {
               <select class="subj-credits-input w-full inset-panel rounded-xl px-4 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/20 outline-none transition-all" data-id="${sub.id}">
                   <option value="2" ${sub.credits === 2 ? 'selected' : ''}>2 (Theory)</option>
                   <option value="3" ${sub.credits === 3 ? 'selected' : ''}>3 (Theory)</option>
-                  <option value="4" ${sub.credits === 4 ? 'selected' : ''}>4 (Lab)</option>
+                  <option value="4T" ${sub.credits === 4 && !sub.isLab ? 'selected' : ''}>4 (Theory)</option>
+                  <option value="4L" ${sub.credits === 4 && sub.isLab ? 'selected' : ''}>4 (Lab)</option>
               </select>
           </div>
           <div>
@@ -423,7 +431,19 @@ function renderSetupSubjects() {
     inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { code: e.target.value }); });
   });
   cardsContainer.querySelectorAll('.subj-credits-input').forEach(inp => {
-    inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { credits: parseInt(e.target.value) }); renderSetupSubjects(); });
+    inp.addEventListener('change', (e) => {
+      const val = e.target.value;
+      let credits, isLab;
+      if (val === '4T') {
+        credits = 4; isLab = false;
+      } else if (val === '4L') {
+        credits = 4; isLab = true;
+      } else {
+        credits = parseInt(val); isLab = false;
+      }
+      TimetableData.updateSubject(e.target.dataset.id, { credits, isLab });
+      renderSetupSubjects();
+    });
   });
   cardsContainer.querySelectorAll('.subj-cpw-input').forEach(inp => {
     inp.addEventListener('change', (e) => { TimetableData.updateSubject(e.target.dataset.id, { theorySlots: parseInt(e.target.value) }); });

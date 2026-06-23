@@ -1,0 +1,1035 @@
+[
+  {
+    "section_id": ["CI_1A", "CI_1B", "CI_1C","CS_1A", "CS_1B", "CS_1C", "CS_1D", "CS_1E", "CS_1F", "BT_1A", "CD_1A", "CY_1A"],
+    "semester": 1,
+    "courses": [
+      { "course_id": "MA211TC", "is_elective": false },
+      { "course_id": "CM211IA", "is_elective": false },
+      { "course_id": "ME112GL",  "is_elective": false },
+      { "course_id": "XX113XTX", "is_elective": true },
+      { "course_id": "XX115XIX", "is_elective": true },
+      { "course_id": "COUNSELLING", "is_elective": false },
+      { "course_id": "EL", "is_elective": false }
+    ]
+  },
+  {
+    "section_id": ["CI_1A", "CI_1B", "CI_1C","CS_1A", "CS_1B", "CS_1C", "CS_1D", "CS_1E", "CS_1F", "BT_1A", "CD_1A", "CY_1A"],
+    "semester": 2,
+    "courses": [
+      { "course_id": "MA221TC", "is_elective": false },
+      { "course_id": "PY221IC", "is_elective": false },
+      { "course_id": "CS222IA",  "is_elective": false },
+      { "course_id": "XX123XTX", "is_elective": true },
+      { "course_id": "CI124TA", "is_elective": false },
+      { "course_id": "HS121EL", "is_elective": false },
+      { "course_id": "HS122KS_HS123KB", "is_elective": false },
+      { "course_id": "ME121DL", "is_elective": false },
+      { "course_id": "COUNSELLING", "is_elective": false },
+      { "course_id": "EL", "is_elective": false }
+    ]
+  },
+  {
+    "section_id": ["CI_2A", "CI_2B"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MAT231ET", "is_elective": false },
+      { "course_id": "CI235AT", "is_elective": false },
+      { "course_id": "CI237DL",  "is_elective": false },
+      { "course_id": "XX232TX", "is_elective": true },
+      { "course_id": "IS233AI", "is_elective": false },
+      { "course_id": "COUNSELLING", "is_elective": false },
+      { "course_id": "AI234AI", "is_elective": false },
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CI_2A", "CI_2B"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "CS241AT", "is_elective": false },
+      { "course_id": "CY245AT", "is_elective": false },
+      { "course_id": "HS248AT",  "is_elective": false },
+      { "course_id": "XX242TX", "is_elective": true },
+      { "course_id": "HS247LX", "is_elective": true },
+      { "course_id": "CD343AI", "is_elective": false },
+      { "course_id": "AI244AI", "is_elective": false },
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["AI_3A", "AI_3B"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS251TA", "is_elective": false },
+      { "course_id": "AI255TBA", "is_elective": false },
+      { "course_id": "CD252IA",  "is_elective": false },
+      { "course_id": "AI255TBC", "is_elective": false },
+      { "course_id": "AI235IA", "is_elective": false },
+      { "course_id": "AI254TA", "is_elective": false }
+    ]
+  },
+  {
+    "section_id": ["AI_3A", "AI_3B"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "AI362IA", "is_elective": false },
+      { "course_id": "HS361TA", "is_elective": false },
+      { "course_id": "AI363IA",  "is_elective": false },
+      { "course_id": "XX266TEX", "is_elective": true },
+      { "course_id": "AI364TA", "is_elective": false },
+      { "course_id": "AI365TDD", "is_elective": false },
+      { "course_id": "AI367P", "is_elective": false }
+    ]
+  },
+  {
+    "section_id": ["AI_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "PLACEMENTS", "is_elective": false },
+      { "course_id": "HS271TA", "is_elective": false },
+      { "course_id": "AI372IA",  "is_elective": false },
+      { "course_id": "AI373TA", "is_elective": false },
+      { "course_id": "AI374TFB", "is_elective": false },
+      { "course_id": "XX375TGX", "is_elective": true }
+    ]
+  },
+  {
+    "section_id": ["AI_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", "is_elective": false }
+    ]
+  },
+  {
+    "section_id": ["CS_2A", "CS_2B", "CS_2C", "CS_2D", "CS_2E", "CD_2A", "CY_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MAT231TC", "is_elective": false },
+      { "course_id": "CS234AI", "is_elective": false },
+      { "course_id": "CS235AI",  "is_elective": false },
+      { "course_id": "XX232TX", "is_elective": true },
+      { "course_id": "IS233AI", "is_elective": false },
+      { "course_id": "COUNSELLING", "is_elective": false },
+      { "course_id": "CS237DL", "is_elective": false },
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CS_2A", "CS_2B", "CS_2C", "CS_2D", "CS_2E", "CD_2A", "CY_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "CS241AT", "is_elective": false },
+      { "course_id": "CY245AT", "is_elective": false },
+      { "course_id": "HS248AT",  "is_elective": false },
+      { "course_id": "XX242TX", "is_elective": true },
+      { "course_id": "HS247LX", "is_elective": true },
+      { "course_id": "CD343AI", "is_elective": false },
+      { "course_id": "CS344AI", "is_elective": false },
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CS_3A", "CS_3B", "CS_3C", "CS_3D", "CS_3E", "CD_3A", "CY_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS251TA", "is_elective": false },
+      { "course_id": "IS353IA", "is_elective": false },
+      { "course_id": "CD252IA",  "is_elective": false },
+      { "course_id": "CS354TA", "is_elective": false },
+      { "course_id": "CS355TBX", "is_elective": true }
+    ]
+  },
+  {
+    "section_id": ["CS_3A", "CS_3B", "CS_3C", "CS_3D", "CS_3E"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS361TA", "is_elective": false},
+      { "course_id": "CS362IA", "is_elective": false},
+      { "course_id": "CS363IA", "is_elective": false},
+      { "course_id": "IS364TA", "is_elective": false},
+      { "course_id": "CS266TED", "is_elective": false},
+      { "course_id": "CS365TDX", "is_elective": true},
+      { "course_id": "CS367P", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CS_4A", "CS_4B", "CS_4C"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", "is_elective": false},
+      { "course_id": "CS372IA", "is_elective": false},
+      { "course_id": "CS373IA", "is_elective": false},
+      { "course_id": "XX375TGX", "is_elective": true},
+      { "course_id": "CS374TFX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["CS_4A", "CS_4B", "CS_4C"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EC_1A", "EC_1B", "EC_1C", "EC_1D", "ET_1A"],
+    "semester": 1,
+    "courses": [
+      { "course_id": "MA211TA", "is_elective": false},
+      { "course_id": "PY211IA", "is_elective": false},
+      { "course_id": "EC112TA", "is_elective": false},
+      { "course_id": "XX113XTX", "is_elective": true},
+      { "course_id": "CI114AT", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EC_1A", "EC_1B", "EC_1C", "EC_1D", "EE_1A", "ET_1A"],
+    "semester": 2,
+    "courses": [
+      { "course_id": "MA221TA", "is_elective": false},
+      { "course_id": "CM221IB", "is_elective": false},
+      { "course_id": "ME122GL", "is_elective": false},
+      { "course_id": "XX123XTX", "is_elective": true},
+      { "course_id": "XX125XIX", "is_elective": true},
+      { "course_id": "HS121EL", "is_elective": false},
+      { "course_id": "HS124TC", "is_elective": false},
+      { "course_id": "HS125YL", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EC_2A", "EC_2B", "EC_2C", "EC_2D"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA232AT", "is_elective": false},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "EC233AI", "is_elective": false},
+      { "course_id": "EC235AT", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "EC234AI", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EC_2A", "EC_2B", "EC_2C", "EC_2D"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "EC241AT", "is_elective": false},
+      { "course_id": "EI243AI", "is_elective": false},
+      { "course_id": "EC244AI", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "EC345AT", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "EC247DL", "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EC_3A", "EC_3B", "EC_3C", "EC_3D"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "EC352IA", "is_elective": false},
+      { "course_id": "EC353IA", "is_elective": false},
+      { "course_id": "EC354TA", "is_elective": false},
+      { "course_id": "EC355TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["EC_3A", "EC_3B", "EC_3C", "EC_3D"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "EC363IA", "is_elective": false},
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "EC362IA", "is_elective": false},
+      { "course_id": "XX266TEX", "is_elective": true},
+      { "course_id": "EC364TA", "is_elective": false},
+      { "course_id": "EC365TDX", "is_elective": true},
+      { "course_id": "EC367P", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EC_4A", "EC_4B", "EC_4C"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", "is_elective": false},
+      { "course_id": "EC372IA", "is_elective": false},
+      { "course_id": "EC373TA", "is_elective": false},
+      { "course_id": "EC374TFX", "is_elective": true},
+      { "course_id": "XX375TGX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["EC_4A", "EC_4B", "EC_4C"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ME_1A", "ME_1B", "CH_1A", "AS_1A", "IM_1A"],
+    "semester": 1,
+    "courses": [
+      { "course_id": "MA211TB", "is_elective": false},
+      { "course_id": "PY211IB", "is_elective": false},
+      { "course_id": "XX113XTX", "is_elective": true},
+      { "course_id": "CI114AT", "is_elective": false},
+      { "course_id": "ME112TA", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ME_2A", "ME_2B"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231TB", "is_elective": false},
+      { "course_id": "ME233AI", "is_elective": false},
+      { "course_id": "ME234AI", "is_elective": false},
+      { "course_id": "ME235AI", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ME_2A", "ME_2B"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "MA241TA", "is_elective": false},
+      { "course_id": "ME243AT", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "ME245AI", "is_elective": false},
+      { "course_id": "ME244AI", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "ME247DL", "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ME_3A", "ME_3B"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "ME252IA", "is_elective": false},
+      { "course_id": "ME353IA", "is_elective": false},
+      { "course_id": "ME354TA", "is_elective": false},
+      { "course_id": "ME355TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["ME_3A", "ME_3B"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "ME362IA", "is_elective": false},
+      { "course_id": "ME363IA", "is_elective": false},
+      { "course_id": "ME367P", "is_elective": false},
+      { "course_id": "ME364TA", "is_elective": false},
+      { "course_id": "ME365TDX", "is_elective": true},
+      { "course_id": "XX266TEX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["ME_4A", "ME_4B"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", "is_elective": false},
+      { "course_id": "ME372IA", "is_elective": false},
+      { "course_id": "ME374TFX", "is_elective": true},
+      { "course_id": "XX375TGX", "is_elective": true},
+      { "course_id": "ME273TA", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ME_4A", "ME_4B"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CE_1A"],
+    "semester": 1,
+    "courses": [
+      { "course_id": "MA211TD", "is_elective": false},
+      { "course_id": "PY211ID", "is_elective": false},
+      { "course_id": "CV112TA", "is_elective": false},
+      { "course_id": "XX113XTX", "is_elective": true},
+      { "course_id": "CI114AT", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CE_1A"],
+    "semester": 2,
+    "courses": [
+      { "course_id": "MA221TD", "is_elective": false},
+      { "course_id": "CM221ID", "is_elective": false},
+      { "course_id": "ME122GL", "is_elective": false},
+      { "course_id": "XX123XTX", "is_elective": true},
+      { "course_id": "XX125XIX", "is_elective": true},
+      { "course_id": "HS121EL", "is_elective": false},
+      { "course_id": "HS124TC", "is_elective": false},
+      { "course_id": "HS125YL", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CE_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231DT", "is_elective": false},
+      { "course_id": "CV233AI", "is_elective": false},
+      { "course_id": "CV234AI", "is_elective": false},
+      { "course_id": "CV235AI", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CE_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "MA241AT", "is_elective": false},
+      { "course_id": "CV343AI", "is_elective": false},
+      { "course_id": "HS248AT",  "is_elective": false},
+      { "course_id": "CV244AI",  "is_elective": false},
+      { "course_id": "CV345AT",  "is_elective": false},
+      { "course_id": "XX242TX",  "is_elective": true},
+      { "course_id": "CV247DL",  "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CE_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "CV352IA", "is_elective": false},
+      { "course_id": "CV353IA", "is_elective": false},
+      { "course_id": "CV354TA", "is_elective": false},
+      { "course_id": "CV255TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["CE_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "CV362IA", "is_elective": false},
+      { "course_id": "CV363IA", "is_elective": false},
+      { "course_id": "CV364TA", "is_elective": false},
+      { "course_id": "XX266TEX", "is_elective": true},
+      { "course_id": "CV365TDE", "is_elective": false},
+      { "course_id": "CV367P", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CE_4A", "CE_4B"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", "is_elective": false},
+      { "course_id": "CV372IA",  "is_elective": false},
+      { "course_id": "CV373TA",  "is_elective": false},
+      { "course_id": "CV374TFX",  "is_elective": true},
+      { "course_id": "XX375TGX",  "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["CE_4A", "CE_4B"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["EE_1A"],
+    "semester": 1,
+    "courses": [
+      { "course_id": "MA211TA", "is_elective": false},
+      { "course_id": "PY211IE", "is_elective": false},
+      { "course_id": "EE112TA", "is_elective": false},
+      { "course_id": "XX113XTX", "is_elective": true},
+      { "course_id": "CI114AT", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EE_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MAT231AT", "is_elective": false},
+      { "course_id": "EE233AT", "is_elective": false},
+      { "course_id": "EC234AT", "is_elective": false},
+      { "course_id": "EE235AT", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EE_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "MA241AT", "is_elective": false},
+      { "course_id": "EI343AI", 	"is_elective" : false},
+      { "course_id": "HS248AT", 	"is_elective" : false},
+      { "course_id": "ET345AT", 	"is_elective" : false},
+      { "course_id": "EE244AI", 	"is_elective" : false},
+      { "course_id": "XX242TX", 	"is_elective" : true},
+      { "course_id": "EE247DL", 	"is_elective" : false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["EE_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS251TA", "is_elective": false},
+      { "course_id": "EE352IA", 	"is_elective" : false},
+      { "course_id": "EE353IA", 	"is_elective" : false},
+      { "course_id": "EE254TA", 	"is_elective" : false},
+      { "course_id": "EE355TBX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["EE_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", 	"is_elective" : false},
+      { "course_id": "EE362IA", 	"is_elective" : false},
+      { "course_id": "EE363IA", 	"is_elective" : false},
+      { "course_id": "EE364TA", 	"is_elective" : false},
+      { "course_id": "XX266TEX", 	"is_elective" : true},
+      { "course_id": "EE365TDX", 	"is_elective" : true},
+      { "course_id": "EE367P", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["EE_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "EE372IA", 	"is_elective" : false},
+      { "course_id": "EE373TA", 	"is_elective" : false},
+      { "course_id": "EE374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["EE_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["BT_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231TB", "is_elective" : false},
+      { "course_id": "BT233AI", "is_elective" : false},
+      { "course_id": "BT234AI", "is_elective" : false},
+      { "course_id": "BT235AI", "is_elective": false},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "BT247DL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["BT_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "BT241AT", "is_elective": false},
+      { "course_id": "BT344AI", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "BT345AT", "is_elective": false},
+      { "course_id": "BT343AI", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "HS247LX", "is_elective": true},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["BT_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS251TA", "is_elective": false},
+      { "course_id": "BT352IA", "is_elective": false},
+      { "course_id": "BT353AI", "is_elective": false},
+      { "course_id": "BT354TA", "is_elective": false},
+      { "course_id": "BT355TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["BT_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS361TA", "is_elective": false},
+      { "course_id": "BT362IA", "is_elective": false},
+      { "course_id": "BT363IA", "is_elective": false},
+      { "course_id": "BT364IA", "is_elective": false},
+      { "course_id": "XX266TEX", "is_elective": true},
+      { "course_id": "BT365TDX", "is_elective": true},
+      { "course_id": "BT367P", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["BT_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", "is_elective": false},
+      { "course_id": "BT372IA", "is_elective": false},
+      { "course_id": "BT373AI", "is_elective": false},
+      { "course_id": "BT374TFX", "is_elective": true},
+      { "course_id": "XX375TGX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["BT_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["CH_1A", "AS_1A", "ME_1A", "ME_1B", "IM_1A"],
+    "semester": 2,
+    "courses": [
+      { "course_id": "MA221TB", "is_elective": false},
+      { "course_id": "CM221IC", "is_elective": false},
+      { "course_id": "ME122GL", "is_elective": false},
+      { "course_id": "XX123XTX", "is_elective": true},
+      { "course_id": "XX125XIX", "is_elective": true},
+      { "course_id": "HS121EL", "is_elective": false},
+      { "course_id": "HS124TC", "is_elective": false},
+      { "course_id": "HS125YL", "is_elective": false},
+      { "course_id": "EL", "is_elective": false},
+      { "course_id": "COUNSELLING", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CH_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231TB", "is_elective": false},
+      { "course_id": "CH233AI", "is_elective": false},
+      { "course_id": "CH234AI", "is_elective": false},
+      { "course_id": "CH235AT", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CH_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "MA241TA", "is_elective": false},
+      { "course_id": "CH343AI", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "CH344AI", "is_elective": false},
+      { "course_id": "CH345AT", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "CH247DL", "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CH_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "CH352IA", "is_elective": false},
+      { "course_id": "CH353IA", "is_elective": false},
+      { "course_id": "CH354TA", "is_elective": false},
+      { "course_id": "CH255TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["CH_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "CH362IA", "is_elective": false},
+      { "course_id": "CH363IA", "is_elective": false},
+      { "course_id": "CH364TA", "is_elective": false},
+      { "course_id": "XX266TEX", "is_elective": true},
+      { "course_id": "CH365TDX", "is_elective": true},
+      { "course_id": "CH367P", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["CH_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "CH372IA", 	"is_elective" : false},
+      { "course_id": "CH373IA", 	"is_elective" : false},
+      { "course_id": "CH374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["CH_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["AS_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231TB", "is_elective": false},
+      { "course_id": "AS233AI", "is_elective": false},
+      { "course_id": "AS234AI", "is_elective": false},
+      { "course_id": "AS235AT", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["AS_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "MA241TA", "is_elective": false},
+      { "course_id": "AS343AI", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "AS244AI", "is_elective": false},
+      { "course_id": "AS345AT", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "AS247DL", "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["AS_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "AS252IA", "is_elective": false},
+      { "course_id": "AS253IA", "is_elective": false},
+      { "course_id": "AS254IA", "is_elective": false},
+      { "course_id": "AS255TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["AS_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "AS362IA", "is_elective": false},
+      { "course_id": "AS363IA", "is_elective": false},
+      { "course_id": "AS364TA", "is_elective": false},
+      { "course_id": "XX266TEX", "is_elective": true},
+      { "course_id": "AS365TDX", "is_elective": true},
+      { "course_id": "AS367P", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["AS_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "AS372IA", 	"is_elective" : false},
+      { "course_id": "AS373TA", 	"is_elective" : false},
+      { "course_id": "AS374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["AS_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["CD_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS361TA", "is_elective": false},
+      { "course_id": "CD362IA", "is_elective": false},
+      { "course_id": "CD363IA", "is_elective": false},
+      { "course_id": "IS364TA", "is_elective": false},
+      { "course_id": "CS266TED", "is_elective": false},
+      { "course_id": "CD365TDC", 	"is_elective" : false},
+      { "course_id": "CD367P", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["CD_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "AI372IA", 	"is_elective" : false},
+      { "course_id": "CD373TA", 	"is_elective" : false},
+      { "course_id": "CD374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["CD_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["CY_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS361TA", "is_elective": false},
+      { "course_id": "CY362IA", "is_elective": false},
+      { "course_id": "CY363IA", "is_elective": false},
+      { "course_id": "IS364TA", "is_elective": false},
+      { "course_id": "CS266TED", "is_elective": false},
+      { "course_id": "CY365TDB", 	"is_elective" : false},
+      { "course_id": "CY367P", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["CY_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "CY372IA", 	"is_elective" : false},
+      { "course_id": "CY373TA", 	"is_elective" : false},
+      { "course_id": "CY374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["CY_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["IS_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231CT", "is_elective": false },
+      { "course_id": "IS234AT", "is_elective": false },
+      { "course_id": "CD235AI",  "is_elective": false },
+      { "course_id": "XX232TX", "is_elective": true },
+      { "course_id": "IS233AI", "is_elective": false },
+      { "course_id": "COUNSELLING", "is_elective": false },
+      { "course_id": "IS237DL", "is_elective": false },
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["IS_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "CS241AT", "is_elective": false },
+      { "course_id": "IS244AI", "is_elective": false },
+      { "course_id": "HS248AT", "is_elective": false },
+      { "course_id": "CY245AT", "is_elective": false },
+      { "course_id": "CD343AI", "is_elective": false },
+      { "course_id": "XX242TX", "is_elective": true },
+      { "course_id": "HS247LX", "is_elective": true },
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["IS_3A", "IS_3B"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS251TA", "is_elective": false },
+      { "course_id": "CD252IA", "is_elective": false },
+      { "course_id": "IS353IA", "is_elective": false },
+      { "course_id": "CS354TA", "is_elective": false },
+      { "course_id": "IS355TBX", "is_elective": true }
+    ]
+  },
+  {
+    "section_id": ["IS_3A", "IS_3B"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS361TA", "is_elective": false },
+      { "course_id": "IS362IA", "is_elective": false },
+      { "course_id": "CS363IA", "is_elective": false },
+      { "course_id": "IS364TA", "is_elective": false },
+      { "course_id": "XX266TEX", "is_elective": true },
+      { "course_id": "IS365TDA", 	"is_elective" : false},
+      { "course_id": "IS367P", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["IS_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", "is_elective": false },
+      { "course_id": "IS372IA", "is_elective": false },
+      { "course_id": "IS373TA", "is_elective": false },
+      { "course_id": "IS374TFX", "is_elective": true },
+      { "course_id": "XX375TGX", "is_elective": true }
+    ]
+  },
+  {
+    "section_id": ["IS_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["ET_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MAT231AT", "is_elective": false},
+      { "course_id": "EI233AI", "is_elective": false},
+      { "course_id": "EC234AI", "is_elective": false},
+      { "course_id": "ET235AT", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ET_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "MAT241TA", "is_elective": false},
+      { "course_id": "EI243AI", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "ET345AT", "is_elective": false},
+      { "course_id": "ET244AI", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "ET247DL", "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ET_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "ET352IA", "is_elective": false},
+      { "course_id": "ET353IA", "is_elective": false},
+      { "course_id": "ET354TA", "is_elective": false},
+      { "course_id": "ET355TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["ET_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "ET362IA", "is_elective": false},
+      { "course_id": "ET363IA", "is_elective": false},
+      { "course_id": "ET364TA", "is_elective": false},
+      { "course_id": "XX266TEX", "is_elective": true},
+      { "course_id": "ET365TDX", "is_elective": true},
+      { "course_id": "ET367P", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["ET_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "ET372IA", 	"is_elective" : false},
+      { "course_id": "ET373IA", 	"is_elective" : false},
+      { "course_id": "ET374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["ET_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["IM_2A"],
+    "semester": 3,
+    "courses": [
+      { "course_id": "MA231TB", "is_elective": false},
+      { "course_id": "IM233AI", "is_elective": false},
+      { "course_id": "IM234AI", "is_elective": false},
+      { "course_id": "IM235AT", "is_elective": false},
+      { "course_id": "HS237LX", "is_elective": true},
+      { "course_id": "XX232TX", "is_elective": true},
+      { "course_id": "COUNSELLING", "is_elective": false},
+      { "course_id": "CS139AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["IM_2A"],
+    "semester": 4,
+    "courses": [
+      { "course_id": "IM241AT", "is_elective": false},
+      { "course_id": "IM343AI", "is_elective": false},
+      { "course_id": "HS248AT", "is_elective": false},
+      { "course_id": "IM244AI", "is_elective": false},
+      { "course_id": "IM345AT", "is_elective": false},
+      { "course_id": "XX242TX", "is_elective": true},
+      { "course_id": "IM247DL", "is_elective": false},
+      { "course_id": "MA149AT", "is_elective": false}
+    ]
+  },
+  {
+    "section_id": ["IM_3A"],
+    "semester": 5,
+    "courses": [
+      { "course_id": "HS351TA", "is_elective": false},
+      { "course_id": "IM352IA", "is_elective": false},
+      { "course_id": "IM353IA", "is_elective": false},
+      { "course_id": "IM254TA", "is_elective": false},
+      { "course_id": "IM355TBX", "is_elective": true}
+    ]
+  },
+  {
+    "section_id": ["IM_3A"],
+    "semester": 6,
+    "courses": [
+      { "course_id": "HS261TA", "is_elective": false},
+      { "course_id": "IM362IA", "is_elective": false},
+      { "course_id": "IM363IA", "is_elective": false},
+      { "course_id": "IM364TA", "is_elective": false},
+      { "course_id": "XX266TEX", 	"is_elective" : true},
+      { "course_id": "IM365TDX", 	"is_elective" : true},
+      { "course_id": "IM367P", 	"is_elective" : false}
+    ]
+  },
+  {
+    "section_id": ["IM_4A"],
+    "semester": 7,
+    "courses": [
+      { "course_id": "HS271TA", 	"is_elective" : false},
+      { "course_id": "IM372IA", 	"is_elective" : false},
+      { "course_id": "IM373TA", 	"is_elective" : false},
+      { "course_id": "IM374TFX", 	"is_elective" : true},
+      { "course_id": "XX375TGX", 	"is_elective" : true}
+    ]
+  },
+  {
+    "section_id": ["IM_4A"],
+    "semester": 8,
+    "courses": [
+      { "course_id": "MAJORPROJECT", 	"is_elective" : false}
+    ]
+  }
+]

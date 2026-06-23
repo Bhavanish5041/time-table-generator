@@ -8,6 +8,8 @@ const TimetableData = (() => {
   let subjects = [];
   let teachers = [];
   let sections = [];
+  let rooms = [];
+  let timeslots = [];
 
   const STORAGE_KEY = 'timetable_generator_data_v5';
   const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -98,10 +100,20 @@ const TimetableData = (() => {
     if (updates.code !== undefined) subject.code = updates.code.trim().toUpperCase();
     if (updates.credits !== undefined) {
       subject.credits = updates.credits;
-      const isMath = subject.name.toLowerCase().includes('math') || subject.code.toUpperCase().startsWith('MA');
-      subject.isLab = updates.credits === 4 && !isMath;
+      // If isLab is explicitly provided, use it; otherwise auto-detect
+      if (updates.isLab !== undefined) {
+        subject.isLab = updates.isLab;
+      } else {
+        const isMath = subject.name.toLowerCase().includes('math') || subject.code.toUpperCase().startsWith('MA');
+        subject.isLab = updates.credits === 4 && !isMath;
+      }
       subject.theorySlots = subject.isLab ? 3 : subject.credits;
-      subject.labSessions = subject.isLab ? 1 : 0;
+      subject.labSessions = subject.isLab ? 2 : 0;
+    } else if (updates.isLab !== undefined) {
+      // isLab changed without credits changing
+      subject.isLab = updates.isLab;
+      subject.theorySlots = subject.isLab ? 3 : subject.credits;
+      subject.labSessions = subject.isLab ? 2 : 0;
     }
     // Allow overriding classes per week independently
     if (updates.theorySlots !== undefined) {
@@ -201,7 +213,7 @@ const TimetableData = (() => {
 
   // ---- PERSISTENCE ----
   function save() {
-    const data = { branches, subjects, teachers, sections, _idCounter };
+    const data = { branches, subjects, teachers, sections, rooms, timeslots, _idCounter };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
@@ -223,6 +235,8 @@ const TimetableData = (() => {
         subjectIds: Array.isArray(t.subjectIds) ? t.subjectIds : []
       }));
       sections = data.sections || [];
+      rooms = data.rooms || [];
+      timeslots = data.timeslots || [];
       _idCounter = data._idCounter || 0;
       
       // Auto-patch: Filter out sections with invalid/corrupted branch IDs
@@ -290,6 +304,8 @@ const TimetableData = (() => {
     subjects = [];
     teachers = [];
     sections = [];
+    rooms = [];
+    timeslots = [];
     _idCounter = 0;
     localStorage.removeItem(STORAGE_KEY);
   }
@@ -318,11 +334,11 @@ const TimetableData = (() => {
           errors.push(`${branch.name} Sem-${sem}: Has subjects but no sections.`);
         }
 
-        // Check each subject has at least one teacher
+        // Check each subject has at least one teacher (warning only — teachers are auto-generated)
         branchSubjects.forEach(sub => {
           const subTeachers = getTeachersForSubject(sub.id);
           if (subTeachers.length === 0) {
-            errors.push(`${branch.name} Sem-${sem}: Subject "${sub.name}" has no teacher assigned.`);
+            warnings.push(`${branch.name} Sem-${sem}: Subject "${sub.name}" has no teacher assigned (will use placeholder).`);
           }
         });
 
@@ -334,7 +350,7 @@ const TimetableData = (() => {
 
         const maxTeachingSlots = DAYS.length * TEACHING_SLOTS;
         if (totalSlots > maxTeachingSlots) {
-          errors.push(
+          warnings.push(
             `${branch.name} Sem-${sem}: Total required slots (${totalSlots}) exceed available ${maxTeachingSlots} slots/week.`
           );
         }
@@ -342,10 +358,6 @@ const TimetableData = (() => {
 
       });
     });
-
-    if (teachers.length === 0) {
-      errors.push('No teachers defined. Add at least one teacher.');
-    }
 
     return { valid: errors.length === 0, errors, warnings };
   }
@@ -357,6 +369,8 @@ const TimetableData = (() => {
       subjects: [...subjects],
       teachers: [...teachers],
       sections: [...sections],
+      rooms: [...rooms],
+      timeslots: [...timeslots],
       days: DAYS,
       slotsPerDay: SLOTS_PER_DAY,
       teachingSlots: TEACHING_SLOTS,
@@ -391,6 +405,8 @@ const TimetableData = (() => {
       subjects: filteredSubjects,
       teachers: filteredTeachers,
       sections: filteredSections,
+      rooms: [...rooms],
+      timeslots: [...timeslots],
       days: DAYS,
       slotsPerDay: SLOTS_PER_DAY,
       teachingSlots: TEACHING_SLOTS,
@@ -402,88 +418,192 @@ const TimetableData = (() => {
 
   // ---- SAMPLE DATA ----
   /**
-   * Load sample data asynchronously from the JSON files.
+   * Load data from the New-Data/ directory using the curriculum-driven model.
+   * Data sources:
+   *   - New-Data/departments.json → branches
+   *   - New-Data/sections.json → sections (mapped to semesters via curriculum)
+   *   - New-Data/Y1_courses.json..Y4_courses.json → course catalog
+   *   - New-Data/curriculum.json → section↔course mapping
+   *   - New-Data/rooms.json → room inventory
+   *   - New-Data/timeslot.json → timeslot definitions
    */
   async function loadSampleData() {
     clearAll();
 
     try {
-      // Fetch data from root since the HTML files are in /frontend/
       const timestamp = Date.now();
-      const [deptRes, secRes, subjRes] = await Promise.all([
-        fetch(`../departments.json?v=${timestamp}`),
-        fetch(`../sections.json?v=${timestamp}`),
-        fetch(`../subjects.json?v=${timestamp}`)
+      const basePath = '../New-Data';
+
+      // Fetch all data files in parallel
+      const [deptRes, secRes, y1Res, y2Res, y3Res, y4Res, currRes, roomRes, tsRes] = await Promise.all([
+        fetch(`${basePath}/departments.json?v=${timestamp}`),
+        fetch(`${basePath}/sections.json?v=${timestamp}`),
+        fetch(`${basePath}/Y1_courses.json?v=${timestamp}`),
+        fetch(`${basePath}/Y2_courses.json?v=${timestamp}`),
+        fetch(`${basePath}/Y3_courses.json?v=${timestamp}`),
+        fetch(`${basePath}/Y4_courses.json?v=${timestamp}`),
+        fetch(`${basePath}/curriculum.json?v=${timestamp}`),
+        fetch(`${basePath}/rooms.json?v=${timestamp}`),
+        fetch(`${basePath}/timeslot.json?v=${timestamp}`)
       ]);
 
       const deptDefs = await deptRes.json();
       const secDefs = await secRes.json();
-      const subjDefs = await subjRes.json();
+      const y1Courses = await y1Res.json();
+      const y2Courses = await y2Res.json();
+      const y3Courses = await y3Res.json();
+      const y4Courses = await y4Res.json();
+      const curriculumDefs = await currRes.json();
+      const roomDefs = await roomRes.json();
+      const timeslotDefs = await tsRes.json();
 
-      // Create branches
-      const branchMap = {};
+      // Store rooms and timeslots for future use
+      rooms = roomDefs || [];
+      timeslots = timeslotDefs || [];
+
+      // ---- 1. Build course lookup map from all Y*_courses files ----
+      const allCourses = [...y1Courses, ...y2Courses, ...y3Courses, ...y4Courses];
+      const courseLookup = {};
+      for (const course of allCourses) {
+        courseLookup[course.id] = course;
+      }
+      console.log(`Loaded ${allCourses.length} courses into lookup (${Object.keys(courseLookup).length} unique).`);
+
+      // ---- 2. Create branches from departments ----
+      const branchMap = {}; // dept.id → internal branch object
       for (const dept of deptDefs) {
-        const branch = addBranch(dept.name, [1, 2, 3, 4, 5, 6, 7, 8]); // Pass dept.name instead of dept.id so the UI looks correct
+        const branch = addBranch(dept.name, [1, 2, 3, 4, 5, 6, 7, 8]);
         branchMap[dept.id] = branch;
       }
 
-      // Create sections for both odd and even semesters based on the year
+      // ---- 3. Create sections from sections.json ----
+      // Each section entry has: id, department, year, section, strength
+      // We need to figure out which semesters each section participates in via curriculum.json
+      const sectionIdToBranch = {}; // e.g. "CI_2A" → internal branch object
+      const sectionDefMap = {};     // e.g. "CI_2A" → { ...secDef }
       for (const sec of secDefs) {
         const branch = branchMap[sec.department];
-        if (!branch) continue;
-        const oddSemester = (sec.year - 1) * 2 + 1;
-        const evenSemester = oddSemester + 1;
-        addSection(sec.section, branch.id, oddSemester, sec.strength || 0);
-        addSection(sec.section, branch.id, evenSemester, sec.strength || 0);
+        if (!branch) {
+          console.warn(`Section ${sec.id}: department "${sec.department}" not found in departments.json, skipping.`);
+          continue;
+        }
+        sectionIdToBranch[sec.id] = branch;
+        sectionDefMap[sec.id] = sec;
       }
 
-      // Ensure every branch and semester has at least one default section ("A")
-      for (const key of Object.keys(branchMap)) {
-        const branch = branchMap[key];
-        for (let sem = 1; sem <= 8; sem++) {
-          const branchSections = getSectionsByBranchSem(branch.id, sem);
-          if (branchSections.length === 0) {
-            addSection('A', branch.id, sem, 60); // Default strength 60
-          }
+      // Build a map: sectionId → Set of semesters from curriculum.json
+      const sectionSemesters = {}; // e.g. "CI_2A" → Set([3, 4])
+      for (const entry of curriculumDefs) {
+        for (const secId of entry.section_id) {
+          if (!sectionSemesters[secId]) sectionSemesters[secId] = new Set();
+          sectionSemesters[secId].add(entry.semester);
         }
       }
 
-      // Create subjects from the new subjects.json format
-      // Format: [ { college, branch, semesters: [ { semester, subjects: [ { name, credits } ] } ] } ]
+      // Now create internal section objects for each (sectionDef, semester) pair
+      const internalSectionMap = {}; // "CI_2A|3" → internal section object
+      for (const [secId, sems] of Object.entries(sectionSemesters)) {
+        const branch = sectionIdToBranch[secId];
+        const secDef = sectionDefMap[secId];
+        if (!branch || !secDef) continue;
+
+        for (const sem of sems) {
+          const internalSec = addSection(secDef.section, branch.id, sem, secDef.strength || 60);
+          internalSectionMap[`${secId}|${sem}`] = internalSec;
+        }
+      }
+
+      // ---- 4. Create subjects per section using curriculum entries ----
+      // Track created subjects to avoid duplicates: key = "branchId|semester|courseId"
+      const subjectDedup = {}; // "branchId|semester|courseId" → internal subject object
       const createdSubjects = [];
-      for (const branchData of subjDefs) {
-        // Handle CSE vs CS mapping if necessary
-        const branchId = branchData.branch === 'CSE' ? 'CS' : branchData.branch;
-        const branch = branchMap[branchId];
-        if (!branch) continue;
 
-        let subjectCounter = 1;
-        for (const semData of branchData.semesters) {
-          const semester = semData.semester;
-          for (const sub of semData.subjects) {
-            // Use the code from JSON if available, else generate a placeholder
-            const code = sub.code || `${branchId}${semester}0${subjectCounter++}`;
-            const hasLabFlag = sub.type ? sub.type.includes('lab') : undefined;
-            const newSub = addSubject(sub.name, code, sub.credits, branch.id, semester, hasLabFlag, sub.theory_hours, sub.lab_hours);
-            createdSubjects.push(newSub);
+      for (const entry of curriculumDefs) {
+        const semester = entry.semester;
+
+        for (const courseEntry of entry.courses) {
+          const courseId = courseEntry.course_id;
+          const courseDef = courseLookup[courseId];
+
+          if (!courseDef) {
+            console.warn(`Curriculum references course "${courseId}" but it's not in any Y*_courses.json, skipping.`);
+            continue;
+          }
+
+          // Determine which branch(es) this course applies to via the section_ids
+          const branchesForCourse = new Set();
+          for (const secId of entry.section_id) {
+            const branch = sectionIdToBranch[secId];
+            if (branch) branchesForCourse.add(branch);
+          }
+
+          for (const branch of branchesForCourse) {
+            const dedupKey = `${branch.id}|${semester}|${courseId}`;
+            if (subjectDedup[dedupKey]) continue; // Already created
+
+            // Determine subject properties from course type
+            const courseType = courseDef.type || 'theory';
+            const theoryHours = courseDef.theory_hours || 0;
+            const labHours = courseDef.lab_hours || 0;
+
+            let isLab = false;
+            let theorySlots = theoryHours;
+            let labSessions = 0;
+
+            if (courseType === 'theory') {
+              isLab = false;
+              theorySlots = theoryHours || courseDef.credits;
+              labSessions = 0;
+            } else if (courseType === 'lab') {
+              isLab = true;
+              theorySlots = 0;
+              labSessions = labHours || 2;
+            } else if (courseType === 'theory_lab') {
+              isLab = true;
+              theorySlots = theoryHours || 3;
+              labSessions = labHours || 2;
+            } else if (courseType === 'audit') {
+              isLab = labHours > 0;
+              theorySlots = theoryHours || 0;
+              labSessions = labHours || 2;
+            }
+
+            const sub = {
+              id: generateId('SUB'),
+              name: courseDef.name,
+              code: courseId,
+              credits: courseDef.credits,
+              isLab: isLab,
+              branchId: branch.id,
+              semester: semester,
+              theorySlots: theorySlots,
+              labSessions: labSessions,
+              isElective: courseEntry.is_elective || false
+            };
+
+            subjects.push(sub);
+            subjectDedup[dedupKey] = sub;
+            createdSubjects.push(sub);
           }
         }
       }
 
-      // Generate a unique teacher for EVERY (Subject, Section) pair
+      // ---- 5. Auto-generate placeholder teachers (one per subject-section pair) ----
+      // Faculty will be loaded from faculty.json later; for now create TBD placeholders
       let teacherCounter = 1;
       for (const sub of createdSubjects) {
         const subSections = getSectionsByBranchSem(sub.branchId, sub.semester);
         for (const sec of subSections) {
-          addTeacher(`Prof. T${teacherCounter++} (${sub.code} - Sec ${sec.name})`, [sub.id]);
+          addTeacher(`TBD-${sub.code}-Sec${sec.name}`, [sub.id]);
+          teacherCounter++;
         }
       }
 
       save();
-      console.log('Sample data loaded from JSON successfully.');
+      console.log(`Data loaded: ${branches.length} branches, ${subjects.length} subjects, ${sections.length} sections, ${teachers.length} teachers, ${rooms.length} rooms, ${timeslots.length} timeslots.`);
       return true;
     } catch (e) {
-      console.error('Failed to load JSON data:', e);
+      console.error('Failed to load New-Data:', e);
       return false;
     }
   }
